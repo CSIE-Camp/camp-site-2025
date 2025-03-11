@@ -1,0 +1,56 @@
+{
+	"name": "camp-site-2025",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "husky && svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check . && eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^1.2.7",
+		"@eslint/js": "^9.22.0",
+		"@lucide/svelte": "^0.479.0",
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.19.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.0.13",
+		"eslint": "^9.22.0",
+		"eslint-config-prettier": "^10.1.1",
+		"eslint-plugin-svelte": "^3.1.0",
+		"flowbite": "^3.1.2",
+		"flowbite-svelte": "^0.48.4",
+		"flowbite-svelte-icons": "^2.0.3",
+		"globals": "^16.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.4.3",
+		"prettier": "^3.5.3",
+		"prettier-plugin-organize-imports": "^4.1.0",
+		"prettier-plugin-svelte": "^3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"svelte": "^5.23.0",
+		"svelte-check": "^4.1.5",
+		"tailwindcss": "^4.0.13",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.26.1",
+		"vite": "^6.2.1"
+	},
+	"packageManager": "pnpm@10.5.1",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
+	"lint-staged": {
+		"*.{svelte,ts}": [
+			"eslint --fix"
+		]
+	}
+}

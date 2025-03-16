@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Canvas } from '@threlte/core';
 	import { Button, Card, Heading, P, Timeline, TimelineItem, Badge } from 'flowbite-svelte';
 	import {
 		ArrowRight,
@@ -10,6 +11,7 @@
 		Rocket
 	} from '@lucide/svelte';
 	import Carousel from '$lib/components/Carousel.svelte';
+	import HeroScene from '$lib/components/HeroScene.svelte';
 </script>
 
 <svelte:head>
@@ -17,15 +19,17 @@
 	<meta name="description" content="國立台灣師範大學電腦科學與資訊工程夏令營 2025" />
 </svelte:head>
 
+<!-- 3D Scene Background -->
+<Canvas>
+	<HeroScene />
+</Canvas>
+
 <!-- Hero Section -->
-<section
-	class="from-primary-600 to-primary-800 relative -mx-4 mb-16 overflow-hidden bg-gradient-to-br px-4 py-20 text-white"
->
-	<div class="absolute inset-0 opacity-10">
-		<div class="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-white"></div>
-		<div class="absolute top-1/2 right-1/4 h-32 w-32 rounded-full bg-white"></div>
-		<div class="absolute bottom-1/4 left-1/2 h-48 w-48 rounded-full bg-white"></div>
-	</div>
+<section class="relative -mx-4 mb-16 overflow-hidden px-4 py-20 text-white">
+	<!-- Overlay gradient for better text readability -->
+	<div
+		class="from-primary-900/80 to-primary-800/70 absolute inset-0 bg-gradient-to-br backdrop-blur-sm"
+	></div>
 
 	<div class="container mx-auto flex flex-col items-center gap-8 md:flex-row">
 		<div class="z-10 md:w-1/2">

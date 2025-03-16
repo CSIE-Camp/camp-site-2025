@@ -64,6 +64,7 @@ If you encounter any issues or have questions:
   - [SvelteKit Documentation](https://kit.svelte.dev/docs)
   - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
   - [Flowbite Svelte Documentation](https://flowbite-svelte.com/docs/pages/introduction)
+  - [Threlte Documentation](https://threlte.xyz/)
 - Ask a team member or the mentor for guidance
 
 Happy coding! 🎉

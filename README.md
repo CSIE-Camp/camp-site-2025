@@ -35,7 +35,7 @@ To start working on the project:
    pnpm dev
    ```
 
-   This will start a local server, typically at <http://localhost:3000> (check your terminal for the exact URL)
+   This will start a local server, typically at <http://localhost:5173> (check your terminal for the exact URL)
 
 2. **Make Changes**:
    - The site will automatically update when you make changes to the code

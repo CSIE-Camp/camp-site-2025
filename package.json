@@ -22,6 +22,9 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.0.13",
+		"@threlte/core": "^8.0.1",
+		"@threlte/extras": "^9.0.2",
+		"@types/three": "^0.174.0",
 		"eslint": "^9.22.0",
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-svelte": "^3.1.0",
@@ -38,6 +41,7 @@
 		"svelte": "^5.23.0",
 		"svelte-check": "^4.1.5",
 		"tailwindcss": "^4.0.13",
+		"three": "^0.174.0",
 		"typescript": "^5.8.2",
 		"typescript-eslint": "^8.26.1",
 		"vite": "^6.2.1"

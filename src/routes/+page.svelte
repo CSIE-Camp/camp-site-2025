@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="container mx-auto flex flex-col items-center gap-8 md:flex-row">
-		<div class="z-10 md:w-1/2">
+		<div class="z-1 md:w-1/2">
 			<Badge class="mb-4 bg-white/20 text-white">2025 年 7 月 10-17 日</Badge>
 			<Heading tag="h1" class="mb-6 text-4xl leading-tight font-extrabold md:text-5xl">
 				探索程式設計的<span class="underline decoration-yellow-300 decoration-4 underline-offset-4"
@@ -52,7 +52,7 @@
 				</Button>
 			</div>
 		</div>
-		<div class="z-10 mt-8 md:mt-0 md:w-1/2">
+		<div class="z-1 mt-8 md:mt-0 md:w-1/2">
 			<div class="rounded-lg bg-white/10 p-2 backdrop-blur-sm">
 				<Carousel interval={6000}>
 					<div

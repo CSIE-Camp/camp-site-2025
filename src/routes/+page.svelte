@@ -1,216 +1,216 @@
 <script lang="ts">
-	import { Button, Card, Heading, P, Timeline, TimelineItem, Badge } from 'flowbite-svelte';
-	import {
-		ArrowRight,
-		Calendar,
-		GraduationCap,
-		Users,
-		FlaskRound,
-		Code,
-		Rocket
-	} from '@lucide/svelte';
-	import Carousel from '$lib/components/Carousel.svelte';
+    import { onMount } from 'svelte';
+
+    let countdown = '';
+    const eventDate = new Date('2025-05-31T23:59:59');
+
+	// 地圖位置的 Google Maps 連結
+    const locations = {
+        activity: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.774712013287!2d121.53454321193558!3d25.007770077740933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa1e27ab738b%3A0x2e5be38c37583475!2z5ZyL56uL6Ie654Gj5bir56-E5aSn5a24IOWFrOmkqOagoeWNgA!5e0!3m2!1szh-TW!2stw!4v1743730247104!5m2!1szh-TW!2stw",
+        dorm: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.47157532015!2d121.51124971193659!3d25.05200097771215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97017461e01%3A0xd2290ddf267d9ffe!2z5om_5pSc6KGM5peFIC0g5Y-w5YyX6YeN5oW26aSo!5e0!3m2!1szh-TW!2stw!4v1743730307162!5m2!1szh-TW!2stw"
+    };
+
+    let currentMap = locations.activity; // 預設顯示活動地點
+
+    // 倒數計時邏輯
+    onMount(() => {
+        const interval = setInterval(() => {
+            const now = new Date();
+            const diff = eventDate.getTime() - now.getTime();
+
+            if (diff <= 0) {
+                clearInterval(interval);
+                countdown = '報名已截止';
+            } else {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                countdown = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+            }
+        }, 1000);
+    });
+
+    // 切換地圖位置
+    function switchLocation(location: 'activity' | 'dorm') {
+        currentMap = locations[location];
+    }
 </script>
 
-<svelte:head>
-	<title>國立台灣師範大學資訊工程夏令營 2025</title>
-	<meta name="description" content="國立台灣師範大學電腦科學與資訊工程夏令營 2025" />
-</svelte:head>
+<style>
+	.cube_front {
+		font-family: "Cubic 11";
+	}
+	.camp-info {
+		/* Layout - 控制區塊的排版 */
+		display: flex;
+		width: 1219px;
+		height: 63.293px;
+		margin-top: 52px;
+		margin-bottom: 52px;
+		flex-direction: column;
+		justify-content: center;
+		flex-shrink: 0;
 
-<!-- Hero Section -->
-<section
-	class="from-primary-600 to-primary-800 relative -mx-4 mb-16 overflow-hidden bg-gradient-to-br px-4 py-20 text-white"
->
-	<div class="absolute inset-0 opacity-10">
-		<div class="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-white"></div>
-		<div class="absolute top-1/2 right-1/4 h-32 w-32 rounded-full bg-white"></div>
-		<div class="absolute bottom-1/4 left-1/2 h-48 w-48 rounded-full bg-white"></div>
-	</div>
+		/* Typography - 控制文字樣式 */
+		color: #FFF;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+	}
+	.sub_title {
+		/* Layout - 控制區塊的排版 */
+		display: inline-flex;
+		width: 357px;
+		height: 103px;
+		margin-left: -24px;
+		margin-right: -32px;
+		flex-direction: column;
+		justify-content: center;
+		flex-shrink: 0;
 
-	<div class="container mx-auto flex flex-col items-center gap-8 md:flex-row">
-		<div class="z-10 md:w-1/2">
-			<Badge class="mb-4 bg-white/20 text-white">2025 年 7 月 10-17 日</Badge>
-			<Heading tag="h1" class="mb-6 text-4xl leading-tight font-extrabold md:text-5xl">
-				探索程式設計的<span class="underline decoration-yellow-300 decoration-4 underline-offset-4"
-					>無限可能</span
-				>
-			</Heading>
-			<P class="mb-8 text-lg text-white/90">
-				加入國立台灣師範大學資訊工程夏令營，一同展開充滿刺激的電腦科學與資訊工程之旅。獲得尖端科技的實作經驗，並與志同道合的夥伴建立連結。
-			</P>
-			<div class="flex flex-wrap gap-4">
-				<Button color="none" href="/courses" class="text-primary-700 bg-white hover:bg-gray-100">
-					探索課程
-					<ArrowRight class="ml-2 size-5" />
-				</Button>
-				<Button
-					color="light"
-					href="#schedule"
-					class="border-white bg-transparent text-white hover:bg-white/10"
-				>
-					查看時程
-				</Button>
-			</div>
+		/* Typography - 控制文字樣式 */
+		color: #FFF;
+		text-align: center;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 60px; /* 120% */
+	}
+	.separate-line {
+		/* Layout - 控制區塊的排版 */
+		margin-left: -18px;
+		margin-right: 24px;
+
+		/* Typography - 控制文字樣式 */
+		color: #FFF;
+		text-align: center;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 60px; /* 120% */
+	}
+	.context {
+		/* Layout - 控制區塊的排版 */
+		display: inline-flex;
+		width: 1420px;
+		height: 105px;
+		flex-direction: column;
+		justify-content: center;
+		flex-shrink: 0;
+
+		/* Typography - 控制文字樣式 */
+		color: #FFF;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 60px; /* 150% */
+	}
+	.activate_btn {
+		/* Layout - 控制區塊的排版 */
+		display: flex;
+		width: 278px;
+		height: 103px;
+		margin-top: 1rem;
+		margin-left: 1rem;
+		margin-right: 38px;
+		flex-direction: column;
+		justify-content: center;
+		flex-shrink: 0;
+
+		/* Typography - 控制文字樣式 */
+		color: #000;
+		text-align: center;
+		font-family: "Cubic 11";
+		font-size: 50px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 60px; /* 120% */
+		border: 3px white solid;
+	}
+    .map-container {
+        width: 90%;
+		flex-shrink: 0;
+		aspect-ratio: 752/345;
+        margin-top: 1rem;
+		margin-bottom: 1rem;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		border-radius: 0.5rem;
+		overflow: hidden;
+		position: relative;
+    }
+
+    .btn {
+        background-color: #00000000;
+        color: #ffffff;
+    }
+
+    .btn:hover {
+        background-color: #fbbf24;
+		color: #000;
+    }
+	.rectangle-46 {
+		width: auto;
+		height: auto;
+		flex-shrink: 0;
+		background: rgba(0, 0, 0, 0.40);
+		border: 3px white solid;
+	}
+	.line-1 {
+		width: 100%;
+		height: 100%;
+		outline: 3px white solid;
+		outline-offset: -1.50px;
+	}
+	.fspan {
+		color: white;
+		font-size: 60px;
+		font-family: Cubic 11;
+		font-weight: 400;
+		word-wrap: break-word;
+	}
+	.title {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 22px;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	}
+	section {
+		margin-left: 128px;
+		margin-right: 128px;
+		display: flex;
+		flex-direction: column;
+	}
+</style>
+
+<section class="p-6 bg-gray-800 text-white">
+    <div class="title cube_front"><span class="fspan">營隊資訊</span></div>
+    <div class="rectangle-46">
+		<p class="cube_front text-center text-yellow-400 mt-2 camp-info" style="margin-left: auto; margin-right: auto;">距離報名截止剩餘：{countdown}</p>
+		<div class="line-1"></div>
+		<div class="mt-6">
+			<p class="cube_front flex items-center"><span class="sub_title inline-flex">報名時間</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">NOW ~ 2025.05.31 (FRI) 23:59</span></p>
+			<p class="cube_front flex items-center"><span class="sub_title inline-flex">活動時間</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">2025.07.01 (MON) 10:00 ~ 2025.07.04 (THU) 14:00</span></p>
+			<p class="cube_front flex items-center"><span class="sub_title inline-flex">報名費用</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">早鳥優惠 $8787</span></p>
+			<p class="cube_front flex items-center"><button type="button" class="btn activate_btn" on:click={() => switchLocation('activity')} on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}>活動地點 </button><span class="context inline-flex" style="margin-top: 15px;">國立臺灣師範大學公館校區</span></p>
+			<p class="cube_front flex items-center"><button type="button" class="btn activate_btn" on:click={() => switchLocation('dorm')} on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}>住宿地點</button><span class="context inline-flex" style="margin-top: 15px;">承攜行旅 臺北重慶館 103 臺北市大同區臺北市大同區重慶北路一段 62 號</span></p>
 		</div>
-		<div class="z-10 mt-8 md:mt-0 md:w-1/2">
-			<div class="rounded-lg bg-white/10 p-2 backdrop-blur-sm">
-				<Carousel interval={6000}>
-					<div
-						class="relative flex h-56 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-blue-600 to-blue-800 md:h-96"
-					>
-						<Code class="size-24 text-white/50" />
-						<div class="absolute right-0 bottom-0 left-0 bg-black/30 p-4 backdrop-blur-sm">
-							<p class="text-xl font-bold text-white">程式設計基礎</p>
-							<p class="text-white/80">從零開始學習程式設計的核心概念</p>
-						</div>
-					</div>
-					<div
-						class="relative flex h-56 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-purple-800 md:h-96"
-					>
-						<FlaskRound class="size-24 text-white/50" />
-						<div class="absolute right-0 bottom-0 left-0 bg-black/30 p-4 backdrop-blur-sm">
-							<p class="text-xl font-bold text-white">資料結構與演算法</p>
-							<p class="text-white/80">深入了解電腦科學的核心概念</p>
-						</div>
-					</div>
-					<div
-						class="relative flex h-56 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-600 to-green-800 md:h-96"
-					>
-						<Users class="size-24 text-white/50" />
-						<div class="absolute right-0 bottom-0 left-0 bg-black/30 p-4 backdrop-blur-sm">
-							<p class="text-xl font-bold text-white">合作專案</p>
-							<p class="text-white/80">團隊協作開發實際應用的軟體專案</p>
-						</div>
-					</div>
-				</Carousel>
-			</div>
-		</div>
-	</div>
-</section>
 
-<!-- About Section -->
-<section class="py-16" id="about">
-	<Heading tag="h2" class="mb-2 text-center">營隊特色</Heading>
-	<p class="mx-auto mb-12 max-w-2xl text-center text-gray-500">
-		我們提供全方位的電腦科學學習體驗，從基礎理論到實際應用
-	</p>
-
-	<div class="grid gap-8 md:grid-cols-3">
-		<Card class="border-none transition-transform hover:-translate-y-1 hover:shadow-lg">
-			<div class="mb-4 flex justify-center">
-				<div
-					class="flex size-16 items-center justify-center rounded-full bg-blue-100 text-blue-600"
-				>
-					<GraduationCap class="size-8" />
-				</div>
-			</div>
-			<Heading tag="h3" class="text-center">扎實學習</Heading>
-			<P class="text-center text-gray-500">
-				透過互動式講座與工作坊探索基礎電腦科學概念，由經驗豐富的教授親自授課。
-			</P>
-		</Card>
-
-		<Card class="border-none transition-transform hover:-translate-y-1 hover:shadow-lg">
-			<div class="mb-4 flex justify-center">
-				<div
-					class="flex size-16 items-center justify-center rounded-full bg-purple-100 text-purple-600"
-				>
-					<FlaskRound class="size-8" />
-				</div>
-			</div>
-			<Heading tag="h3" class="text-center">實作體驗</Heading>
-			<P class="text-center text-gray-500">
-				在實作程式碼環節中運用知識，打造實際專案。學習最新的開發工具和技術。
-			</P>
-		</Card>
-
-		<Card class="border-none transition-transform hover:-translate-y-1 hover:shadow-lg">
-			<div class="mb-4 flex justify-center">
-				<div
-					class="flex size-16 items-center justify-center rounded-full bg-green-100 text-green-600"
-				>
-					<Users class="size-8" />
-				</div>
-			</div>
-			<Heading tag="h3" class="text-center">人脈連結</Heading>
-			<P class="text-center text-gray-500">
-				與同儕、導師以及業界專家在資訊工程領域交流。建立寶貴的人脈，為未來發展鋪路。
-			</P>
-		</Card>
-	</div>
-</section>
-
-<!-- Schedule Section -->
-<section class="rounded-xl bg-gray-100 px-8 py-16" id="schedule">
-	<div class="mx-auto max-w-4xl">
-		<Heading tag="h2" class="mb-2 text-center">夏令營時程</Heading>
-		<p class="mx-auto mb-12 max-w-2xl text-center text-gray-500">為期8天的精彩課程與活動安排</p>
-
-		<Timeline>
-			<TimelineItem title="第一天：程式設計簡介" date="2025 年 7 月 10 日">
-				<div slot="icon" class="bg-primary-100 text-primary-700">
-					<Calendar class="size-5" />
-				</div>
-				<p class="text-gray-600">
-					歡迎會議、團隊組成，以及程式設計基礎介紹。建立營隊社群，認識志同道合的夥伴。
-				</p>
-			</TimelineItem>
-
-			<TimelineItem title="第2-3天：資料結構與演算法" date="2025 年 7 月 11-12 日">
-				<div slot="icon" class="bg-primary-100 text-primary-700">
-					<Calendar class="size-5" />
-				</div>
-				<p class="text-gray-600">透過實例學習基礎資料結構與演算法。解決實際問題，參與團隊競賽。</p>
-			</TimelineItem>
-
-			<TimelineItem title="第4-5天：網頁開發" date="2025 年 7 月 13-14 日">
-				<div slot="icon" class="bg-primary-100 text-primary-700">
-					<Calendar class="size-5" />
-				</div>
-				<p class="text-gray-600">介紹網頁技術、建立響應式介面與後端基礎。開發個人作品集網站。</p>
-			</TimelineItem>
-
-			<TimelineItem title="第6-7天：專案開發" date="2025 年 7 月 15-16 日">
-				<div slot="icon" class="bg-primary-100 text-primary-700">
-					<Calendar class="size-5" />
-				</div>
-				<p class="text-gray-600">在業界專家的指導下進行合作專案。應用所學知識，解決實際問題。</p>
-			</TimelineItem>
-
-			<TimelineItem title="第8天：專案展示" date="2025 年 7 月 17 日">
-				<div slot="icon" class="bg-primary-100 text-primary-700">
-					<Calendar class="size-5" />
-				</div>
-				<p class="text-gray-600">
-					最終專案報告、頒獎典禮及結營慶祝。與業界代表交流，展示學習成果。
-				</p>
-			</TimelineItem>
-		</Timeline>
-	</div>
-</section>
-
-<!-- CTA Section -->
-<section class="py-16">
-	<div
-		class="from-primary-600 to-primary-800 mx-auto max-w-4xl rounded-2xl bg-gradient-to-r p-8 text-center text-white shadow-xl"
-	>
-		<Heading tag="h2" class="mb-4">準備好接受挑戰了嗎？</Heading>
-		<P class="mb-8">國立台灣師範大學資訊工程夏令營 2025 名額有限，立即預訂你的席位！</P>
-		<div
-			class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4"
-		>
-			<Button size="xl" color="none" class="text-primary-700 bg-white hover:bg-gray-100">
-				<Rocket class="mr-2 size-5" />
-				立即報名
-			</Button>
-			<Button
-				size="xl"
-				href="/courses"
-				color="light"
-				class="border-white bg-transparent text-white hover:bg-white/10"
-			>
-				探索課程
-			</Button>
+		<!-- 地圖嵌入 -->
+		<div class="map-container" style="margin-left: auto; margin-right: auto;">
+			<iframe
+				title="Location Map"
+				src={currentMap}
+				width="100%"
+				height="100%"
+				style="border:0;"
+				allowfullscreen
+				loading="lazy">
+			</iframe>
 		</div>
 	</div>
 </section>

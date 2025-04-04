@@ -1,6 +1,10 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 
+    if (import.meta.env.DEV) {
+        import('./dev-style.css');
+    }
+
     let countdown = '';
     const eventDate = new Date('2025-05-31T23:59:59');
 	// 地圖位置的 Google Maps 連結
@@ -36,24 +40,16 @@
     }
 </script>
 
-<style>
-    :global(body) {
-        background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
-        background-size: cover;
-        background-attachment: fixed;
-    }
-</style>
-
 <section class="mx-18 text-pretty min-w-[720px]">
     <div class="mt-3 mb-3">
         <span class="text-white text-4xl font-[Cubic 11]">營隊資訊</span>
     </div>
     <div class="bg-black/40 border-3 border-white">
-		<p class="mt-5 mb-5 text-center text-white text-3xl font-[Cubic 11]">
+		<p class="mt-7 mb-7 text-center text-white text-3xl font-[Cubic 11]">
 			距離報名截止剩餘：{countdown}
 		</p>
         <hr class="border-2 border-white mb-5"/>
-        <div class="w-[95%] mx-auto grid grid-cols-2 gap-x-6 gap-y-6 grid-cols-[15%_85%] font-[Cubic11] text-white flex justify-center items-center">
+        <div class="w-[95%] mx-auto grid grid-cols-2 gap-x-6 gap-y-6 grid-cols-[15%_85%] font-[Cubic 11] text-white flex justify-center items-center">
             <div class="py-6 border-r-3 text-3xl text-center">報名時間</div>
             <div class="text-2xl justify-self-start">
                 <ul>

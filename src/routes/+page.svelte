@@ -41,6 +41,11 @@
     .cubic_font {
         font-family: "Cubic 11";
     }
+    :global(body) {
+        background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
+        background-size: cover;
+        background-attachment: fixed;
+    }
 </style>
 
 <section class="mx-32 flex flex-col">
@@ -87,7 +92,7 @@
                     住宿地點
                 </button>
                 <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px] mt-[15px]">
-                    承攜行旅 臺北重慶館 103 臺北市大同區臺北市大同區重慶北路一段 62 號
+                    承攜行旅 臺北重慶館<br/> 103 臺北市大同區臺北市大同區重慶北路一段 62 號
                 </span>
             </p>
         </div>

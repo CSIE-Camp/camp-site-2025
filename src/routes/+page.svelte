@@ -41,11 +41,6 @@
     .cubic_font {
         font-family: "Cubic 11";
     }
-    :global(body) {
-        background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
-        background-size: cover;
-        background-attachment: fixed;
-    }
 </style>
 
 <section class="mx-32 flex flex-col">
@@ -66,7 +61,7 @@
             <p class="cubic_font flex items-center">
                 <span class="inline-flex w-[357px] h-[103px] -ml-6 -mr-8 flex-col justify-center flex-shrink-0 text-white text-center text-[50px] font-normal leading-[60px]">活動時間</span>
                 <span class="text-white text-center text-[50px] font-normal leading-[60px] -ml-[18px] mr-6">|</span>
-                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px]">2025.07.01 (MON) 10:00 ~ 2025.07.04 (THU) 14:00</span>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px]">2025.07.01 (MON) 16:00 ~ 2025.07.04 (THU) 14:00</span>
             </p>
             <p class="cubic_font flex items-center">
                 <span class="inline-flex w-[357px] h-[103px] -ml-6 -mr-8 flex-col justify-center flex-shrink-0 text-white text-center text-[50px] font-normal leading-[60px]">報名費用</span>

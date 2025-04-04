@@ -41,6 +41,11 @@
     .cubic_font {
         font-family: "Cubic 11";
     }
+    :global(body) {
+        background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
+        background-size: cover;
+        background-attachment: fixed;
+    }
 </style>
 
 <section class="mx-32 flex flex-col">
@@ -70,7 +75,7 @@
             </p>
             <p class="cubic_font flex items-center">
                 <button type="button" 
-                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black bg-transparent text-white" 
+                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black hover:cursor-pointer bg-transparent text-white" 
                     on:click={() => switchLocation('activity')} 
                     on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}>
                     活動地點
@@ -81,7 +86,7 @@
             </p>
             <p class="cubic_font flex items-center">
                 <button type="button" 
-                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black bg-transparent text-white" 
+                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black hover:cursor-pointer bg-transparent text-white" 
                     on:click={() => switchLocation('dorm')} 
                     on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}>
                     住宿地點

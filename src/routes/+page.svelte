@@ -38,179 +38,65 @@
 </script>
 
 <style>
-	.cube_front {
-		font-family: "Cubic 11";
-	}
-	.camp-info {
-		/* Layout - 控制區塊的排版 */
-		display: flex;
-		width: 1219px;
-		height: 63.293px;
-		margin-top: 52px;
-		margin-bottom: 52px;
-		flex-direction: column;
-		justify-content: center;
-		flex-shrink: 0;
-
-		/* Typography - 控制文字樣式 */
-		color: #FFF;
-		font-size: 50px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-	}
-	.sub_title {
-		/* Layout - 控制區塊的排版 */
-		display: inline-flex;
-		width: 357px;
-		height: 103px;
-		margin-left: -24px;
-		margin-right: -32px;
-		flex-direction: column;
-		justify-content: center;
-		flex-shrink: 0;
-
-		/* Typography - 控制文字樣式 */
-		color: #FFF;
-		text-align: center;
-		font-size: 50px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 60px; /* 120% */
-	}
-	.separate-line {
-		/* Layout - 控制區塊的排版 */
-		margin-left: -18px;
-		margin-right: 24px;
-
-		/* Typography - 控制文字樣式 */
-		color: #FFF;
-		text-align: center;
-		font-size: 50px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 60px; /* 120% */
-	}
-	.context {
-		/* Layout - 控制區塊的排版 */
-		display: inline-flex;
-		width: 1420px;
-		height: 105px;
-		flex-direction: column;
-		justify-content: center;
-		flex-shrink: 0;
-
-		/* Typography - 控制文字樣式 */
-		color: #FFF;
-		font-size: 40px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 60px; /* 150% */
-	}
-	.activate_btn {
-		/* Layout - 控制區塊的排版 */
-		display: flex;
-		width: 278px;
-		height: 103px;
-		margin-top: 1rem;
-		margin-left: 1rem;
-		margin-right: 38px;
-		flex-direction: column;
-		justify-content: center;
-		flex-shrink: 0;
-
-		/* Typography - 控制文字樣式 */
-		color: #000;
-		text-align: center;
-		font-family: "Cubic 11";
-		font-size: 50px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 60px; /* 120% */
-		border: 3px white solid;
-	}
-    .map-container {
-        width: 90%;
-		flex-shrink: 0;
-		aspect-ratio: 752/345;
-        margin-top: 1rem;
-		margin-bottom: 1rem;
-		margin-left: 1rem;
-		margin-right: 1rem;
-		border-radius: 0.5rem;
-		overflow: hidden;
-		position: relative;
+    .cubic_font {
+        font-family: "Cubic 11";
     }
-
-    .btn {
-        background-color: #00000000;
-        color: #ffffff;
-    }
-
-    .btn:hover {
-        background-color: #fbbf24;
-		color: #000;
-    }
-	.rectangle-46 {
-		width: auto;
-		height: auto;
-		flex-shrink: 0;
-		background: rgba(0, 0, 0, 0.40);
-		border: 3px white solid;
-	}
-	.line-1 {
-		width: 100%;
-		height: 100%;
-		outline: 3px white solid;
-		outline-offset: -1.50px;
-	}
-	.fspan {
-		color: white;
-		font-size: 60px;
-		font-family: Cubic 11;
-		font-weight: 400;
-		word-wrap: break-word;
-	}
-	.title {
-		width: 100%;
-		height: 100%;
-		margin-bottom: 22px;
-		justify-content: center;
-		display: flex;
-		flex-direction: column;
-	}
-	section {
-		margin-left: 128px;
-		margin-right: 128px;
-		display: flex;
-		flex-direction: column;
-	}
 </style>
 
-<section class="p-6 bg-gray-800 text-white">
-    <div class="title cube_front"><span class="fspan">營隊資訊</span></div>
-    <div class="rectangle-46">
-		<p class="cube_front text-center text-yellow-400 mt-2 camp-info" style="margin-left: auto; margin-right: auto;">距離報名截止剩餘：{countdown}</p>
-		<div class="line-1"></div>
-		<div class="mt-6">
-			<p class="cube_front flex items-center"><span class="sub_title inline-flex">報名時間</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">NOW ~ 2025.05.31 (FRI) 23:59</span></p>
-			<p class="cube_front flex items-center"><span class="sub_title inline-flex">活動時間</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">2025.07.01 (MON) 10:00 ~ 2025.07.04 (THU) 14:00</span></p>
-			<p class="cube_front flex items-center"><span class="sub_title inline-flex">報名費用</span><span class="separate-line inline-flex">|</span><span class="context inline-flex">早鳥優惠 $8787</span></p>
-			<p class="cube_front flex items-center"><button type="button" class="btn activate_btn" on:click={() => switchLocation('activity')} on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}>活動地點 </button><span class="context inline-flex" style="margin-top: 15px;">國立臺灣師範大學公館校區</span></p>
-			<p class="cube_front flex items-center"><button type="button" class="btn activate_btn" on:click={() => switchLocation('dorm')} on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}>住宿地點</button><span class="context inline-flex" style="margin-top: 15px;">承攜行旅 臺北重慶館 103 臺北市大同區臺北市大同區重慶北路一段 62 號</span></p>
-		</div>
+<section class="mx-32 flex flex-col">
+    <div class="w-full h-full mb-[22px] justify-center flex flex-col">
+        <span class="cubic_font text-white text-[60px] font-[Cubic11] font-normal break-words">營隊資訊</span>
+    </div>
+    <div class="w-auto h-auto flex-shrink-0 bg-black/40 border-[3px] border-white">
+		<p class="cubic_font text-center text-white mt-2 flex w-[1219px] h-[63.293px] mt-[62px] mb-[52px] flex-col justify-center items-center flex-shrink-0 text-[50px] font-normal mx-auto">
+			距離報名截止剩餘：{countdown}
+		</p>
+        <div class="w-full h-full outline outline-[3px] outline-white -outline-offset-[1.5px]"></div>
+        <div class="mt-6">
+            <p class="cubic_font flex items-center">
+                <span class="inline-flex w-[357px] h-[103px] -ml-6 -mr-8 flex-col justify-center flex-shrink-0 text-white text-center text-[50px] font-normal leading-[60px]">報名時間</span>
+                <span class="text-white text-center text-[50px] font-normal leading-[60px] -ml-[18px] mr-6">|</span>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px]">NOW ~ 2025.05.31 (FRI) 23:59</span>
+            </p>
+            <p class="cubic_font flex items-center">
+                <span class="inline-flex w-[357px] h-[103px] -ml-6 -mr-8 flex-col justify-center flex-shrink-0 text-white text-center text-[50px] font-normal leading-[60px]">活動時間</span>
+                <span class="text-white text-center text-[50px] font-normal leading-[60px] -ml-[18px] mr-6">|</span>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px]">2025.07.01 (MON) 10:00 ~ 2025.07.04 (THU) 14:00</span>
+            </p>
+            <p class="cubic_font flex items-center">
+                <span class="inline-flex w-[357px] h-[103px] -ml-6 -mr-8 flex-col justify-center flex-shrink-0 text-white text-center text-[50px] font-normal leading-[60px]">報名費用</span>
+                <span class="text-white text-center text-[50px] font-normal leading-[60px] -ml-[18px] mr-6">|</span>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px]">早鳥優惠 $8787</span>
+            </p>
+            <p class="cubic_font flex items-center">
+                <button type="button" 
+                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black bg-transparent text-white" 
+                    on:click={() => switchLocation('activity')} 
+                    on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}>
+                    活動地點
+                </button>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px] mt-[15px]">
+                    國立臺灣師範大學公館校區
+                </span>
+            </p>
+            <p class="cubic_font flex items-center">
+                <button type="button" 
+                    class="cubic_font flex w-[278px] h-[103px] mt-4 ml-4 mr-[38px] flex-col justify-center flex-shrink-0 text-black text-center font-[Cubic11] text-[50px] font-normal leading-[60px] border-[3px] border-white hover:bg-yellow-400 hover:text-black bg-transparent text-white" 
+                    on:click={() => switchLocation('dorm')} 
+                    on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}>
+                    住宿地點
+                </button>
+                <span class="inline-flex w-[1420px] h-[105px] flex-col justify-center flex-shrink-0 text-white text-[40px] font-normal leading-[60px] mt-[15px]">
+                    承攜行旅 臺北重慶館 103 臺北市大同區臺北市大同區重慶北路一段 62 號
+                </span>
+            </p>
+        </div>
 
-		<!-- 地圖嵌入 -->
-		<div class="map-container" style="margin-left: auto; margin-right: auto;">
-			<iframe
-				title="Location Map"
-				src={currentMap}
-				width="100%"
-				height="100%"
-				style="border:0;"
-				allowfullscreen
-				loading="lazy">
-			</iframe>
-		</div>
-	</div>
+        <div class="w-[90%] flex-shrink-0 aspect-[752/345] my-4 mx-4 rounded-lg overflow-hidden relative mx-auto">
+            <iframe
+                title="Location Map"
+                src={currentMap}
+                class="w-full h-full border-0"
+                allowfullscreen
+                loading="lazy">
 </section>

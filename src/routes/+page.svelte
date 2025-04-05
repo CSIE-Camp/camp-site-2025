@@ -15,6 +15,60 @@
 
     let currentMap = locations.activity; // 預設顯示活動地點
 
+    let stage; // 報名階段
+    const now = new Date();
+    if (now < new Date('2025-05-01')) {
+        stage = 0; // 早鳥報名
+    } else if (now < new Date('2025-05-20')) {
+        stage = 1; // 一階報名
+    } else if (now >= new Date('2025-05-27') && now < new Date('2025-06-02')) {
+        stage = 2; // 二階報名
+    } else if (now >= new Date('2025-06-02')) {
+        stage = 3; // 報名已截止
+    } else {
+        stage = 4; // 非報名時段
+    }
+
+    let stageText = ''; // 報名階段文字
+    let dateTexts = [
+        '2025/04/21 - 2025/04/30', // 早鳥報名截止日期
+        '2025/05/01 - 2025/05/19', // 一階報名截止日期
+        '2025/05/27 - 2025/06/01', // 二階報名截止日期
+        '', // 報名已截止
+        '(2025/05/27 再開放)' // 非報名時段
+    ];
+    if (stage === 0) {
+        stageText = '早鳥報名：' + dateTexts[stage];
+    } else if (stage === 1) {
+        stageText = '一階報名：' + dateTexts[stage];
+    } else if (stage === 2) {
+        stageText = '二階報名：' + dateTexts[stage];
+    } else if (stage === 3) {
+        stageText = '報名已截止' + dateTexts[stage];
+    } else if (stage === 4) {
+        stageText = '非報名時段 ' + dateTexts[stage];
+    }
+
+    let stageCostText = ''; // 報名費用文字
+    let originalCostText = ''; // 原始報名費用
+    if (stage === 0) {
+        originalCostText = '7300';
+        stageCostText = '6800 元'; // 早鳥報名費用
+    } else if (stage === 1) {
+        originalCostText = '';
+        stageCostText = '7300 元'; // 一階報名費用
+    } else if (stage === 2) {
+        originalCostText = '';
+        stageCostText = '7300 元'; // 二階報名費用
+    } else if (stage === 3) {
+        originalCostText = '';
+        stageCostText = '報名已截止'; // 報名已截止
+    } else if (stage === 4) {
+        originalCostText = '';
+        stageCostText = '非報名時段 (原價 7300 元)'; // 非報名時段
+    }
+
+
     // 倒數計時邏輯
     onMount(() => {
         const interval = setInterval(() => {
@@ -50,27 +104,20 @@
 		</p>
         <hr class="border-2 border-white mb-5"/>
         <div class="w-[95%] mx-auto grid grid-cols-2 gap-x-6 gap-y-6 grid-cols-[15%_85%] font-[Cubic 11] text-white flex justify-center items-center">
-            <div class="py-6 border-r-3 text-3xl text-center">報名時間</div>
+            <div class="py-1 border-r-3 text-3xl text-center">報名時間</div>
             <div class="text-2xl justify-self-start">
-                <ul>
-                    <li>早鳥 4/21 - 4/30</li>
-                    <li>一階 5/1 - 5/19</li>
-                    <li>二階 5/27 - 6/1</li>
-                </ul>
+                {stageText}
             </div>
 
-            <div class="py-3 border-r-3 text-3xl text-center">報名費用</div>
+            <div class="py-1 border-r-3 text-3xl text-center">報名費用</div>
             <div class="text-2xl justify-self-start">
-                <ul>
-                    <li>早鳥 6800</li>
-                    <li>一二階 7300</li>
-                </ul>
+                <span class="line-through text-red-500 text-xl">{originalCostText}</span> {stageCostText}
             </div>
 
-            <div class="border-r-3 text-3xl text-center">報名費用</div>
+            <div class="py-1 border-r-3 text-3xl text-center">活動時間</div>
             <div class="text-2xl justify-self-start">7/1 (二) - 7/4 (五)</div>
 
-            <div class="border-r-3 text-3xl text-center">詳細資訊</div>
+            <div class="py-1 border-r-3 text-3xl text-center">詳細資訊</div>
             <div class="text-2xl justify-self-start"><a href="https://docs.google.com/document/d/1yZE3Mumvc52DEaeNavlcUavxazWvIfe8/edit?rtpof=true&sd=true" class="hover:text-yellow-400">點此查看 活動簡章</a></div>
 
             <button type="button" 

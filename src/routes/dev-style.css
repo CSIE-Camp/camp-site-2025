@@ -1,0 +1,32 @@
+body {
+    background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Cubic 11"
+}
+
+.mt-7:hover {
+    background: linear-gradient(
+        to right,
+        #ff0000,
+        #ff8000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8000ff,
+        #ff0080,
+        #ff0000
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 3s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}

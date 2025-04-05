@@ -17,7 +17,7 @@
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col bg-gray-50">
+<div class="flex min-h-screen flex-col bg-[url(background.png)] bg-[rgba(0,0,0,0.5)] bg-center bg-contain bg-fixed bg-repeat" style="background-blend-mode: multiply;">
 	<Navbar
 		let:hidden
 		let:toggle
@@ -34,10 +34,6 @@
 			<NavLi href="/" class="hover:bg-primary-50 rounded-lg">
 				<Home class="mr-2 size-5" />
 				首頁
-			</NavLi>
-			<NavLi href="/courses" class="hover:bg-primary-50 rounded-lg">
-				<BookOpen class="mr-2 size-5" />
-				課程
 			</NavLi>
 			<NavLi>
 				<Button size="sm" class="ml-2">立即報名</Button>

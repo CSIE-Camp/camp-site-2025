@@ -27,3 +27,10 @@ body {
 	--color-primary-800: #cc4522;
 	--color-primary-900: #a5371b;
 }
+
+@font-face {
+	font-family: 'Cubic-11';
+	src: url('/fonts/Cubic_11.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -5,7 +5,7 @@ body {
     font-family: "Cubic 11"
 }
 
-.mt-7 {
+.mt-7:hover {
     background: linear-gradient(
         to right,
         #ff0000,
@@ -23,7 +23,7 @@ body {
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    animation: rainbow-animation 8s linear infinite;
+    animation: rainbow-animation 3s linear infinite;
 }
 
 @keyframes rainbow-animation {

@@ -16,14 +16,14 @@
     let currentMap = locations.activity; // 預設顯示活動地點
 
     let stage; // 報名階段
-    const now = new Date();
-    if (now < new Date('2025-05-01')) {
+    const now = new Date(); 
+    if (now < new Date('2025-05-01T00:00:00')) {
         stage = 0; // 早鳥報名
-    } else if (now < new Date('2025-05-20')) {
+    } else if (now < new Date('2025-05-20T00:00:00')) {
         stage = 1; // 一階報名
-    } else if (now >= new Date('2025-05-27') && now < new Date('2025-06-02')) {
+    } else if (now >= new Date('2025-05-27T00:00:00') && now < new Date('2025-06-02T00:00:00')) {
         stage = 2; // 二階報名
-    } else if (now >= new Date('2025-06-02')) {
+    } else if (now >= new Date('2025-06-02T00:00:00')) {
         stage = 3; // 報名已截止
     } else {
         stage = 4; // 非報名時段
@@ -35,7 +35,7 @@
         '2025/05/01 - 2025/05/19', // 一階報名截止日期
         '2025/05/27 - 2025/06/01', // 二階報名截止日期
         '', // 報名已截止
-        '(2025/05/27 再開放)' // 非報名時段
+        '(若有名額則 5/27 後開放二階報名)' // 非報名時段
     ];
     if (stage === 0) {
         stageText = '早鳥報名：' + dateTexts[stage];
@@ -46,7 +46,7 @@
     } else if (stage === 3) {
         stageText = '報名已截止' + dateTexts[stage];
     } else if (stage === 4) {
-        stageText = '非報名時段 ' + dateTexts[stage];
+        stageText = '暫不受理報名 ' + dateTexts[stage];
     }
 
     let stageCostText = ''; // 報名費用文字
@@ -62,10 +62,10 @@
         stageCostText = '7300 元'; // 二階報名費用
     } else if (stage === 3) {
         originalCostText = '';
-        stageCostText = '報名已截止'; // 報名已截止
+        stageCostText = '7300 元 (報名已截止)'; // 報名已截止
     } else if (stage === 4) {
         originalCostText = '';
-        stageCostText = '非報名時段 (原價 7300 元)'; // 非報名時段
+        stageCostText = '7300 元'; // 非報名時段
     }
 
 

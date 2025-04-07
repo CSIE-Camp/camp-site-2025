@@ -3,7 +3,7 @@
     import yourImage from '$lib/assets/cube.png';
     import backgroundImage from '$lib/assets/background.png';
 
-    let title = "2025 師大資工營";
+    let title = "2025 臺師大資工營";
     let subtitle = "資遊你和我的師界";
     let signupPeriod = "04/21 - 05/31";
 </script>
@@ -60,7 +60,7 @@
         <p 
             style="color: white; font-family: 'Cubic 11', sans-serif; font-size: 1.5rem; display: flex; align-items: center; margin-bottom: 1rem;"
         >
-            報名期間：
+            報名期間
             <span 
                 class="signup-period" 
                 style="font-size: 2.5rem; margin-left: 0.5rem;"

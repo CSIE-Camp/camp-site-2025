@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ 星空版</title>
+
+  <!-- Cubic 11 字體 -->
+  <link href="https://cdn.jsdelivr.net/gh/mistval/cubic11-font/webfonts/cubic11.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: 'Cubic 11', monospace;
+      color: white;
+      min-height: 100vh;
+      position: relative;
+      scroll-behavior: smooth;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .faq-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      border: 3px solid white;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .faq-box {
+      border: 2px solid white;
+      padding: 40px 20px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .faq-box .answer {
+  display: none;
+  }
+    .faq-box:hover {
+      background-color: orange;
+      color: black;
+    }
+
+    .faq-box .question {
+      font-size: 16px;
+    }
+    .page-title {
+  font-size: 48px;
+  color: white;
+  text-align: left;
+  max-width: 1200px;
+  margin: 60px auto 0 auto;
+  padding-left: 40px;
+  font-family: 'Cubic 11', monospace;
+}
+
+
+
+    /* Modal 彈跳視窗 */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-family: 'Cubic 11', monospace;
+}
+
+.modal-window {
+  background: #c0c0c0;
+  border: 3px solid black;
+  box-shadow: 4px 4px black;
+  width: 400px;
+  max-width: 90%;
+}
+
+/* 藍色標題列 */
+.modal-title-bar {
+  background: #0000aa;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* 關閉按鈕 */
+.modal-close {
+  background: #c0c0c0;
+  border: 2px solid black;
+  font-family: 'Cubic 11', monospace;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* 內容邊框（內層） */
+.modal-inner-border {
+  border: 2px solid #808080;
+  margin: 8px;
+  padding: 12px;
+  background: #c0c0c0;
+}
+
+/* 實際內容 */
+.modal-content p {
+  font-size: 16px;
+  color: black;
+  line-height: 1.6;
+}
+
+
+
+    /* 自訂捲軸樣式 */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #ffb347;
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <h1 class="page-title">FAQ</h1>
+
+  <div class="faq-container">
+<!-- 復古像素風 Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-window">
+    <div class="modal-title-bar">
+      <span id="modalQuestion">視窗標題</span>
+      <button class="modal-close" id="closeModal">X</button>
+    </div>
+    <div class="modal-inner-border">
+      <div class="modal-content">
+        <p id="modalAnswer">視窗內容</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="faq-box">
+      <div class="question">沒有基礎的適合來參加嗎？</div>
+      <div class="answer">非常歡迎。我們的課程都是新手導向，都是在零基礎的情況下設計的。</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我已經有基礎了課程對我而言會不會太簡單？</div>
+      <div class="answer">不會。我們會提供補充資料或挑戰任務給已經有基礎的同學挑戰！</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">會有教授來上課嗎？</div>
+      <div class="answer">會！第一天會有系上的教授為我們帶來《走進 CS》演講。</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">可以不要跟大家一起住宿嗎？</div>
+      <div class="answer">課程安排中有包含小隊的團體實作，而多數討論的時間會在回到旅館之後。因此會要求各學員住宿，以便進行小組討論。</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我要怎麼往返學校與旅館？</div>
+      <div class="answer">我們會一起搭公車前往，所以記得自備有餘額的悠遊卡跟一卡通喔～</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我可以跟朋友同一組或同房間嗎？</div>
+      <div class="answer">我們會隨機分組，基本上會跟同一組的夥伴同房喔！</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">時程表中的「敬請期待」是甚麼？</div>
+      <div class="answer">除了課程以外，營隊中也會準備一些讓大家放鬆的活動，在學習之餘獲得片刻的閒暇時光！</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我看到課表中有「選修課」，這是代表我可以自己選想上甚麼課的意思嗎？要怎麼選課呢？</div>
+      <div class="answer">沒錯！選修課就是可以讓你自己選擇有興趣的課上課～在成功報名之後我們會寄送選修課志願序填寫表單，記得去填寫才能上到自己比較喜歡的課喔！選課結果將在營隊中公布</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我可以跟朋友同一組或同房間嗎？</div>
+      <div class="answer">我們會隨機分組，基本上會跟同一組的夥伴同房喔！</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">我怎麼知道我有沒有報名成功？</div>
+      <div class="answer">若填寫在 Google 表單內的信箱有收到表單回覆的信即為成功送出。</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">交出報名表單後還可以修改資料嗎？</div>
+      <div class="answer">可以，我們的表單在時限內都可以編輯，到當初填表單的信箱修改即可～</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">早鳥優惠的時間是怎麼計算的？</div>
+      <div class="answer">以最後編輯表單的時間為準，也就是 5/1 00:00 後若編輯回覆可能就沒有早鳥資格喔！</div>
+    </div>
+    <div class="faq-box">
+      <div class="question">個人資料填寫中和程式相關的問題是否會影響錄取？</div>
+      <div class="answer">不會，這個問題僅供我們做分隊的參考。</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="close-btn" id="closeModal">×</div>
+    <h2 id="modalQuestion">問題</h2>
+    <p id="modalAnswer">答案</p>
+  </div>
+</div>
+
+ <!-- particles.js -->
+ <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+ <script src="particles-config.js"></script>
+
+ <!-- 彈跳視窗功能 -->
+ <script>
+   const modal = document.getElementById('modalOverlay');
+   const modalQuestion = document.getElementById('modalQuestion');
+   const modalAnswer = document.getElementById('modalAnswer');
+   const closeModal = document.getElementById('closeModal');
+
+   document.querySelectorAll('.faq-box').forEach(box => {
+     box.addEventListener('click', () => {
+      const q = box.querySelector('.question').textContent;
+      const a = box.querySelector('.answer').textContent;
+       modalQuestion.textContent = q;
+       modalAnswer.textContent = a;
+       modal.style.display = 'flex';
+     });
+   });
+
+   closeModal.addEventListener('click', () => {
+     modal.style.display = 'none';
+   });
+
+   window.addEventListener('click', e => {
+     if (e.target === modal) {
+       modal.style.display = 'none';
+     }
+   });
+ </script>
+
+</body>
+</html>

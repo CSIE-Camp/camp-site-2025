@@ -5,14 +5,32 @@
 @source "../node_modules/flowbite-svelte/dist";
 
 body {
-	font-family:
-		'Inter',
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		Roboto,
-		sans-serif;
+	font-family: "Cubic 11";
 	-webkit-font-smoothing: antialiased;
+	background: url('/background.png') no-repeat center center fixed;
+	background-size: cover;
+	color: #fff !important;
+}
+
+* {
+	color: inherit;
+	background-color: inherit;
+}
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@plugin 'flowbite/plugin';
+@source "../node_modules/flowbite-svelte/dist";
+
+body {
+	font-family: "Cubic 11";
+	-webkit-font-smoothing: antialiased;
+	background-color: #000 !important;
+	color: #fff !important;
+}
+
+* {
+	color: inherit;
 }
 
 @theme {

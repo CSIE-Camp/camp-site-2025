@@ -1,4 +1,3 @@
-<p style="color: red">正在使用這個 Carousel.svelte</p>
 
 <script>
     import yourImage from '$lib/assets/cube.png';

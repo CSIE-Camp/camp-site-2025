@@ -95,6 +95,27 @@
 </script>
 
 <section class="mx-18 text-pretty min-w-[720px]">
+    <div class="mt-3 mb-3 text-white text-center text-6xl font-[Cubic 11]">
+            今年夏天<br>（史詩級的音效）
+    </div>
+    
+     <div class="mt-3 mb-3 text-white text-center text-2xl leading-loose font-[Cubic 11]">
+        <br>「各位公測玩家們準備好了嗎？」<br>
+        「Yooooooooooooooo！」<br>
+        由《你在”code“什麼》團隊攜手無名小卒打造。 <br>
+        耗資我也不知道。（滑倒） <br>
+        「打敗那隻 Boss！！！」（登登） <br>
+        《資遊你和我的師界》！（哐當）<br>
+        「所以說，Boss 人咧？」<br>
+        「欸？！！！」<br>
+        「讓我們一起進入遊戲的世界吧！」<br>
+        今年暑假，我們不見不散！（收尾的音效）<br><br>
+        伊莎貝拉：「非哥，你在”code“什～麼？」<br>
+        非哥：「四月二十一，早鳥報名開始！」<br><br>
+     </div>
+</section>
+
+<section class="mx-18 text-pretty min-w-[720px]">
     <div class="mt-3 mb-3">
         <span class="text-white text-4xl font-[Cubic 11]">營隊資訊</span>
     </div>

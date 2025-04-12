@@ -8,15 +8,6 @@
   }));
 </script>
 
-<style>
-  :global(body) {
-    background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Cubic 11" !important;
-  }
-</style>
-
 <section class="mx-18 text-pretty min-w-[720px]">
   <div class="mt-5 mb-5">
       <span class="text-white text-4xl font-[Cubic 11]">歷屆回顧</span>
@@ -28,58 +19,61 @@
     
     <hr class="mt-5 border-2 border-white"/>
 
-    <Carousel
-      images={images}
-      let:Controls
-      class="aspect-[352/181]"
-      style="height:100%;"
-    >
-      <Controls let:ControlButton let:changeSlide>
-        <ControlButton 
-          name="Previous" 
-          forward={false} 
-          on:click={()=>changeSlide(false)}
-          class="translate-x-5"
-        >
-          <div 
-            class="
-              w-12 h-12 rounded-full bg-black/40 
-              hover:bg-black/80 transition-colors
-              hover:cursor-pointer
-              flex items-center justify-center
-            "
+    <div class="group">
+      <Carousel
+        images={images}
+        duration={5000}
+        let:Controls
+        class="aspect-[352/181]"
+        style="height:100%;"
+      >
+        <Controls let:ControlButton let:changeSlide>
+          <ControlButton 
+            name="Previous" 
+            forward={false} 
+            on:click={()=>changeSlide(false)}
+            class="translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           >
-            <img 
-              src="/images/icons/preview.png"
-              alt="preview"
-              class="w-3/5 h-3/5 object-contain"
-            />
-          </div>
-        </ControlButton>
+            <div 
+              class="
+                w-12 h-12 rounded-full bg-black/40 
+                hover:bg-black/80 transition-colors
+                hover:cursor-pointer
+                flex items-center justify-center
+              "
+            >
+              <img 
+                src="/images/icons/preview.png"
+                alt="preview"
+                class="w-3/5 h-3/5 object-contain"
+              />
+            </div>
+          </ControlButton>
 
-        <ControlButton 
-          name="Next" 
-          forward={true} 
-          on:click={()=>changeSlide(true)}
-          class="-translate-x-5"
-        >
-          <div 
-            class="
-              w-12 h-12 rounded-full bg-black/40 
-              hover:bg-black/80 transition-colors
-              hover:cursor-pointer
-              flex items-center justify-center
-            "
+          <ControlButton 
+            name="Next" 
+            forward={true} 
+            on:click={()=>changeSlide(true)}
+            class="-translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           >
-            <img 
-              src="/images/icons/next.png"
-              alt="preview"
-              class="w-3/5 h-3/5 object-contain"
-            />
-          </div>
-        </ControlButton>
-      </Controls>
-    </Carousel>
+            <div 
+              class="
+                w-12 h-12 rounded-full bg-black/40 
+                hover:bg-black/80 transition-colors
+                hover:cursor-pointer
+                flex items-center justify-center
+              "
+            >
+              <img 
+                src="/images/icons/next.png"
+                alt="preview"
+                class="w-3/5 h-3/5 object-contain"
+              />
+            </div>
+          </ControlButton>
+        </Controls>
+      </Carousel>
+    </div>
   </div>
 
 </section>

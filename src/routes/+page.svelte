@@ -1,47 +1,86 @@
 <script>
   import { Carousel } from 'flowbite-svelte';
 
-  const tabs = [
-    { year: '2024', title: '你們在code什麼', images: [
-      { src: '/images/2024-1.JPG', alt: 'Profile Image 1' },
-      { src: '/images/2024-2.JPG', alt: 'Profile Image 2' },
-    ] },
-    { year: '2023', title: 'E級玩家', images: [
-      { src: '/images/2023-1.jpg', alt: 'Settings Image 1' },
-      { src: '/images/2023-2.jpg', alt: 'Settings Image 2' },
-    ] },
-    { year: '2022', title: 'CSI:EDEN', images: [] },
-  ];
-
-  let activeTab = 0;
-  let image;
+  const imageFiles = import.meta.glob('/static/images/photo/*.{jpg,jpeg,png,gif}', { eager: true });
+  let images = Object.entries(imageFiles).map(([path, module], index) => ({
+    src: path.replace('/static', ''),
+    alt: `Image ${index + 1}`
+  }));
 </script>
 
-<div class="min-h-screen flex flex-col justify-center items-center space-y-8 bg-gray-900 text-white">
+<style>
+  :global(body) {
+    background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Cubic 11" !important;
+  }
+</style>
 
-  <!-- Tabs 選單 -->
-  <div class="flex border border-white divide-x divide-white">
-    {#each tabs as tab, index}
-      <button
-        class={`px-6 py-2 text-sm ${activeTab === index ? 'bg-yellow-400 text-black' : 'hover:bg-white hover:text-black'}`}
-        on:click={() => activeTab = index}
-      >
-        {tab.year} | {tab.title}
-      </button>
-    {/each}
+<section class="mx-18 text-pretty min-w-[720px]">
+  <div class="mt-5 mb-5">
+      <span class="text-white text-4xl font-[Cubic 11]">歷屆回顧</span>
   </div>
+  <div class="bg-black/40 border-3 border-white font-[Cubic 11] text-center">
+    <div class="mt-5 mb-5 text-white text-2xl font-[Cubic 11]">
+      2024 | 你們在code什麼
+    </div>
+    
+    <hr class="mt-5 border-2 border-white"/>
 
-  <!-- Carousel -->
-  <div class="w-[960px] h-[540px]">
     <Carousel
-      images={tabs[activeTab].images}
-      let:Indicators let:Controls
-      on:change={({ detail }) => (image = detail)}
-      class="aspect-[16/9]"
+      images={images}
+      let:Controls
+      class="aspect-[352/181]"
+      style="height:100%;"
     >
-      <Controls />
-      <Indicators />
+      <Controls let:ControlButton let:changeSlide>
+        <ControlButton 
+          name="Previous" 
+          forward={false} 
+          on:click={()=>changeSlide(false)}
+          class="translate-x-5"
+        >
+          <div 
+            class="
+              w-12 h-12 rounded-full bg-black/40 
+              hover:bg-black/80 transition-colors
+              hover:cursor-pointer
+              flex items-center justify-center
+            "
+          >
+            <img 
+              src="/images/icons/preview.png"
+              alt="preview"
+              class="w-3/5 h-3/5 object-contain"
+            />
+          </div>
+        </ControlButton>
+
+        <ControlButton 
+          name="Next" 
+          forward={true} 
+          on:click={()=>changeSlide(true)}
+          class="-translate-x-5"
+        >
+          <div 
+            class="
+              w-12 h-12 rounded-full bg-black/40 
+              hover:bg-black/80 transition-colors
+              hover:cursor-pointer
+              flex items-center justify-center
+            "
+          >
+            <img 
+              src="/images/icons/next.png"
+              alt="preview"
+              class="w-3/5 h-3/5 object-contain"
+            />
+          </div>
+        </ControlButton>
+      </Controls>
     </Carousel>
   </div>
 
-</div>
+</section>
+

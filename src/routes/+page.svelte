@@ -8,6 +8,15 @@
   }));
 </script>
 
+<style>
+  :global(body) {
+    background-image: url('https://truth.bahamut.com.tw/artwork/202205/7245f0d2ec4c17a9180e630470d9bfa2.JPG?w=1000');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Cubic 11" !important;
+  }
+</style>
+
 <section class="mx-18 text-pretty min-w-[720px]">
   <div class="mt-5 mb-5">
       <span class="text-white text-4xl font-[Cubic 11]">歷屆回顧</span>
@@ -32,7 +41,7 @@
             name="Previous" 
             forward={false} 
             on:click={()=>changeSlide(false)}
-            class="translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            class=" z-0 translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           >
             <div 
               class="
@@ -54,7 +63,7 @@
             name="Next" 
             forward={true} 
             on:click={()=>changeSlide(true)}
-            class="-translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            class="z-0 -translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           >
             <div 
               class="

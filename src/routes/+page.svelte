@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Carousel } from 'flowbite-svelte';
-    
+
 	let countdown = '';
 	const eventDate = new Date('2025-05-31T23:59:59');
 	// 地圖位置的 Google Maps 連結
@@ -96,50 +96,46 @@
 		alt: `Image ${index + 1}`
 	}));
 
-    // 計算navbar高度
-    let navbarHeight = 0;
-    onMount(() => {
-        const navbar = document.querySelector('nav');
-        if (navbar) {
-            navbarHeight = navbar.offsetHeight;
-        }
-    });
+	// 計算navbar高度
+	let navbarHeight = 0;
+	onMount(() => {
+		const navbar = document.querySelector('nav');
+		if (navbar) {
+			navbarHeight = navbar.offsetHeight;
+		}
+	});
+
+	// 交通方式
+	let activeTab = 'Bus';
 </script>
 
-<section 
-    class="flex items-center px-8"
-    style="height: calc(100vh - {navbarHeight}px);"
->
+<section class="flex items-center px-8" style="height: calc(100vh - {navbarHeight}px);">
 	<!-- 左側圖片 -->
-	<div class="flex-1 flex justify-center items-center">
-		<img src="cube.png" alt="資工營主視覺" class="w-full h-auto" />
+	<div class="flex flex-1 items-center justify-center">
+		<img src="cube.png" alt="資工營主視覺" class="h-auto w-full" />
 	</div>
 
 	<!-- 右側文字區塊 -->
-	<div class="flex-1 flex flex-col justify-center items-start pl-6 space-y-4">
-		<h1 class="text-3xl">
-			2025 臺師大資工營
-		</h1>
-		<h2 class="text-6xl/20">
-			資遊你和我的師界
-		</h2>
+	<div class="flex flex-1 flex-col items-start justify-center space-y-4 pl-6">
+		<h1 class="text-3xl">2025 臺師大資工營</h1>
+		<h2 class="text-6xl/20">資遊你和我的師界</h2>
 		<p class="text-3xl">
 			報名期間
-            <span class="text-6xl">04/21 - 05/31</span>
+			<span class="text-6xl">04/21 - 05/31</span>
 		</p>
 		<a
 			href="https://forms.gle/tZzXBLQuiR8QSpdKA"
-			class="mt-4 bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-3 px-10 text-3xl rounded-none transition"
+			class="mt-4 rounded-none bg-yellow-300 px-10 py-3 text-3xl font-bold text-black transition hover:bg-yellow-500"
 		>
 			立即報名
 		</a>
 	</div>
 </section>
 
-<section class="mx-18 min-w-[720px] text-pretty my-20">
-	<h1 class="text-center text-6xl mb-10">
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+	<h1 class="mb-10 text-center text-6xl">
 		今年夏天<br />（史詩級的音效）
-    </h1>
+	</h1>
 
 	<div class="text-center text-2xl/12">
 		「各位公測玩家們準備好了嗎？」<br />
@@ -157,17 +153,15 @@
 	</div>
 </section>
 
-<section class="mx-18 min-w-[720px] text-pretty my-20">
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
 	<div class="my-3">
-		<span class="text-4xl ">營隊資訊</span>
+		<span class="text-4xl">營隊資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40">
-		<p class="p-7 text-center text-3xl border-b-3 border-white">
+		<p class="border-b-3 border-white p-7 text-center text-3xl">
 			距離報名截止剩餘：{countdown}
 		</p>
-		<div
-			class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6"
-		>
+		<div class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6">
 			<div class="border-r-3 py-1 text-center text-3xl">報名時間</div>
 			<div class="justify-self-start text-2xl">
 				{stageText}
@@ -226,39 +220,84 @@
 	</div>
 </section>
 
-<section class="mx-18 text-pretty min-w-[720px]">
-    <div class="my-3">
-        <span class="text-4xl">黑客松</span>
-    </div>
-    <div class="bg-black/40 border-3 border-white text-center text-2xl/12 p-5">
-        <p>
-          在上了這麼多 Discord Bot 的課，你是不是也開始想問：<br/>
-          「學這些到底可以幹嘛啊？」<br/>
-          在營隊的最後，我們要來點刺激的：<br/>
-           💥 每組都要寫出一隻超酷、超實用、超創意的 Discord Bot！<br/>
-           不但有機會拿獎品，還有神秘的好吃點心獎勵，<br/>
-           獻給那些熬夜寫 code、debug 到天亮（希望不會啦 😅）的你！<br/>
-          等等？你問主題是什麼？<br/>
-          嘿嘿～我們的主題超級多元，<br/>
-          有的畫畫、有的給資源、有的像小遊戲一樣超上癮～<br/>
-           📌 畫畫機器人？<br/>
-           📌 養成遊戲機器人？<br/>
-           📌 學習資源機器人？<br/>
-          什麼都有，只有你想不到，沒有我們不敢讓你挑戰的！<br/>
-          想知道我們黑客松主題到底是什們呢？<br/>
-          那就來參加《2025 師大資工營》來尋找答案吧！<br/>
-          用一場最狂的 Discord Bot 黑客松，<br/>
-          為你的高中生活畫下一個印象深刻的驚嘆號吧！🔥<br/>
-        </p>
-    </div>
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+	<div class="my-3">
+		<span class="text-4xl text-white">交通方式</span>
+	</div>
+	<div class="border-3 border-white bg-black/40">
+		<div class="border-b-3 border-white text-2xl/12 flex">
+            <button 
+                class="flex-1 hover:cursor-pointer
+                {activeTab === 'Bus' ? 'bg-yellow-300 text-black' : ''}" 
+                on:click={() => {activeTab = 'Bus'}}
+            >
+            搭公車
+            </button>
+            <div class="w-[3px] bg-white"></div>
+			<button 
+                class="flex-1 hover:cursor-pointer
+                {activeTab === 'MRT' ? 'bg-yellow-300 text-black' : ''}" 
+                on:click={() => {activeTab = 'MRT'}}
+            >
+            搭捷運
+            </button>
+		</div>
+		<div class="text-2xl p-5 w-full text-center">
+            {#if activeTab == 'Bus'}
+            <p>搭乘</p>
+            <p class="my-3 text-xl"> 
+                0 南、109、236 區、251、251 區、252、<br>
+                253、278、278 區、280、280 直、284、<br>
+                505、52、530、606、643、644、<br>
+                648、660、668、棕 11、藍 28、<br>
+                羅斯福路幹線、松江新生幹線、復興幹線、基隆路幹線、景美-榮總（快）</p>
+            <p>至「師大分部」站</p>
+            <p class="text-5xl my-5">↓</p>
+            <p>向西步行約 2 分鐘至國立台灣師範大學公館校區門口</p>
+
+            {:else}
+            <p>搭乘松山新店線（綠線）至「公館」站 1 號出口</p>
+            <p class="text-5xl my-5">↓</p>
+            <p>向東南步行約 12 分鐘至國立台灣師範大學公館校區門口</p>
+
+            {/if}
+		</div>
+	</div>
 </section>
 
-<section class="mx-18 min-w-[720px] text-pretty my-20">
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
 	<div class="my-3">
-		<span class="text-4xl ">歷屆回顧</span>
+		<span class="text-4xl">黑客松</span>
+	</div>
+	<div class="border-3 border-white bg-black/40 p-5 text-center text-2xl/12">
+		<p>
+			在上了這麼多 Discord Bot 的課，你是不是也開始想問：<br />
+			「學這些到底可以幹嘛啊？」<br />
+			在營隊的最後，我們要來點刺激的：<br />
+			💥 每組都要寫出一隻超酷、超實用、超創意的 Discord Bot！<br />
+			不但有機會拿獎品，還有神秘的好吃點心獎勵，<br />
+			獻給那些熬夜寫 code、debug 到天亮（希望不會啦 😅）的你！<br />
+			等等？你問主題是什麼？<br />
+			嘿嘿～我們的主題超級多元，<br />
+			有的畫畫、有的給資源、有的像小遊戲一樣超上癮～<br />
+			📌 畫畫機器人？<br />
+			📌 養成遊戲機器人？<br />
+			📌 學習資源機器人？<br />
+			什麼都有，只有你想不到，沒有我們不敢讓你挑戰的！<br />
+			想知道我們黑客松主題到底是什們呢？<br />
+			那就來參加《2025 師大資工營》來尋找答案吧！<br />
+			用一場最狂的 Discord Bot 黑客松，<br />
+			為你的高中生活畫下一個印象深刻的驚嘆號吧！🔥<br />
+		</p>
+	</div>
+</section>
+
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+	<div class="my-3">
+		<span class="text-4xl">歷屆回顧</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 text-center">
-		<div class="p-5 text-2xl border-b-3 border-white">2024 | 你們在code什麼</div>
+		<div class="border-b-3 border-white text-2xl/15">2024 | 你們在code什麼</div>
 		<div class="group">
 			<Carousel
 				{images}
@@ -276,7 +315,9 @@
 						on:click={() => changeSlide(false)}
 						class=" z-0 translate-x-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 					>
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"
+						>
 							<img src="/icons/preview.png" alt="preview" class="h-3/5 w-3/5 object-contain" />
 						</div>
 					</ControlButton>
@@ -287,13 +328,14 @@
 						on:click={() => changeSlide(true)}
 						class="z-0 -translate-x-5 opacity-50 transition-opacity duration-500 group-hover:opacity-100"
 					>
-						<div class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80">
+						<div
+							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"
+						>
 							<img src="/icons/next.png" alt="preview" class="h-3/5 w-3/5 object-contain" />
 						</div>
 					</ControlButton>
 				</Controls>
 			</Carousel>
 		</div>
-    </div>
+	</div>
 </section>
-

@@ -1,11 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Carousel } from 'flowbite-svelte';
-
-	if (import.meta.env.DEV) {
-		import('./dev-style.css');
-	}
-
+    
 	let countdown = '';
 	const eventDate = new Date('2025-05-31T23:59:59');
 	// 地圖位置的 Google Maps 連結

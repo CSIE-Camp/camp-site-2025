@@ -54,7 +54,7 @@
 		{@render children()}
 	</main>
 
-	<footer class="flex items-center py-10">
+	<footer class="flex items-center pb-10 px-10">
 		<div class="px-10">
 			<img 
 			src="/profile.png" alt="NTNU CSIE CAMP" 

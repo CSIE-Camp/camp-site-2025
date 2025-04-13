@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { Button, Modal } from 'flowbite-svelte';
   
   let faqModal1 = false; 
   let faqModal2 = false; 
@@ -141,31 +139,34 @@
   </div>
 </section>
 
-<!-- FAQ Modal 1 -->
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal1 ? 'block' : 'hidden'}" 
-  transition:fade={{ duration: 200 }}
-  on:click={() => (faqModal1 = false)}
-  role="button" 
-  tabindex="0"
->
-  <div class="relative w-175 bg-black border-3 border-white p-8" on:click|stopPropagation={() => {}}>
-    <div class="text-3xl text-white font-[Cubic 11] mb-6">沒有基礎的適合來參加嗎？</div>
-    <button 
-      on:click={() => (faqModal1 = false)}
-      class="absolute top-2 right-2 text-white border-2 border-white w-8 h-8 flex items-center justify-center hover:bg-red-500 hover:cursor-pointer transition-colors"
-    >
-      Ｘ
-    </button>
-    <div class="text-white text-lg font-[Cubic 11] max-h-80 overflow-y-auto">
-      非常歡迎。我們的課程都是新手導向，都是在零基礎的情況下設計的。
+{#if faqModal1}
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75" 
+    transition:fade={{ duration: 200 }}
+    on:click={() => (faqModal1 = false)}
+    on:keydown={(e) => e.key === 'Escape' && (faqModal1 = false)}
+    role="button" 
+    tabindex="0"
+  >
+    <div class="relative w-175 bg-black border-3 border-white p-8">
+      <div class="text-3xl text-white font-[Cubic 11] mb-6">沒有基礎的適合來參加嗎？</div>
+      <button 
+        on:click={() => (faqModal1 = false)}
+        class="absolute top-2 right-2 text-white border-2 border-white w-8 h-8 flex items-center justify-center hover:bg-red-500 hover:cursor-pointer transition-colors"
+      >
+        Ｘ
+      </button>
+      <div class="text-white text-lg font-[Cubic 11] max-h-80 overflow-y-auto">
+        非常歡迎。我們的課程都是新手導向，都是在零基礎的情況下設計的。
+      </div>
     </div>
   </div>
-</div>
+{/if}
 
 <!-- FAQ Modal 2 -->
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal2 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal2 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal2 = false)}
   role="button" 
   tabindex="0"
 >
@@ -187,6 +188,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal3 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal3 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal3 = false)}
   role="button" 
   tabindex="0"
 >
@@ -208,6 +210,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal4 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal4 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal4 = false)}
   role="button" 
   tabindex="0"
 >
@@ -229,6 +232,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal5 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal5 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal5 = false)}
   role="button" 
   tabindex="0"
 >
@@ -250,6 +254,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal6 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal6 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal6 = false)}
   role="button" 
   tabindex="0"
 >
@@ -271,6 +276,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal7 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal7 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal7 = false)}
   role="button" 
   tabindex="0"
 >
@@ -292,6 +298,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal8 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal8 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal8 = false)}
   role="button" 
   tabindex="0"
 >
@@ -313,6 +320,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal9 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal9 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal9 = false)}
   role="button" 
   tabindex="0"
 >
@@ -334,6 +342,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal10 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal10 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal10 = false)}
   role="button" 
   tabindex="0"
 >
@@ -355,6 +364,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal11 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal11 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal11 = false)}
   role="button" 
   tabindex="0"
 >
@@ -376,6 +386,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/75 {faqModal12 ? 'block' : 'hidden'}" 
   transition:fade={{ duration: 200 }}
   on:click={() => (faqModal12 = false)}
+  on:keydown={(e) => e.key === 'Escape' && (faqModal12 = false)}
   role="button" 
   tabindex="0"
 >

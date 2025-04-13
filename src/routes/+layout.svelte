@@ -31,30 +31,30 @@
 			</a>
 			<a
 				href="/"
-				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-400 hover:text-black"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
 			>
 				FAQ
 			</a>
 			<a
 				href="/"
-				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-400 hover:text-black"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
 			>
 				課程資訊
 			</a>
 			<a
-				href="/"
-				class="box-border block w-30 border-2 border-yellow-400 bg-yellow-400 p-1 text-center text-xl text-black hover:border-white hover:bg-white"
+				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl text-black hover:bg-yellow-500 hover:border-yellow-500"
 			>
 				立即報名
 			</a>
 		</NavUl>
 	</Navbar>
 
-	<main class="container mx-auto max-w-7xl flex-grow px-4 py-8">
+	<main class="container mx-auto max-w-7xl flex-grow px-4">
 		{@render children()}
 	</main>
 
-	<footer class="flex items-center py-5 px-10">
+	<footer class="flex items-center py-10">
 		<div class="px-10">
 			<img 
 			src="/profile.png" alt="NTNU CSIE CAMP" 

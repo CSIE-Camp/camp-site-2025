@@ -99,14 +99,53 @@
 		src: path,
 		alt: `Image ${index + 1}`
 	}));
+
+    // 計算navbar高度
+    let navbarHeight = 0;
+    onMount(() => {
+        const navbar = document.querySelector('nav');
+        if (navbar) {
+            navbarHeight = navbar.offsetHeight;
+        }
+    });
 </script>
 
-<section class="mx-18 min-w-[720px] text-pretty">
-	<div class="font-[Cubic 11] mt-3 mb-3 text-center text-6xl text-white">
+<section 
+    class="flex items-center px-8"
+    style="height: calc(100vh - {navbarHeight}px);"
+>
+	<!-- 左側圖片 -->
+	<div class="flex-1 flex justify-center items-center">
+		<img src="cube.png" alt="資工營主視覺" class="w-full h-auto" />
+	</div>
+
+	<!-- 右側文字區塊 -->
+	<div class="flex-1 flex flex-col justify-center items-start pl-6 text-white space-y-4">
+		<h1 class="text-3xl">
+			2025 臺師大資工營
+		</h1>
+		<h2 class="text-6xl/20">
+			資遊你和我的師界
+		</h2>
+		<p class="text-3xl">
+			報名期間
+            <span class="text-6xl">04/21 - 05/31</span>
+		</p>
+		<a
+			href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+			class="mt-4 bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-3 px-10 text-3xl rounded-none transition"
+		>
+			立即報名
+		</a>
+	</div>
+</section>
+
+<section class="mx-18 min-w-[720px] text-pretty my-20">
+	<div class="mt-3 mb-3 text-center text-6xl text-white">
 		今年夏天<br />（史詩級的音效）
 	</div>
 
-	<div class="font-[Cubic 11] mt-3 mb-3 text-center text-2xl leading-loose text-white">
+	<div class="text-center text-2xl leading-loose text-white">
 		<br />「各位公測玩家們準備好了嗎？」<br />
 		「Yooooooooooooooo！」<br />
 		由《你在”code“什麼》團隊攜手無名小卒打造。 <br />
@@ -122,12 +161,12 @@
 	</div>
 </section>
 
-<section class="mx-18 min-w-[720px] text-pretty">
-	<div class="mt-3 mb-3">
+<section class="mx-18 min-w-[720px] text-pretty my-20">
+	<div class="my-3">
 		<span class="text-4xl text-white">營隊資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40">
-		<p class="mt-7 mb-7 text-center text-3xl text-white">
+		<p class="my-7 text-center text-3xl text-white">
 			距離報名截止剩餘：{countdown}
 		</p>
 		<hr class="mb-5 border-2 border-white" />
@@ -152,13 +191,13 @@
 			<div class="justify-self-start text-2xl">
 				<a
 					href="https://docs.google.com/document/d/1yZE3Mumvc52DEaeNavlcUavxazWvIfe8/edit?rtpof=true&sd=true"
-					class="hover:text-yellow-400">點此查看 活動簡章</a
+					class="hover:text-yellow-300">點此查看 活動簡章</a
 				>
 			</div>
 
 			<button
 				type="button"
-				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-400 hover:text-black"
+				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
 				on:click={() => switchLocation('activity')}
 				on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}
 			>
@@ -168,7 +207,7 @@
 
 			<button
 				type="button"
-				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-400 hover:text-black"
+				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
 				on:click={() => switchLocation('dorm')}
 				on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}
 			>
@@ -192,8 +231,8 @@
 	</div>
 </section>
 
-<section class="mx-18 min-w-[720px] text-pretty">
-	<div class="mt-5 mb-5">
+<section class="mx-18 min-w-[720px] text-pretty my-20">
+	<div class="my-3">
 		<span class="text-4xl text-white">歷屆回顧</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 text-center">
@@ -236,5 +275,6 @@
 				</Controls>
 			</Carousel>
 		</div>
-	</div>
+    </div>
 </section>
+

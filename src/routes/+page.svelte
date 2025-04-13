@@ -18,26 +18,30 @@
 </script>
 
 <header class="mx-18 text-pretty min-w-[720px]">
-	<span class="title">交通方式</span>
+	<span class="text-xl text-yellow-300">交通方式</span>
 </header>
 
 <section class="mx-18 text-pretty min-w-[720px]">
-  <table class="styled-table">
+  <table class="w-4/5 border-collapse border-3 border-white">
     <thead>
       <tr>
-        <th class="table-header-left {activeTab === 'left' ? 'active' : ''}"><button on:click={handleLeft}>搭公車</button></th>
-        <th class="table-header-right {activeTab === 'right' ? 'active' : ''}"><button on:click={handleRight}>搭捷運</button></th>
+        <th class="border-2 border-white px-3 py-15 w-1/2 h-full text-lg cursor-pointer transition-all duration-300 bg-yellow-300  {activeTab === 'left' ? 'active' : ''}">
+          <button class="bg-yellow-300 text-white z-1 relative" on:click={handleLeft}>搭公車</button>
+        </th>
+        <th class="border-2 border-white px-3 py-15 w-1/2 h-full text-lg cursor-pointer transition-all duration-300 bg-yellow-300 text-white {activeTab === 'right' ? 'active' : ''}">
+          <button class="bg-yellow-300 text-white z-1 relative" on:click={handleRight}>搭捷運</button>
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td colspan="2" class="table-content-start">{displayContent1}</td>
+        <td colspan="2" class="pt-5 pl-7. pr-7 border-t-3 border-white text-center text-base text-white">{displayContent1}</td>
       </tr>
       <tr>
-        <td colspan="2" class="down-arrow">↓</td>
+        <td colspan="2" class="text-center text-6xl text-white">↓</td>
       </tr>
       <tr>
-        <td colspan="2" class="table-content-end">{displayContent2}</td>
+        <td colspan="2" class="text-center text-base pb-5">{displayContent2}</td>
       </tr>
     </tbody>
   </table>

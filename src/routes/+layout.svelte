@@ -17,7 +17,7 @@
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col bg-gray-50">
+<div class="flex min-h-screen flex-col bg-gray-900">
 	<Navbar
 		let:hidden
 		let:toggle

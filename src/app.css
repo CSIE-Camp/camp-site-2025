@@ -16,18 +16,8 @@ body {
 	color: inherit;
 	background-color: inherit;
 } */
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
 
-@plugin 'flowbite/plugin';
-@source "../node_modules/flowbite-svelte/dist";
 
-body {
-	font-family: "Cubic 11";
-	-webkit-font-smoothing: antialiased;
-	background-color: #000;
-	/* color: #fff; */
-}
 
 
 
@@ -42,11 +32,5 @@ body {
 	--color-primary-700: #eb4f27;
 	--color-primary-800: #cc4522;
 	--color-primary-900: #a5371b;
-}
-
-* {
-    background: #000000 ;
-    background-size: cover;
-    font-family: "Cubic 11";
 }
 

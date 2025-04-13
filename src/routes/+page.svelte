@@ -16,20 +16,21 @@
     activeTab = 'right';
   }
 </script>
+<section class="mx-18 min-w-[720px] text-pretty">
+  <div class="mt-3 mb-3">
+	<span class="text-4xl text-white">交通方式</span>
+</div>
 
-<header class="mx-18 text-pretty min-w-[720px]">
-	<span class="text-xl text-yellow-300">交通方式</span>
-</header>
-
-<section class="mx-18 text-pretty min-w-[720px]">
-  <table class="w-4/5 border-collapse border-3 border-white">
-    <thead>
+  <table class="w-4/5 border-collapse border-3 border-white bg-black/40">
+    <thead class="h-12">
       <tr>
-        <th class="border-2 border-white px-3 py-15 w-1/2 h-full text-lg cursor-pointer transition-all duration-300 bg-yellow-300  {activeTab === 'left' ? 'active' : ''}">
-          <button class="bg-yellow-300 text-white z-1 relative" on:click={handleLeft}>搭公車</button>
+        <th class="border-2 border-white w-1/2 h-full text-lg cursor-pointer transition-all duration-300
+        {activeTab === 'left' ? 'bg-yellow-300 text-black' : ''}">
+          <button class="w-full h-full z-1 relative" on:click={handleLeft}>搭公車</button>
         </th>
-        <th class="border-2 border-white px-3 py-15 w-1/2 h-full text-lg cursor-pointer transition-all duration-300 bg-yellow-300 text-white {activeTab === 'right' ? 'active' : ''}">
-          <button class="bg-yellow-300 text-white z-1 relative" on:click={handleRight}>搭捷運</button>
+        <th class="border-2 border-white w-1/2 h-full text-lg cursor-pointer transition-all duration-300
+        {activeTab === 'right' ? 'bg-yellow-300 text-black' : ''}">
+          <button class="w-full h-full z-1 relative" on:click={handleRight}>搭捷運</button>
         </th>
       </tr>
     </thead>

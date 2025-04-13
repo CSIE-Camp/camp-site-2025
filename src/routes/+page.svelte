@@ -116,7 +116,7 @@
 	</div>
 
 	<!-- 右側文字區塊 -->
-	<div class="flex-1 flex flex-col justify-center items-start pl-6 text-white space-y-4">
+	<div class="flex-1 flex flex-col justify-center items-start pl-6 space-y-4">
 		<h1 class="text-3xl">
 			2025 臺師大資工營
 		</h1>
@@ -137,12 +137,12 @@
 </section>
 
 <section class="mx-18 min-w-[720px] text-pretty my-20">
-	<div class="mt-3 mb-3 text-center text-6xl text-white">
+	<h1 class="text-center text-6xl mb-10">
 		今年夏天<br />（史詩級的音效）
-	</div>
+    </h1>
 
-	<div class="text-center text-2xl leading-loose text-white">
-		<br />「各位公測玩家們準備好了嗎？」<br />
+	<div class="text-center text-2xl/12">
+		「各位公測玩家們準備好了嗎？」<br />
 		「Yooooooooooooooo！」<br />
 		由《你在”code“什麼》團隊攜手無名小卒打造。 <br />
 		耗資我也不知道。（滑倒） <br />
@@ -159,15 +159,14 @@
 
 <section class="mx-18 min-w-[720px] text-pretty my-20">
 	<div class="my-3">
-		<span class="text-4xl text-white">營隊資訊</span>
+		<span class="text-4xl ">營隊資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40">
-		<p class="my-7 text-center text-3xl text-white">
+		<p class="p-7 text-center text-3xl border-b-3 border-white">
 			距離報名截止剩餘：{countdown}
 		</p>
-		<hr class="mb-5 border-2 border-white" />
 		<div
-			class="mx-auto grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6 text-white"
+			class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6"
 		>
 			<div class="border-r-3 py-1 text-center text-3xl">報名時間</div>
 			<div class="justify-self-start text-2xl">
@@ -229,9 +228,9 @@
 
 <section class="mx-18 text-pretty min-w-[720px]">
     <div class="my-3">
-        <span class="text-white text-4xl">黑客松</span>
+        <span class="text-4xl">黑客松</span>
     </div>
-    <div class="bg-black/40 border-3 border-white text-center text-white text-2xl/12 p-5">
+    <div class="bg-black/40 border-3 border-white text-center text-2xl/12 p-5">
         <p>
           在上了這麼多 Discord Bot 的課，你是不是也開始想問：<br/>
           「學這些到底可以幹嘛啊？」<br/>
@@ -256,20 +255,17 @@
 
 <section class="mx-18 min-w-[720px] text-pretty my-20">
 	<div class="my-3">
-		<span class="text-4xl text-white">歷屆回顧</span>
+		<span class="text-4xl ">歷屆回顧</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 text-center">
-		<div class="mt-5 mb-5 text-2xl text-white">2024 | 你們在code什麼</div>
-
-		<hr class="mt-5 border-2 border-white" />
-
+		<div class="p-5 text-2xl border-b-3 border-white">2024 | 你們在code什麼</div>
 		<div class="group">
 			<Carousel
 				{images}
 				duration={5000}
 				let:Controls
 				let:Indicators
-				class="aspect-[352/181]"
+				class="aspect-[352/181] rounded-none"
 				style="height:100%;"
 			>
 				<Indicators />

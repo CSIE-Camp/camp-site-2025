@@ -13,6 +13,7 @@ body {
 		Roboto,
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
+    color: white;
 }
 
 @theme {

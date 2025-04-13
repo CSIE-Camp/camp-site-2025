@@ -14,7 +14,7 @@
 	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(background.png)] bg-contain bg-fixed bg-center bg-repeat"
 	style="background-blend-mode: multiply;"
 >
-	<Navbar class="sticky top-0 z-20 w-full px-2 py-1 sm:px-4 dark:bg-[#22222D]">
+	<Navbar class="sticky top-0 z-20 w-full py-1 dark:bg-[#22222D]">
 		<NavBrand href="/">
 			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
 			<span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white"
@@ -43,7 +43,7 @@
 			</a>
 			<a
 				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
-				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl text-black hover:bg-yellow-500 hover:border-yellow-500"
+				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl text-black hover:bg-yellow-500 hover:border-yellow-500 font-bold"
 			>
 				立即報名
 			</a>

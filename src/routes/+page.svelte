@@ -1,9 +1,9 @@
 <script>
   import { Carousel } from 'flowbite-svelte';
 
-  const imageFiles = import.meta.glob('/static/images/photo/*.{jpg,jpeg,png,gif}', { eager: true });
+  const imageFiles = import.meta.glob('/src/images/*.{jpg,jpeg,png,gif}', { eager: true });
   let images = Object.entries(imageFiles).map(([path, module], index) => ({
-    src: path.replace('/static', ''),
+    src: path,
     alt: `Image ${index + 1}`
   }));
 </script>
@@ -32,11 +32,12 @@
       <Carousel
         images={images}
         duration={5000}
-        let:Controls
+        let:Controls let:Indicators
         class="aspect-[352/181]"
         style="height:100%;"
       >
-        <Controls let:ControlButton let:changeSlide>
+        <Indicators />
+        <Controls let:ControlButton let:changeSlide >
           <ControlButton 
             name="Previous" 
             forward={false} 
@@ -52,7 +53,7 @@
               "
             >
               <img 
-                src="/images/icons/preview.png"
+                src="/icons/preview.png"
                 alt="preview"
                 class="w-3/5 h-3/5 object-contain"
               />
@@ -63,7 +64,7 @@
             name="Next" 
             forward={true} 
             on:click={()=>changeSlide(true)}
-            class="z-0 -translate-x-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            class="z-0 -translate-x-5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"
           >
             <div 
               class="
@@ -74,7 +75,7 @@
               "
             >
               <img 
-                src="/images/icons/next.png"
+                src="/icons/next.png"
                 alt="preview"
                 class="w-3/5 h-3/5 object-contain"
               />

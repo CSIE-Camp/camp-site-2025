@@ -45,3 +45,103 @@ body {
 	--color-primary-800: #cc4522;
 	--color-primary-900: #a5371b;
 }
+
+* {
+    background: #000000 !important;
+    background-size: cover;
+    font-family: "Cubic 11" !important;
+}
+
+.title {
+    font-size: 2rem;
+    color: white !important;
+}
+
+.styled-table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 3px solid #fff;
+}
+
+.table-header-left,
+.table-header-right {
+    border: 2px solid #fff;
+    padding: 3px 15px;
+    width: 50%;
+    height: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #000000;
+    color: #ffffff !important;
+}
+
+.table-header-left button,
+.table-header-right button {
+    width: 100%;
+    height: 100%;
+    padding: 3px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: black;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+.table-header-left button:active,
+.table-header-right button:active {
+    background: yellow;
+    color: black;
+}
+
+.table-header-left.active button,
+.table-header-right.active button {
+    background: yellow !important;
+    color: black !important;
+    z-index: 1;
+    position: relative;
+}
+
+.table-header-left,
+.table-header-right {
+    background: #000000;
+    color: #ffffff !important;
+    border: 2px solid #fff;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table-content-start {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-top: 3px solid #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white !important;
+}
+
+.table-content-mid {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white !important;
+}
+
+.table-content-end {
+    text-align: center;
+    font-size: 1.2rem;
+    padding-bottom: 20px;
+}
+
+.down-arrow {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}

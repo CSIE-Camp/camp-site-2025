@@ -1,0 +1,316 @@
+<script lang="ts">
+	let modalSwitch = -1;
+	const schedules_mornong = [
+		{
+			name: '開幕',
+			description: '課程開幕式，介紹課程目標與內容大綱。',
+			class: '',
+			showmodal: false
+		},
+		{
+			name: '邊緣人的好朋友—在 Discord 跟 AI 機器人聊天吧！',
+			description:
+				'相信大家都有在 Discord 跟朋友聊天的經驗吧～\n什麼！你說沒有朋友跟你聊天，幫你 QQ😢\n但是沒關係，在這堂課你可以學會怎麼寫你的第一隻 Discord bot。\n甚至可以透過串接大型語言模型，\n幫你的機器人注入靈魂，\n這樣你就有一個跟你聊天的機器人了～\n再也不需要找朋友聊天了。\n本堂課程你將學到：\n教你寫出第一隻 Discord bot\n講解「非同步處理」的概念\n講解大型語言模型背後的原理\n講解 API 的原理\n教你如何使用 Gemini API，並串接 Discord bot，在 Discord 製作 AI 聊天機器人',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '如何打造自己的遊戲 - Discord Bot 的進階語法',
+			description:
+				'經過雜貨店，不經意的一撇，竟然是大搖 🕹️\n來玩玩看吧，腦海不自覺地浮現這個想法。\n拉張塑膠椅，扭了扭頭，轉了轉手...\n一切，準備就緒！\n「鏘！」十元投下去...\n手指飛快的在按鍵之間飛梭。\n「丟丟丟丟...拐拐...」\n馬上來打臉我的，是大大的「GAMEOVER」字樣 👾\n對，我只是在亂按 🙃\n可惡...這也太難了...\n遊戲機...氣人...\n如果你也覺得遊戲機氣人的話😡\n不妨試試做自己的遊戲機器人🤖\n這堂課，你會學到：\n✅ 考驗即時反應的 QTE 事件\n✅ 模擬 RPG 的對話系統\n✅ 類似寶可夢的回合對戰\n❎ 好討厭的感覺呀~~~\n此外，此外，本堂課將接合前面所學\n利用 AI 幫你生成屬於自己的世界觀 🏞️\n我們將一步步手把手教學，帶你從不會學到會。\n因為：\n「雖然只是遊戲，但可不是鬧著玩的。」 ',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '黑客松',
+			description: '黑客松專案開發時間。',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '報到 + 破冰',
+			description: '歡迎來到課程！這個環節我們將進行破冰活動，讓大家互相認識。',
+			class: '',
+			showmodal: false
+		}
+	];
+	const schedules_afternoon = [
+		{
+			name: 'PYTHON 基礎',
+			description:
+				'你是不是常常聽到「Python 很簡單，適合初學者」但打開程式編輯器還是覺得好陌生？\n別擔心！這堂課就是為了你這樣的 零經驗新手 設計的 🚀\n從最基本的輸出、變數、計算開始，\n再一路帶你搞懂「什麼是 if 判斷？for 跑來跑去要跑去哪？」\n學完之後，你就能：\n✔️ 寫出自己的小工具\n✔️ 跑迴圈跑得比小明還快\n✔️ 和別人說「我會 Python 喔！」\n我們還會透過實際的 小練習 & 有趣範例，讓你不只是會看，也真的寫得出來～\n別擔心看不懂、不敢問，這堂課就是你的 程式啟蒙起點！',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '選修課一',
+			description: `課程名稱：讓電玩變好玩的魔法,
+            課程介紹：
+            不知道各位平常玩不玩遊戲、看不看電競直播？
+            各位是否曾思考過，電玩作為軟體，背後藏著什麼秘密——
+            - 為什麼跑 3D 遊戲好卡，怎麼樣才不會卡？
+            - 為什麼在開放世界，遠處的景物都會變糊變醜？
+            - 傳說中的光線追蹤是什麼？為什麼需要那麼貴的顯示卡？
+            除此之外，還會帶大家分析經典遊戲與程式背後隱含的資工知識！
+
+            課程名稱：探索電腦的內在，解密核心零件的力量
+            課程介紹：
+            你每天用電腦，但你真的了解它嗎？
+            只知道螢幕畫面裡的軟體程式，但你真實摸的到的硬體，卻連看都沒看過？
+            這堂課帶你認識電腦裡的各種零件，
+            不只是空口說說，直接拆一台電腦給你看，讓你看清他們的廬山真面目。
+
+            課程名稱：Boom！成為爆破專家的 Day [0]
+            課程介紹：
+            「月考怎麼只考 99 分！家裡 Wi-Fi 我改密碼了！沒考 100 分你就別想上網！」
+            小明的網路自由，被媽媽的 Wi-Fi 密碼封印！
+            於是，他開始了瘋狂的手動輸入密碼測試：「mama520...不對，12345678...還是不對！」
+            此時，隔壁老王，手拿筆電，悠悠地出現在門口，露出神秘微笑：
+            「還在一個個手打？不累嗎？密碼是拿來爆破的，不是拿來猜的！」
+            本課堂你將學到:
+            - 弱密碼的危害
+            - 離線爆破Wi-Fi
+            - 爆破工具比較 
+            原神可莉曾經說過:「蹦蹦炸彈 !! 一起來學爆破吧！除了爆破密碼外，要記得陪可莉炸魚喔！」
+            `,
+			class: '',
+			showmodal: false
+		},
+		{
+			name: '選修課二',
+			description: `課程名稱：零與一之中的萬千世界
+            課程介紹：
+            想知道檔案文件背後的儲存方式嗎？
+            想知道壓縮軟體是怎麼讓檔案變小的嗎？
+            又或者是想一窺在資工發展的上古時期，任天堂工程師們是如何壓榨遊戲機資源？
+            那麼，快來選這堂《數位檔案編碼》吧！
+            在這堂課裡，我們首先會介紹數位檔案的基本形式，釐清資料的本質，並分析平時最常見的檔案格式—點陣圖；接著，我們會讓各位理解資料壓縮的基礎知識、特性以及限制；最後，再用一段歷史闡述編碼與壓縮技術的利用能帶來何種力量。
+            
+            課程名稱：揭開你每天上網的秘密
+            課程介紹：
+            你有沒有想過，每天輸入網址，按下 Enter，然後畫面就出來了——這背後到底發生了什麼？我們將帶你一步步揭開網頁誕生的過程，從你敲下網址的那一刻，到資料從遠方傳來，再到文字、樣式和互動出現在螢幕上。
+            這堂課還會特別探索瀏覽器這個神奇工具。你可能覺得瀏覽器沒什麼好玩，但其實是你還沒發現它的潛力！它藏著超強的隱藏功能，讓你不用寫複雜程式，就能創造自己的網頁，甚至把任何網頁改成你喜歡的樣子！
+            
+            課程名稱：從 0 開始的密碼學生活
+            課程介紹：
+            「ㄟ小明，你知道有遊戲把商標藏在鳥的叫聲中嘛 ?!」
+            「蝦？鳥的叫聲是要怎麼藏商標？不會又是米哈遊吧？」
+            「你猜得好準哦 !! 就是原神的鳥叫聲藏了 MiHoYo，他是用摩斯密碼藏的！但你知道嗎？這種『把訊息藏起來』的技術，從幾百年前就開始了！」
+            密碼學，不只是駭客、間諜在用，其實它早就滲透在我們的遊戲、歷史、戰爭和生活中！
+            這堂課，會帶你踏入密碼學的殿堂，讓你對各類加密有基礎的認識，並透過 CTF 題目來幫助你穩固知識
+            本課程你將學到：
+            古典密碼學
+            現代密碼學
+            CTF
+            甚麼？你怕這堂課太複雜 ?! NoNoNo~ 這堂課會帶你認識基礎概念，不會深究加密原理，對新手超級友善。
+            `,
+			class: '',
+			showmodal: false
+		},
+		{
+			name: '黑客松報告',
+			description: '各組展示黑客松專案成果，講師提供回饋。',
+			class: '',
+			showmodal: false
+		},
+		{
+			name: '擁有自己的男女朋友 - Discord bot AI 生圖',
+			description:
+				'「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式AI)',
+			class: 'text-base',
+			showmodal: false
+		},
+		{
+			name: '活動三',
+			description: '敬請期待！🥰',
+			class: '',
+			showmodal: false
+		},
+		{
+			name: '閉幕',
+			description: '課程總結與結業式，頒發證書與合影。',
+			class: '',
+			showmodal: false
+		}
+	];
+	const schedules_night = [
+		{
+			name: '活動一',
+			description: '敬請期待！🥳',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '活動二',
+			description: '敬請期待！🤩',
+			class: 'row-span-2',
+			showmodal: false
+		},
+		{
+			name: '黑客松',
+			description: '黑客松專案開發時間',
+			class: 'row-span-2',
+			showmodal: false
+		}
+	];
+</script>
+
+<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+	<div class="my-3">
+		<span class="text-4xl">課程內容</span>
+	</div>
+	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12">
+		<div class="grid grid-cols-5 gap-3 text-xl grid-rows-[min-content_repeat(3,1fr_1fr_min-content)]">
+			<div class="bg-[url(mushroom.png)] bg-contain bg-center bg-no-repeat"></div>
+			<div class="bg-white p-3 text-center text-2xl text-black">07.01 (TUE)</div>
+			<div class="bg-white p-3 text-center text-2xl text-black">07.02 (WED)</div>
+			<div class="bg-white p-3 text-center text-2xl text-black">07.03 (THU)</div>
+			<div class="bg-white p-3 text-center text-2xl text-black">07.04 (FRI)</div>
+
+			<div
+				class="col-start-1 row-span-2 flex flex-col items-center justify-evenly bg-white py-3 text-center text-2xl text-black"
+			>
+				<p>09:00</p>
+				<p>|</p>
+				<p>12:00</p>
+			</div>
+
+			{#each schedules_mornong as schedules}
+				<button
+					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+                    on:click={() => {schedules.showmodal = true}}
+				>
+					{schedules.name}
+				</button>
+
+				{#if schedules.showmodal === true}
+				<div
+					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+                    on:click|self = {() => (schedules.showmodal = false)}
+                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+     				role="button"
+	 				tabindex="0"
+				>
+					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
+						<div class="flex justify-between mb-6">
+							<div class="grow mr-5 text-3xl/12 whitespace-pre-line border-b-2 border-white">{schedules.name}</div>
+							<button
+								on:click={() => (schedules.showmodal = false)}
+								class="h-8 w-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 align-center"
+							>
+								x
+							</button>
+						</div>
+						<div class="h-full text-lg whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
+					</div>
+				</div>
+                {/if}
+			{/each}
+
+			<div class="col-span-5 bg-white p-3 text-center text-2xl text-black">LUNCH TIME</div>
+
+			<div
+				class="col-start-1 row-span-2 flex flex-col items-center justify-evenly bg-white py-3 text-center text-2xl text-black"
+			>
+				<p>14:00</p>
+				<p>|</p>
+				<p>17:00</p>
+			</div>
+
+			{#each schedules_afternoon as schedules}
+				<button
+					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+                    on:click={() => {schedules.showmodal = true}}
+				>
+					{schedules.name}
+				</button>
+                {#if schedules.showmodal === true}
+				<div
+					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+                    on:click|self = {() => (schedules.showmodal = false)}
+                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+     				role="button"
+	 				tabindex="0"
+				>
+					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
+						<div class="flex justify-between mb-6">
+							<div class="grow mr-5 text-3xl/12 whitespace-pre-line border-b-2 border-white">{schedules.name}</div>
+							<button
+								on:click={() => (schedules.showmodal = false)}
+								class="h-8 w-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 align-center"
+							>
+								x
+							</button>
+						</div>
+						<div class="h-full text-lg whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
+					</div>
+				</div>
+                {/if}
+			{/each}
+
+			<div class="col-span-4 bg-white p-3 text-center text-2xl text-black">DINNER TIME</div>
+
+			<div
+				class="col-start-1 row-span-2 flex flex-col items-center justify-evenly bg-white py-3 text-center text-2xl text-black"
+			>
+				<p>19:00</p>
+				<p>|</p>
+				<p>21:00</p>
+			</div>
+
+			{#each schedules_night as schedules}
+				<button
+					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					on:click={() => {schedules.showmodal = true}}
+				>
+					{schedules.name}
+				</button>
+
+				{#if schedules.showmodal === true}
+				<div
+					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+                    on:click|self = {() => (schedules.showmodal = false)}
+                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+     				role="button"
+	 				tabindex="0"
+				>
+					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
+						<div class="flex justify-between mb-6">
+							<div class="grow mr-5 text-3xl/12 whitespace-pre-line border-b-2 border-white">{schedules.name}</div>
+							<button
+								on:click={() => (schedules.showmodal = false)}
+								class="h-8 w-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 align-center"
+							>
+								x
+							</button>
+						</div>
+						<div class="h-full text-lg whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
+					</div>
+				</div>
+                {/if}
+			{/each}
+
+			<div class="col-span-4 bg-white p-3 text-center text-2xl text-black">
+				CODING/SLEEPING TIME
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+.modal-scrollbar::-webkit-scrollbar { /* 滾動條寬度 */
+  width: 8px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track { /* 軌道背景 */
+  background: #333;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb { /* 滑塊顏色 */
+  background: #fff;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:hover { /* 滑塊懸停時顏色 */
+  background: #ffdf20;
+}
+</style>

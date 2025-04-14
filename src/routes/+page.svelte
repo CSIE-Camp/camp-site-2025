@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Carousel } from 'flowbite-svelte';
+    import CourseInfo from '$lib/components/Course_info.svelte';
 
 	let countdown = '';
 	const eventDate = new Date('2025-05-31T23:59:59');
@@ -264,6 +265,8 @@
 		</div>
 	</div>
 </section>
+
+<CourseInfo/>
 
 <section class="mx-18 mb-20 min-w-[720px] text-pretty">
 	<div class="my-3">

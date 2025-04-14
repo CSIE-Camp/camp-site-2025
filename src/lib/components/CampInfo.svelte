@@ -95,7 +95,7 @@
 	}
 </script>
 
-<section class="mx-18 mb-20 min-w-[720px] text-pretty" id="CampInfo">
+<section class="mb-20 text-pretty" id="CampInfo">
 	<div class="my-3">
 		<span class="text-4xl">營隊資訊</span>
 	</div>

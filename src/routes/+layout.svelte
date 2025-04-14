@@ -24,19 +24,19 @@
 		<NavHamburger />
 		<NavUl>
 			<a
-				href="/"
+				href="#CampInfo"
 				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:cursor-pointer hover:bg-yellow-400 hover:text-black"
 			>
 				活動資訊
 			</a>
 			<a
-				href="/"
+				href="#FAQ"
 				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
 			>
 				FAQ
 			</a>
 			<a
-				href="/"
+				href="#CourseInfo"
 				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
 			>
 				課程資訊

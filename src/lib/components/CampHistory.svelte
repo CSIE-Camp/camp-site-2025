@@ -8,7 +8,7 @@
 	}));
 </script>
 
-<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+<section class="mx-18 mb-20 min-w-[720px] text-pretty" id="CampHistory">
 	<div class="my-3">
 		<span class="text-4xl">歷屆回顧</span>
 	</div>

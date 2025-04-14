@@ -1,4 +1,4 @@
-<section class="mx-18 mb-20 min-w-[720px] text-pretty">
+<section class="mx-18 mb-20 min-w-[720px] text-pretty" id="Introduction">
 	<h1 class="mb-10 text-center text-6xl">
 		今年夏天<br />（史詩級的音效）
 	</h1>

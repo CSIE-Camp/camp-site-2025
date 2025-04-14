@@ -1,10 +1,11 @@
 <script lang="ts">
-	import HeroPage from '../sections/HeroPage.svelte';
-	import Introduction from '../sections/Introduction.svelte';
-	import CampInfo from '../sections/CampInfo.svelte';
-	import Transportation from '../sections/Transportation.svelte';
-	import Hackathon from '../sections/Hackathon.svelte';
-	import CampHistory from '../sections/CampHistory.svelte';
+	import HeroPage from "$lib/components/HeroPage.svelte";
+	import Introduction from "$lib/components/Introduction.svelte";
+	import CampInfo from "$lib/components/CampInfo.svelte";
+	import Transportation from "$lib/components/Transportation.svelte";
+	import CourseInfo from "$lib/components/CourseInfo.svelte";
+	import Hackathon from "$lib/components/Hackathon.svelte";
+	import CampHistory from "$lib/components/CampHistory.svelte";
 </script>
 
 <HeroPage/>
@@ -14,6 +15,8 @@
 <CampInfo/>
 
 <Transportation/>
+
+<CourseInfo/>
 
 <Hackathon/>
 

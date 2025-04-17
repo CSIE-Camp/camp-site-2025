@@ -3,91 +3,79 @@
 	import {
 		Navbar,
 		NavBrand,
-		NavLi,
 		NavUl,
 		NavHamburger,
-		Footer,
-		FooterCopyright,
-		FooterLink,
-		FooterLinkGroup,
-		Heading,
-		Button
 	} from 'flowbite-svelte';
-	import { Home, BookOpen, Github, Mail, Instagram } from '@lucide/svelte';
+	import {InstagramSolid, FacebookSolid} from 'flowbite-svelte-icons';
 	let { children } = $props();
 </script>
 
-<div class="flex min-h-screen flex-col bg-gray-50">
-	<Navbar
-		let:hidden
-		let:toggle
-		class="sticky top-0 z-10 border-b bg-white/80 py-4 backdrop-blur-sm"
-	>
+<div
+	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(background.png)] bg-contain bg-fixed bg-center bg-repeat"
+	style="background-blend-mode: multiply;"
+>
+	<Navbar class="sticky top-0 z-20 w-full py-1 dark:bg-[#22222D]">
 		<NavBrand href="/">
-			<span class="self-center text-xl font-semibold whitespace-nowrap">
-				<span class="text-primary-600">NTNU</span> CSIE Camp
-				<span class="text-primary-600">2025</span>
-			</span>
+			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
+			<span class="self-center text-3xl font-semibold whitespace-nowrap dark:text-white"
+				>2025 NTNU CSIE CAMP</span
+			>
 		</NavBrand>
-		<NavHamburger on:click={toggle} />
-		<NavUl {hidden} class="ml-auto">
-			<NavLi href="/" class="hover:bg-primary-50 rounded-lg">
-				<Home class="mr-2 size-5" />
-				首頁
-			</NavLi>
-			<NavLi href="/courses" class="hover:bg-primary-50 rounded-lg">
-				<BookOpen class="mr-2 size-5" />
-				課程
-			</NavLi>
-			<NavLi>
-				<Button size="sm" class="ml-2">立即報名</Button>
-			</NavLi>
+		<NavHamburger />
+		<NavUl>
+			<a
+				href="#CampInfo"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:cursor-pointer hover:bg-yellow-400 hover:text-black"
+			>
+				活動資訊
+			</a>
+			<a
+				href="#FAQ"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
+			>
+				FAQ
+			</a>
+			<a
+				href="#CourseInfo"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white hover:bg-yellow-300 hover:text-black"
+			>
+				課程資訊
+			</a>
+			<a
+				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl text-black hover:bg-yellow-500 hover:border-yellow-500 font-bold"
+			>
+				立即報名
+			</a>
 		</NavUl>
 	</Navbar>
 
-	<main class="container mx-auto max-w-7xl flex-grow px-4 py-8">
+	<main class="container mx-auto max-w-7xl flex-grow px-4">
 		{@render children()}
 	</main>
 
-	<Footer class="mt-auto border-t bg-white">
-		<div class="container mx-auto max-w-7xl px-4 py-6">
-			<div class="md:flex md:justify-between">
-				<div class="mb-6 md:mb-0">
-					<FooterCopyright href="/" by="NTNU CSIE" year={2025} />
-					<p class="mt-2 text-sm text-gray-500">國立台灣師範大學資訊工程學系</p>
-				</div>
-				<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
-					<div>
-						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">聯絡資訊</h2>
-						<FooterLinkGroup>
-							<FooterLink class="flex items-center gap-2" href="mailto:example@ntnu.edu.tw">
-								<Mail class="size-4" />
-								聯絡我們
-							</FooterLink>
-						</FooterLinkGroup>
-					</div>
-					<div>
-						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">資源</h2>
-						<FooterLinkGroup>
-							<FooterLink href="/courses">課程資訊</FooterLink>
-							<FooterLink href="#faq">常見問題</FooterLink>
-						</FooterLinkGroup>
-					</div>
-					<div>
-						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">社群媒體</h2>
-						<FooterLinkGroup>
-							<FooterLink class="flex items-center gap-2" href="#">
-								<Github class="size-4" />
-								GitHub
-							</FooterLink>
-							<FooterLink class="flex items-center gap-2" href="#">
-								<Instagram class="size-4" />
-								Instagram
-							</FooterLink>
-						</FooterLinkGroup>
-					</div>
-				</div>
-			</div>
+	<footer class="flex items-center pb-10 px-10">
+		<div class="px-10">
+			<img 
+			src="/profile.png" alt="NTNU CSIE CAMP" 
+			class="size-30"
+			/>
 		</div>
-	</Footer>
+		<div class="grow text-white">
+			<h2 class="text-3xl">2025 台師大資工營 | 資遊你和我的師界</h2>
+			<p class="text-xl/10">
+				台北市文山區汀州路87號應用科學大樓B1 Meeting Room<br>
+				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br>
+				若有疑問可以來信或私訊粉專
+			</p>
+		</div>
+		<div class="flex text-white">
+			<a href="https://www.instagram.com/ntnucsiecamp2025/">
+				<InstagramSolid class="size-20 hover:text-gray-400"/>
+			</a>
+			<a href="https://www.facebook.com/ntnucsiecamp">
+				<FacebookSolid class="size-20 hover:text-gray-400"/>
+			</a>
+		</div>
+	</footer>
 </div>

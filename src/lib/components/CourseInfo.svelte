@@ -163,7 +163,7 @@
 			class="grid grid-cols-5 grid-rows-[min-content_min-content_1fr_1fr_min-content_repeat(2,1fr_1fr_min-content)] gap-3
 			text-xl"
 		>
-			<div class="bg-[url(mushroom.png)] bg-contain bg-center bg-no-repeat"></div>
+			<div class="bg-[url(/mushroom.png)] bg-contain bg-center bg-no-repeat"></div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.01 (TUE)</div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.02 (WED)</div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.03 (THU)</div>

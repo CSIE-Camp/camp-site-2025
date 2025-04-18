@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(background.png)] bg-contain bg-fixed bg-center bg-repeat"
+	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(/background.png)] bg-contain bg-fixed bg-center bg-repeat"
 	style="background-blend-mode: multiply;"
 >
 	<Navbar class="sticky top-0 z-20 w-full py-1 dark:bg-[#22222D]">

@@ -13,7 +13,7 @@
 		<span class="text-4xl">歷屆回顧</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 text-center">
-		<div class="border-b-3 border-white text-2xl/15">2024 | 你們在code什麼</div>
+		<div class="border-b-3 border-white text-2xl/15">2024 | 你們在 "code" 什麼</div>
 		<div class="group">
 			<Carousel
 				{images}

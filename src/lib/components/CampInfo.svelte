@@ -1,7 +1,28 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
 
-	let countdown = '';
+	let countdown = {
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0
+	};
+
+	// Track previous values to detect changes
+	let prevCountdown = {
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0
+	};
+
+	// Flash flags for each unit
+	let flashDay = false;
+	let flashHour = false;
+	let flashMinute = false;
+	let flashSecond = false;
 
 	const eventDate = new Date('2025-05-31T23:59:59');
 	// 地圖位置的 Google Maps 連結
@@ -70,6 +91,9 @@
 		stageCostText = '7300 元'; // 非報名時段
 	}
 
+	let isCountdownActive = true;
+	const secondsProgress = tweened(0, { duration: 1000, easing: cubicOut });
+
 	// 倒數計時邏輯
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -78,15 +102,46 @@
 
 			if (diff <= 0) {
 				clearInterval(interval);
-				countdown = '報名已截止';
+				isCountdownActive = false;
+				countdown = {
+					days: 0,
+					hours: 0,
+					minutes: 0,
+					seconds: 0
+				};
 			} else {
-				const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-				const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-				const minutes = Math.floor((diff / (1000 * 60)) % 60);
-				const seconds = Math.floor((diff / 1000) % 60);
-				countdown = `${days} 天 ${hours} 小時 ${minutes} 分鐘 ${seconds} 秒`;
+				// Store previous values
+				prevCountdown = { ...countdown };
+
+				countdown = {
+					days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+					hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+					minutes: Math.floor((diff / (1000 * 60)) % 60),
+					seconds: Math.floor((diff / 1000) % 60)
+				};
+
+				// Check for changes and trigger flashes
+				if (prevCountdown.days !== countdown.days) {
+					flashDay = true;
+					setTimeout(() => (flashDay = false), 500);
+				}
+				if (prevCountdown.hours !== countdown.hours) {
+					flashHour = true;
+					setTimeout(() => (flashHour = false), 500);
+				}
+				if (prevCountdown.minutes !== countdown.minutes) {
+					flashMinute = true;
+					setTimeout(() => (flashMinute = false), 500);
+				}
+				// Always flash seconds as they change every time
+				flashSecond = true;
+				setTimeout(() => (flashSecond = false), 500);
+
+				secondsProgress.set(countdown.seconds / 60);
 			}
 		}, 1000);
+
+		return () => clearInterval(interval);
 	});
 
 	// 切換地圖位置
@@ -100,9 +155,34 @@
 		<span class="text-4xl">營隊資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40">
-		<p class="border-b-3 border-white p-7 text-center text-3xl">
-			距離報名截止剩餘：{countdown}
-		</p>
+		{#if isCountdownActive}
+			<div class="border-b-3 border-white p-7 text-center">
+				<p class="mb-4 text-3xl">距離報名截止剩餘</p>
+				<div class="countdown-container">
+					<div class="countdown-unit {flashDay ? 'flash' : ''}">
+						<div class="countdown-value">{countdown.days}</div>
+						<div class="countdown-label">天</div>
+					</div>
+					<div class="countdown-separator">:</div>
+					<div class="countdown-unit {flashHour ? 'flash' : ''}">
+						<div class="countdown-value">{countdown.hours}</div>
+						<div class="countdown-label">時</div>
+					</div>
+					<div class="countdown-separator">:</div>
+					<div class="countdown-unit {flashMinute ? 'flash' : ''}">
+						<div class="countdown-value">{countdown.minutes}</div>
+						<div class="countdown-label">分</div>
+					</div>
+					<div class="countdown-separator">:</div>
+					<div class="countdown-unit {flashSecond ? 'flash' : ''}">
+						<div class="countdown-value">{countdown.seconds}</div>
+						<div class="countdown-label">秒</div>
+					</div>
+				</div>
+			</div>
+		{:else}
+			<p class="border-b-3 border-white p-7 text-center text-3xl">報名已截止</p>
+		{/if}
 		<div class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6">
 			<div class="border-r-3 py-1 text-center text-3xl">報名時間</div>
 			<div class="justify-self-start text-2xl">
@@ -161,3 +241,68 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.countdown-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+
+	.countdown-unit {
+		position: relative;
+		background-color: rgba(0, 0, 0, 0.5);
+		border: 3px solid white;
+		border-radius: 0.5rem;
+		padding: 1rem;
+		width: 6rem;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+	}
+
+	.flash {
+		animation: flash-background 1s ease-out forwards;
+	}
+
+	@keyframes flash-background {
+		0% {
+			background-color: rgba(255, 255, 0, 0.8);
+		}
+		20% {
+			background-color: rgba(255, 255, 0, 0.8);
+		}
+		50% {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		90% {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		100% {
+			background-color: rgba(255, 255, 0, 0.8);
+		}
+	}
+
+	.countdown-value {
+		font-size: 2.5rem;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+		z-index: 2;
+		position: relative;
+	}
+
+	.countdown-label {
+		text-align: center;
+		font-size: 1rem;
+		margin-top: 0.5rem;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.countdown-separator {
+		font-size: 2rem;
+		font-weight: bold;
+		align-self: center;
+	}
+</style>

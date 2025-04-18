@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Carousel } from 'flowbite-svelte';
 
-	const imageFiles = import.meta.glob('/src/images/*.{jpg,jpeg,png,gif}', { eager: true });
+	const imageFiles = import.meta.glob('/static/images/*.{jpg,jpeg,png,gif}', { eager: true });
 	let images = Object.entries(imageFiles).map(([path, module], index) => ({
-		src: path,
+		src: path.replace('/static', ''),
 		alt: `Image ${index + 1}`
 	}));
 </script>

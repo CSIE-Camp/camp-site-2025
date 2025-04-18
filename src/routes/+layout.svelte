@@ -54,18 +54,18 @@
 			<img src="/profile.png" alt="NTNU CSIE CAMP" class="size-30" />
 		</div>
 		<div class="grow text-white">
-			<h2 class="text-3xl">2025 台師大資工營 | 資遊你和我的師界</h2>
+			<h2 class="text-3xl">2025 臺師大資工營 | 資遊你和我的師界</h2>
 			<p class="text-xl/10">
-				台北市文山區汀州路87號應用科學大樓B1 Meeting Room<br />
+				臺北市文山區汀州路四段 88 號 應用科學大樓<br />
 				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br />
 				若有疑問可以來信或私訊粉專
 			</p>
 		</div>
 		<div class="flex text-white">
-			<a href="https://www.instagram.com/ntnucsiecamp2025/">
+			<a href="https://www.instagram.com/ntnucsiecamp2025/" target="_blank">
 				<InstagramSolid class="size-20 hover:text-gray-400" />
 			</a>
-			<a href="https://www.facebook.com/ntnucsiecamp">
+			<a href="https://www.facebook.com/ntnucsiecamp" target="_blank">
 				<FacebookSolid class="size-20 hover:text-gray-400" />
 			</a>
 		</div>

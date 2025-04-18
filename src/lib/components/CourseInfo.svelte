@@ -181,7 +181,7 @@
 
 			{#each schedules_mornong as schedules}
 				<button
-					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
 					on:click={() => {
 						schedules.showmodal = true;
 					}}
@@ -229,7 +229,7 @@
 
 			{#each schedules_afternoon as schedules}
 				<button
-					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
 					on:click={() => {
 						schedules.showmodal = true;
 					}}
@@ -276,7 +276,7 @@
 
 			{#each schedules_night as schedules}
 				<button
-					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					class="border-3 border-white bg-transparent px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
 					on:click={() => {
 						schedules.showmodal = true;
 					}}

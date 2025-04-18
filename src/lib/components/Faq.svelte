@@ -20,7 +20,8 @@
 		},
 		{
 			name: '可以不要跟大家一起住宿嗎？',
-			description: '課程安排中有包含小隊的團體實作，而多數討論的時間會在回到旅館之後。因此會要求各學員住宿，以便進行小組討論。',
+			description:
+				'課程安排中有包含小隊的團體實作，而多數討論的時間會在回到旅館之後。因此會要求各學員住宿，以便進行小組討論。',
 			class: 'row-span-2',
 			showmodal: false
 		},
@@ -38,13 +39,15 @@
 		},
 		{
 			name: '時程表中「敬請期待」是甚麼？',
-			description: '除了課程以外，營隊中也會準備一些讓大家放鬆的活動，在學習之餘獲得片刻的閒暇時光！',
+			description:
+				'除了課程以外，營隊中也會準備一些讓大家放鬆的活動，在學習之餘獲得片刻的閒暇時光！',
 			class: 'row-span-1',
 			showmodal: false
 		},
 		{
 			name: '我看到課表中有「選修課」，\n這代表我可以自己選想上甚麼課的意思嗎？\n要怎麼選課呢？',
-			description: '沒錯！選修課就是可以讓你自己選擇有興趣的課上課～在成功報名之後我們會寄送選修課志願序填寫表單，記得去填寫才能上到自己比較喜歡的課喔！選課結果將在營隊中公布',
+			description:
+				'沒錯！選修課就是可以讓你自己選擇有興趣的課上課～在成功報名之後我們會寄送選修課志願序填寫表單，記得去填寫才能上到自己比較喜歡的課喔！選課結果將在營隊中公布',
 			class: 'row-span-3',
 			showmodal: false
 		},
@@ -71,8 +74,8 @@
 			description: '不會，這個問題僅供我們做分隊的參考。',
 			class: 'row-span-1',
 			showmodal: false
-		},
-	]
+		}
+	];
 </script>
 
 <section class="mb-20 text-pretty" id="FAQ">
@@ -80,37 +83,43 @@
 		<span class="text-4xl">FAQ</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12">
-		<div class="grid auto-rows-min grid-cols-3 gap-5 grid-rows-[repeat(6,1fr)]">
+		<div class="grid auto-rows-min grid-cols-3 grid-rows-[repeat(6,1fr)] gap-5">
 			{#each FAQList as schedules}
 				<button
-					class="text-2xl/10 text-left border-3 border-white p-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-                    on:click={() => {schedules.showmodal = true}}
+					class="border-3 border-white p-5 text-left text-2xl/10 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					on:click={() => {
+						schedules.showmodal = true;
+					}}
 				>
 					{schedules.name}
 				</button>
 
 				{#if schedules.showmodal === true}
-				<div
-					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-                    on:click|self = {() => (schedules.showmodal = false)}
-                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
-     				role="button"
-	 				tabindex="0"
-				>
-					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
-						<div class="flex justify-between mb-6 border-b-2 border-white">
-							<div class="grow mr-5 text-3xl/12 whitespace-pre-line">{schedules.name}</div>
-							<button
-								on:click={() => (schedules.showmodal = false)}
-								class="size-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 flex justify-center items-center"
-							>
-							<span>x</span>
-							</button>
+					<div
+						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+						on:click|self={() => (schedules.showmodal = false)}
+						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						role="button"
+						tabindex="0"
+					>
+						<div
+							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
+						>
+							<div class="mb-6 flex justify-between border-b-2 border-white">
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<button
+									on:click={() => (schedules.showmodal = false)}
+									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
+								>
+									<span>x</span>
+								</button>
+							</div>
+							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
+								{schedules.description}
+							</div>
 						</div>
-						<div class="h-full text-lg/8 whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
 					</div>
-				</div>
-                {/if}
+				{/if}
 			{/each}
 		</div>
 	</div>

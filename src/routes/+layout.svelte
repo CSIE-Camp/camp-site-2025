@@ -1,12 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import {
-		Navbar,
-		NavBrand,
-		NavUl,
-		NavHamburger,
-	} from 'flowbite-svelte';
-	import {InstagramSolid, FacebookSolid} from 'flowbite-svelte-icons';
+	import { Navbar, NavBrand, NavUl, NavHamburger } from 'flowbite-svelte';
+	import { InstagramSolid, FacebookSolid } from 'flowbite-svelte-icons';
 	let { children } = $props();
 </script>
 
@@ -43,7 +38,7 @@
 			</a>
 			<a
 				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
-				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl text-black hover:bg-yellow-500 hover:border-yellow-500 font-bold"
+				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl font-bold text-black hover:border-yellow-500 hover:bg-yellow-500"
 			>
 				立即報名
 			</a>
@@ -54,27 +49,24 @@
 		{@render children()}
 	</main>
 
-	<footer class="flex items-center pb-10 px-10">
+	<footer class="flex items-center px-10 pb-10">
 		<div class="px-10">
-			<img 
-			src="/profile.png" alt="NTNU CSIE CAMP" 
-			class="size-30"
-			/>
+			<img src="/profile.png" alt="NTNU CSIE CAMP" class="size-30" />
 		</div>
 		<div class="grow text-white">
 			<h2 class="text-3xl">2025 台師大資工營 | 資遊你和我的師界</h2>
 			<p class="text-xl/10">
-				台北市文山區汀州路87號應用科學大樓B1 Meeting Room<br>
-				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br>
+				台北市文山區汀州路87號應用科學大樓B1 Meeting Room<br />
+				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br />
 				若有疑問可以來信或私訊粉專
 			</p>
 		</div>
 		<div class="flex text-white">
 			<a href="https://www.instagram.com/ntnucsiecamp2025/">
-				<InstagramSolid class="size-20 hover:text-gray-400"/>
+				<InstagramSolid class="size-20 hover:text-gray-400" />
 			</a>
 			<a href="https://www.facebook.com/ntnucsiecamp">
-				<FacebookSolid class="size-20 hover:text-gray-400"/>
+				<FacebookSolid class="size-20 hover:text-gray-400" />
 			</a>
 		</div>
 	</footer>

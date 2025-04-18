@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-    let countdown = '';
-	
+	let countdown = '';
+
 	const eventDate = new Date('2025-05-31T23:59:59');
 	// 地圖位置的 Google Maps 連結
 	const locations = {

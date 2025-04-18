@@ -3,14 +3,14 @@
 		{
 			name: '邊緣人的好朋友 —— 在 Discord 跟 AI 機器人聊天吧！',
 			description:
-			'相信大家都有在 Discord 跟朋友聊天的經驗吧～\n什麼！你說沒有朋友跟你聊天，幫你 QQ😢\n但是沒關係，在這堂課你可以學會怎麼寫你的第一隻 Discord bot。\n甚至可以透過串接大型語言模型，\n幫你的機器人注入靈魂，\n這樣你就有一個跟你聊天的機器人了～\n再也不需要找朋友聊天了。\n本堂課程你將學到：\n教你寫出第一隻 Discord bot\n講解「非同步處理」的概念\n講解大型語言模型背後的原理\n講解 API 的原理\n教你如何使用 Gemini API，並串接 Discord bot，在 Discord 製作 AI 聊天機器人',
+				'相信大家都有在 Discord 跟朋友聊天的經驗吧～\n什麼！你說沒有朋友跟你聊天，幫你 QQ😢\n但是沒關係，在這堂課你可以學會怎麼寫你的第一隻 Discord bot。\n甚至可以透過串接大型語言模型，\n幫你的機器人注入靈魂，\n這樣你就有一個跟你聊天的機器人了～\n再也不需要找朋友聊天了。\n本堂課程你將學到：\n教你寫出第一隻 Discord bot\n講解「非同步處理」的概念\n講解大型語言模型背後的原理\n講解 API 的原理\n教你如何使用 Gemini API，並串接 Discord bot，在 Discord 製作 AI 聊天機器人',
 			class: 'row-span-3',
 			showmodal: false
 		},
 		{
 			name: '如何打造自己的遊戲 —— Discord Bot 的進階語法',
 			description:
-			'經過雜貨店，不經意的一撇，竟然是大搖 🕹️\n來玩玩看吧，腦海不自覺地浮現這個想法。\n拉張塑膠椅，扭了扭頭，轉了轉手...\n一切，準備就緒！\n「鏘！」十元投下去...\n手指飛快的在按鍵之間飛梭。\n「丟丟丟丟...拐拐...」\n馬上來打臉我的，是大大的「GAMEOVER」字樣 👾\n對，我只是在亂按 🙃\n可惡...這也太難了...\n遊戲機...氣人...\n如果你也覺得遊戲機氣人的話😡\n不妨試試做自己的遊戲機器人🤖\n這堂課，你會學到：\n✅ 考驗即時反應的 QTE 事件\n✅ 模擬 RPG 的對話系統\n✅ 類似寶可夢的回合對戰\n❎ 好討厭的感覺呀~~~\n此外，此外，本堂課將接合前面所學\n利用 AI 幫你生成屬於自己的世界觀 🏞️\n我們將一步步手把手教學，帶你從不會學到會。\n因為：\n「雖然只是遊戲，但可不是鬧著玩的。」 ',
+				'經過雜貨店，不經意的一撇，竟然是大搖 🕹️\n來玩玩看吧，腦海不自覺地浮現這個想法。\n拉張塑膠椅，扭了扭頭，轉了轉手...\n一切，準備就緒！\n「鏘！」十元投下去...\n手指飛快的在按鍵之間飛梭。\n「丟丟丟丟...拐拐...」\n馬上來打臉我的，是大大的「GAMEOVER」字樣 👾\n對，我只是在亂按 🙃\n可惡...這也太難了...\n遊戲機...氣人...\n如果你也覺得遊戲機氣人的話😡\n不妨試試做自己的遊戲機器人🤖\n這堂課，你會學到：\n✅ 考驗即時反應的 QTE 事件\n✅ 模擬 RPG 的對話系統\n✅ 類似寶可夢的回合對戰\n❎ 好討厭的感覺呀~~~\n此外，此外，本堂課將接合前面所學\n利用 AI 幫你生成屬於自己的世界觀 🏞️\n我們將一步步手把手教學，帶你從不會學到會。\n因為：\n「雖然只是遊戲，但可不是鬧著玩的。」 ',
 			class: 'row-span-3',
 			showmodal: false
 		},
@@ -31,7 +31,7 @@
 			description: '課程開幕式，介紹課程目標與內容大綱。',
 			class: '',
 			showmodal: false
-		},
+		}
 	];
 	const schedules_afternoon = [
 		{
@@ -159,9 +159,9 @@
 		<span class="text-4xl">課程內容</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12">
-		<div 
-			class="grid grid-cols-5 gap-3 text-xl 
-			grid-rows-[min-content_min-content_1fr_1fr_min-content_repeat(2,1fr_1fr_min-content)]"
+		<div
+			class="grid grid-cols-5 grid-rows-[min-content_min-content_1fr_1fr_min-content_repeat(2,1fr_1fr_min-content)] gap-3
+			text-xl"
 		>
 			<div class="bg-[url(mushroom.png)] bg-contain bg-center bg-no-repeat"></div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.01 (TUE)</div>
@@ -182,33 +182,39 @@
 			{#each schedules_mornong as schedules}
 				<button
 					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-                    on:click={() => {schedules.showmodal = true}}
+					on:click={() => {
+						schedules.showmodal = true;
+					}}
 				>
 					{schedules.name}
 				</button>
 
 				{#if schedules.showmodal === true}
-				<div
-					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-                    on:click|self = {() => (schedules.showmodal = false)}
-                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
-     				role="button"
-	 				tabindex="0"
-				>
-					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
-						<div class="flex justify-between mb-6 border-b-2 border-white">
-							<div class="grow mr-5 text-3xl/12 whitespace-pre-line ">{schedules.name}</div>
-							<button
-								on:click={() => (schedules.showmodal = false)}
-								class="size-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 flex justify-center items-center"
-							>
-								<span>x</span>
-							</button>
+					<div
+						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+						on:click|self={() => (schedules.showmodal = false)}
+						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						role="button"
+						tabindex="0"
+					>
+						<div
+							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
+						>
+							<div class="mb-6 flex justify-between border-b-2 border-white">
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<button
+									on:click={() => (schedules.showmodal = false)}
+									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
+								>
+									<span>x</span>
+								</button>
+							</div>
+							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
+								{schedules.description}
+							</div>
 						</div>
-						<div class="h-full text-lg/8 whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
 					</div>
-				</div>
-                {/if}
+				{/if}
 			{/each}
 
 			<div class="col-span-5 bg-white p-3 text-center text-2xl text-black">LUNCH TIME</div>
@@ -224,32 +230,38 @@
 			{#each schedules_afternoon as schedules}
 				<button
 					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-                    on:click={() => {schedules.showmodal = true}}
+					on:click={() => {
+						schedules.showmodal = true;
+					}}
 				>
 					{schedules.name}
 				</button>
-                {#if schedules.showmodal === true}
-				<div
-					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-                    on:click|self = {() => (schedules.showmodal = false)}
-                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
-     				role="button"
-	 				tabindex="0"
-				>
-					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
-						<div class="flex justify-between mb-6 border-b-2 border-white">
-							<div class="grow mr-5 text-3xl/12 whitespace-pre-line">{schedules.name}</div>
-							<button
-								on:click={() => (schedules.showmodal = false)}
-								class="size-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 flex justify-center items-center"
-							>
-								<span>x</span>
-							</button>
+				{#if schedules.showmodal === true}
+					<div
+						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+						on:click|self={() => (schedules.showmodal = false)}
+						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						role="button"
+						tabindex="0"
+					>
+						<div
+							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
+						>
+							<div class="mb-6 flex justify-between border-b-2 border-white">
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<button
+									on:click={() => (schedules.showmodal = false)}
+									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
+								>
+									<span>x</span>
+								</button>
+							</div>
+							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
+								{schedules.description}
+							</div>
 						</div>
-						<div class="h-full text-lg/8 whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
 					</div>
-				</div>
-                {/if}
+				{/if}
 			{/each}
 
 			<div class="col-span-4 bg-white p-3 text-center text-2xl text-black">DINNER TIME</div>
@@ -265,33 +277,39 @@
 			{#each schedules_night as schedules}
 				<button
 					class="border-3 border-white px-3 py-5 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-					on:click={() => {schedules.showmodal = true}}
+					on:click={() => {
+						schedules.showmodal = true;
+					}}
 				>
 					{schedules.name}
 				</button>
 
 				{#if schedules.showmodal === true}
-				<div
-					class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-                    on:click|self = {() => (schedules.showmodal = false)}
-                    on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
-     				role="button"
-	 				tabindex="0"
-				>
-					<div class="relative w-200 border-3 border-white bg-black p-8 max-h-[90vh] flex flex-col" >
-						<div class="flex justify-between mb-6 border-b-2 border-white">
-							<div class="grow mr-5 text-3xl/12 whitespace-pre-line">{schedules.name}</div>
-							<button
-								on:click={() => (schedules.showmodal = false)}
-								class="size-8 border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500 flex justify-center items-center"
-							>
-								<span>x</span>
-							</button>
+					<div
+						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+						on:click|self={() => (schedules.showmodal = false)}
+						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						role="button"
+						tabindex="0"
+					>
+						<div
+							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
+						>
+							<div class="mb-6 flex justify-between border-b-2 border-white">
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<button
+									on:click={() => (schedules.showmodal = false)}
+									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
+								>
+									<span>x</span>
+								</button>
+							</div>
+							<div class="modal-scrollbar h-full overflow-y-auto text-lg whitespace-pre-line">
+								{schedules.description}
+							</div>
 						</div>
-						<div class="h-full text-lg whitespace-pre-line overflow-y-auto modal-scrollbar">{schedules.description}</div>
 					</div>
-				</div>
-                {/if}
+				{/if}
 			{/each}
 
 			<div class="col-span-4 bg-white p-3 text-center text-2xl text-black">
@@ -302,19 +320,23 @@
 </section>
 
 <style>
-.modal-scrollbar::-webkit-scrollbar { /* 滾動條寬度 */
-  width: 8px;
-}
+	.modal-scrollbar::-webkit-scrollbar {
+		/* 滾動條寬度 */
+		width: 8px;
+	}
 
-.modal-scrollbar::-webkit-scrollbar-track { /* 軌道背景 */
-  background: #333;
-}
+	.modal-scrollbar::-webkit-scrollbar-track {
+		/* 軌道背景 */
+		background: #333;
+	}
 
-.modal-scrollbar::-webkit-scrollbar-thumb { /* 滑塊顏色 */
-  background: #fff;
-}
+	.modal-scrollbar::-webkit-scrollbar-thumb {
+		/* 滑塊顏色 */
+		background: #fff;
+	}
 
-.modal-scrollbar::-webkit-scrollbar-thumb:hover { /* 滑塊懸停時顏色 */
-  background: #ffdf20;
-}
+	.modal-scrollbar::-webkit-scrollbar-thumb:hover {
+		/* 滑塊懸停時顏色 */
+		background: #ffdf20;
+	}
 </style>

@@ -148,7 +148,11 @@
 				<a 
 					href="https://guidehotel.com.tw/hotel-detail/346" 
 					target="_blank"
-					class="hover:text-yellow-300"> 承攜行旅-台北台大館 </a><br />（臺北市中正區羅斯福路三段 98 號）
+					class="hover:text-yellow-300"> 承攜行旅-台北台大館 </a><br />
+					<a 
+						href="https://maps.app.goo.gl/kVK1XueDzAtNsBW6A"
+						target="_blank"
+						class="hover:text-yellow-300">（臺北市中正區羅斯福路三段 98 號）</a>
 			</span>
 		</div>
 

@@ -9,8 +9,8 @@
 	<div class="border-3 border-white bg-black/40">
 		<div class="flex border-b-3 border-white text-2xl/12">
 			<button
-				class="flex-1 hover:cursor-pointer
-                {activeTab === 'Bus' ? 'bg-yellow-300 text-black' : ''}"
+				class="flex-1 transition-colors hover:cursor-pointer
+                {activeTab === 'Bus' ? 'bg-yellow-300 text-black  ' : ' hover:bg-yellow-500'}"
 				on:click={() => {
 					activeTab = 'Bus';
 				}}
@@ -19,8 +19,8 @@
 			</button>
 			<div class="w-[3px] bg-white"></div>
 			<button
-				class="flex-1 hover:cursor-pointer
-                {activeTab === 'MRT' ? 'bg-yellow-300 text-black' : ''}"
+				class="flex-1 transition-colors hover:cursor-pointer
+                {activeTab === 'MRT' ? 'bg-yellow-300 text-black  ' : ' hover:bg-yellow-500'}"
 				on:click={() => {
 					activeTab = 'MRT';
 				}}

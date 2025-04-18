@@ -86,7 +86,7 @@
 		<div class="grid auto-rows-min grid-cols-3 grid-rows-[repeat(6,1fr)] gap-5">
 			{#each FAQList as schedules}
 				<button
-					class="border-3 border-white p-5 text-left text-2xl/10 whitespace-pre-line hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
+					class="border-3 border-white p-5 text-left text-2xl/10 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
 					on:click={() => {
 						schedules.showmodal = true;
 					}}

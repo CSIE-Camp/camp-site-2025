@@ -27,7 +27,7 @@
 		<h2 class="text-6xl/20">資遊你和我的師界</h2>
 		<p class="text-3xl">
 			報名期間
-			<span class="text-6xl">04/21 - 05/31</span>
+			<span class="text-6xl">04/21 - 05/19</span>
 		</p>
 		<a
 			href="https://forms.gle/tZzXBLQuiR8QSpdKA"

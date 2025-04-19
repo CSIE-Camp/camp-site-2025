@@ -1,5 +1,5 @@
 <section class="mb-20 text-pretty" id="Introduction">
-	<h1 class="mb-10 text-center text-6xl">
+	<h1 class="mb-10 text-center text-6xl/24">
 		今年夏天<br />（史詩級的音效）
 	</h1>
 

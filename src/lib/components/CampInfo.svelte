@@ -24,7 +24,7 @@
 	let flashMinute = false;
 	let flashSecond = false;
 
-	const eventDate = new Date('2025-05-31T23:59:59');
+	const eventDate = new Date('2025-05-19T23:59:59');
 	// 地圖位置的 Google Maps 連結
 	const locations = {
 		activity:
@@ -75,21 +75,24 @@
 
 	let originalCostText = ''; // 原始報名費用
 	if (stage === 0) {
-		originalCostText = '7300';
-		stageCostText = '6800 元'; // 早鳥報名費用
+		originalCostText = '7400';
+		stageCostText = '6900 元'; // 早鳥報名費用
 	} else if (stage === 1) {
 		originalCostText = '';
-		stageCostText = '7300 元'; // 一階報名費用
+		stageCostText = '7400 元'; // 一階報名費用
 	} else if (stage === 2) {
 		originalCostText = '';
-		stageCostText = '7300 元'; // 二階報名費用
+		stageCostText = '7400 元'; // 二階報名費用
 	} else if (stage === 3) {
 		originalCostText = '';
-		stageCostText = '7300 元 (報名已截止)'; // 報名已截止
+		stageCostText = '7400 元 (報名已截止)'; // 報名已截止
 	} else if (stage === 4) {
 		originalCostText = '';
-		stageCostText = '7300 元'; // 非報名時段
+		stageCostText = '7400 元'; // 非報名時段
 	}
+
+
+	stageCostText += ' / 清寒 3500 元'; 
 
 	let isCountdownActive = true;
 	const secondsProgress = tweened(0, { duration: 1000, easing: cubicOut });
@@ -201,7 +204,7 @@
 			<div class="border-r-3 py-1 text-center text-3xl">詳細資訊</div>
 			<div class="justify-self-start text-2xl">
 				<a
-					href="https://docs.google.com/document/d/1yZE3Mumvc52DEaeNavlcUavxazWvIfe8/edit?rtpof=true&sd=true"
+					href="https://drive.google.com/file/d/1tVDKH31xWfpOBJMWEkedD96Vh1odnq_A/view?usp=sharing"
 					class="hover:text-yellow-300">點此查看 活動簡章</a
 				>
 			</div>

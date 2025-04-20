@@ -91,8 +91,7 @@
 		stageCostText = '7400 元'; // 非報名時段
 	}
 
-
-	stageCostText += ' / 清寒 3500 元'; 
+	stageCostText += ' / 清寒 3500 元';
 
 	let isCountdownActive = true;
 	const secondsProgress = tweened(0, { duration: 1000, easing: cubicOut });
@@ -228,14 +227,18 @@
 				住宿地點
 			</button>
 			<span class="justify-self-start text-2xl">
-				<a 
-					href="https://guidehotel.com.tw/hotel-detail/346" 
+				<a
+					href="https://guidehotel.com.tw/hotel-detail/346"
 					target="_blank"
-					class="hover:text-yellow-300"> 承攜行旅-台北台大館 </a><br />
-					<a 
-						href="https://maps.app.goo.gl/kVK1XueDzAtNsBW6A"
-						target="_blank"
-						class="hover:text-yellow-300">（臺北市中正區羅斯福路三段 98 號）</a>
+					class="hover:text-yellow-300"
+				>
+					承攜行旅-台北台大館
+				</a><br />
+				<a
+					href="https://maps.app.goo.gl/kVK1XueDzAtNsBW6A"
+					target="_blank"
+					class="hover:text-yellow-300">（臺北市中正區羅斯福路三段 98 號）</a
+				>
 			</span>
 		</div>
 

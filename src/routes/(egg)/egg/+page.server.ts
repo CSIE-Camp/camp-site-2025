@@ -26,6 +26,8 @@ let inflight: Promise<z.infer<typeof Website>> | null = null;
 export const load = async () => {
 	const now = Date.now();
 
+	const keepAlive = new Promise((r) => setTimeout(() => r(Math.random()), 1000 * 60));
+
 	// If cache is valid, return it
 	if (cache && cache.expires > now) {
 		return { response: cache.value };
@@ -51,7 +53,7 @@ export const load = async () => {
 
 	// If no cache and a request is already in-flight, wait for it
 	if (inflight) {
-		return { response: inflight };
+		return { response: inflight, keepAlive };
 	}
 
 	// No cache and no in-flight, generate and wait
@@ -65,7 +67,7 @@ export const load = async () => {
 			inflight = null;
 			throw err;
 		});
-	return { response: inflight };
+	return { response: inflight, keepAlive };
 };
 
 async function generate() {

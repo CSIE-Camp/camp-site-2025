@@ -1,3 +1,4 @@
+import { building } from '$app/environment';
 import { env } from '$env/dynamic/private';
 import OpenAI from 'openai';
 import { zodResponseFormat } from 'openai/helpers/zod';
@@ -5,7 +6,7 @@ import { z } from 'zod';
 import data from './data.md?raw';
 
 const openai = new OpenAI({
-	apiKey: env.LLM_API_KEY,
+	apiKey: env.LLM_API_KEY || (building ? 'test' : undefined),
 	baseURL: env.LLM_BASE_URL
 });
 

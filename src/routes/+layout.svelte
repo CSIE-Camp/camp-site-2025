@@ -45,7 +45,7 @@
 		</NavUl>
 	</Navbar>
 
-	<main class="container mx-auto max-w-7xl flex-grow px-4">
+	<main class="container mx-auto max-w-7xl flex-grow px-2 sm:px-4">
 		{@render children()}
 	</main>
 

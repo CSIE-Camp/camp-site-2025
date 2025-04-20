@@ -12,7 +12,7 @@
 </script>
 
 <section
-	class="flex items-center px-8"
+	class="flex flex-col md:flex-row items-center px-2 sm:px-8"
 	style="height: calc(100vh - {navbarHeight}px);"
 	id="HeroPage"
 >

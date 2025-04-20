@@ -1,8 +1,8 @@
 <script lang="ts">
-	import '../app.css';
+	import '../../app.css';
 	import { Navbar, NavBrand, NavUl, NavHamburger } from 'flowbite-svelte';
 	let { children } = $props();
-	
+
 	// 追蹤懸停狀態
 	let isInstagramHovered = $state(false);
 	let isFacebookHovered = $state(false);
@@ -65,45 +65,45 @@
 			</p>
 		</div>
 		<div class="flex gap-5">
-			<a 
-				href="https://www.instagram.com/ntnucsiecamp2025/" 
+			<a
+				href="https://www.instagram.com/ntnucsiecamp2025/"
 				target="_blank"
 				class="transition-transform hover:scale-110"
-				onmouseenter={() => isInstagramHovered = true}
-				onmouseleave={() => isInstagramHovered = false}
+				onmouseenter={() => (isInstagramHovered = true)}
+				onmouseleave={() => (isInstagramHovered = false)}
 			>
 				{#if isInstagramHovered}
-					<img 
-						src="/icons/btn-ig-hover.png" 
-						alt="Instagram" 
-						class="size-25 object-contain transition-all duration-300" 
+					<img
+						src="/icons/btn-ig-hover.png"
+						alt="Instagram"
+						class="size-25 object-contain transition-all duration-300"
 					/>
 				{:else}
-					<img 
-						src="/icons/btn-ig.png" 
-						alt="Instagram" 
-						class="size-25 object-contain transition-all duration-300" 
+					<img
+						src="/icons/btn-ig.png"
+						alt="Instagram"
+						class="size-25 object-contain transition-all duration-300"
 					/>
 				{/if}
 			</a>
-			<a 
-				href="https://www.facebook.com/ntnucsiecamp" 
+			<a
+				href="https://www.facebook.com/ntnucsiecamp"
 				target="_blank"
 				class="transition-transform hover:scale-110"
-				onmouseenter={() => isFacebookHovered = true}
-				onmouseleave={() => isFacebookHovered = false}
+				onmouseenter={() => (isFacebookHovered = true)}
+				onmouseleave={() => (isFacebookHovered = false)}
 			>
 				{#if isFacebookHovered}
-					<img 
-						src="/icons/btn-fb-hover.png" 
-						alt="Facebook" 
-						class="size-25 object-contain transition-all duration-300" 
+					<img
+						src="/icons/btn-fb-hover.png"
+						alt="Facebook"
+						class="size-25 object-contain transition-all duration-300"
 					/>
 				{:else}
-					<img 
-						src="/icons/btn-fb.png" 
-						alt="Facebook" 
-						class="size-25 object-contain transition-all duration-300" 
+					<img
+						src="/icons/btn-fb.png"
+						alt="Facebook"
+						class="size-25 object-contain transition-all duration-300"
 					/>
 				{/if}
 			</a>

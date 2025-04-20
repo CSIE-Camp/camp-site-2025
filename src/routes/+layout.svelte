@@ -1,8 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import { Navbar, NavBrand, NavUl, NavHamburger } from 'flowbite-svelte';
-	import { InstagramSolid, FacebookSolid } from 'flowbite-svelte-icons';
 	let { children } = $props();
+	
+	// 追蹤懸停狀態
+	let isInstagramHovered = $state(false);
+	let isFacebookHovered = $state(false);
 </script>
 
 <div
@@ -61,12 +64,48 @@
 				若有疑問可以來信或私訊粉專
 			</p>
 		</div>
-		<div class="flex text-white">
-			<a href="https://www.instagram.com/ntnucsiecamp2025/" target="_blank">
-				<InstagramSolid class="size-20 hover:text-gray-400" />
+		<div class="flex gap-5">
+			<a 
+				href="https://www.instagram.com/ntnucsiecamp2025/" 
+				target="_blank"
+				class="transition-transform hover:scale-110"
+				onmouseenter={() => isInstagramHovered = true}
+				onmouseleave={() => isInstagramHovered = false}
+			>
+				{#if isInstagramHovered}
+					<img 
+						src="/icons/btn-ig-hover.png" 
+						alt="Instagram" 
+						class="size-25 object-contain transition-all duration-300" 
+					/>
+				{:else}
+					<img 
+						src="/icons/btn-ig.png" 
+						alt="Instagram" 
+						class="size-25 object-contain transition-all duration-300" 
+					/>
+				{/if}
 			</a>
-			<a href="https://www.facebook.com/ntnucsiecamp" target="_blank">
-				<FacebookSolid class="size-20 hover:text-gray-400" />
+			<a 
+				href="https://www.facebook.com/ntnucsiecamp" 
+				target="_blank"
+				class="transition-transform hover:scale-110"
+				onmouseenter={() => isFacebookHovered = true}
+				onmouseleave={() => isFacebookHovered = false}
+			>
+				{#if isFacebookHovered}
+					<img 
+						src="/icons/btn-fb-hover.png" 
+						alt="Facebook" 
+						class="size-25 object-contain transition-all duration-300" 
+					/>
+				{:else}
+					<img 
+						src="/icons/btn-fb.png" 
+						alt="Facebook" 
+						class="size-25 object-contain transition-all duration-300" 
+					/>
+				{/if}
 			</a>
 		</div>
 	</footer>

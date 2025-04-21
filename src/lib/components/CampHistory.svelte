@@ -29,7 +29,7 @@
 						name="Previous"
 						forward={false}
 						on:click={() => changeSlide(false)}
-						class=" z-0 translate-x-5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+						class="z-0 translate-x-5 hidden md:block"
 					>
 						<div
 							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"
@@ -42,7 +42,7 @@
 						name="Next"
 						forward={true}
 						on:click={() => changeSlide(true)}
-						class="z-0 -translate-x-5 opacity-50 transition-opacity duration-500 group-hover:opacity-100"
+						class="z-0 -translate-x-5 hidden md:block"
 					>
 						<div
 							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"

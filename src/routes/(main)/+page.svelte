@@ -11,8 +11,8 @@
 </script>
 
 <svelte:head>
-	<title>2025 師大資工營</title>
-	<meta name="description" content="2025 師大資工營 7/1 ~ 7/4 在台北！" />
+	<title>2025 臺師大資工營 NTNU CSIE CAMP</title>
+	<meta name="description" content="2025 臺師大資工營 7/1 ~ 7/4 在師大公館校區，等你來「資遊你和我的師界」！" />
 	<meta property="og:image" content="https://camp.ntnucsie.info/social.png" />
 	<meta property="twitter:card" content="summary_large_image" />
 </svelte:head>

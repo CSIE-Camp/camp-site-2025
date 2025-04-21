@@ -204,6 +204,7 @@
 			<div class="text-center md:text-left text-2xl">
 				<a
 					href="https://drive.google.com/file/d/1tVDKH31xWfpOBJMWEkedD96Vh1odnq_A/view?usp=sharing"
+					target="_blank"
 					class="hover:text-yellow-300">點此查看 活動簡章</a
 				>
 			</div>

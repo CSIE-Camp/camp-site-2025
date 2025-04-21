@@ -1,10 +1,35 @@
 <script lang="ts">
 	import { schedules_mornong, schedules_afternoon, schedules_night } from './schedules';
+	// 建立本地副本，方便觸發 reactivity
+	let morn = schedules_mornong;
+	let aft = schedules_afternoon;
+	let ni = schedules_night;
+
+	type Schedule = {
+		name: string;
+		description: string;
+		class?: string;
+		showmodal: boolean;
+	};
+
+	function openModal(schedule: Schedule) {
+		schedule.showmodal = true;
+		// 重新分配本地副本強制更新
+		morn = [...morn];
+		aft = [...aft];
+		ni = [...ni];
+	}
+	function closeModal(schedule: Schedule) {
+		schedule.showmodal = false;
+		morn = [...morn];
+		aft = [...aft];
+		ni = [...ni];
+	}
 </script>
 
 <section class="mb-20 text-pretty" id="CourseInfo">
 	<div class="my-3">
-		<span class="text-4xl">課程內容</span>
+		<span class="text-4xl">課程資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12 overflow-x-auto">
 		<div
@@ -27,21 +52,19 @@
 
 			<div class="h-10"></div>
 
-			{#each schedules_mornong as schedules}
+			{#each morn as schedule}
 				<button
-					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-					on:click={() => {
-						schedules.showmodal = true;
-					}}
+					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
+					on:click={() => openModal(schedule)}
 				>
-					{schedules.name}
+					{schedule.name}
 				</button>
 
-				{#if schedules.showmodal === true}
+				{#if schedule.showmodal === true}
 					<div
 						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-						on:click|self={() => (schedules.showmodal = false)}
-						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						on:click|self={() => closeModal(schedule)}
+						on:keydown={(e) => e.key === 'Escape' && closeModal(schedule)}
 						role="button"
 						tabindex="0"
 					>
@@ -49,16 +72,16 @@
 							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
 						>
 							<div class="mb-6 flex justify-between border-b-2 border-white">
-								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedule.name}</div>
 								<button
-									on:click={() => (schedules.showmodal = false)}
+									on:click={() => closeModal(schedule)}
 									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
 								>
 									<span>x</span>
 								</button>
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
-								{schedules.description}
+								{schedule.description}
 							</div>
 						</div>
 					</div>
@@ -75,20 +98,18 @@
 				<p>17:00</p>
 			</div>
 
-			{#each schedules_afternoon as schedules}
+			{#each aft as schedule}
 				<button
-					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-					on:click={() => {
-						schedules.showmodal = true;
-					}}
+					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
+					on:click={() => openModal(schedule)}
 				>
-					{schedules.name}
+					{schedule.name}
 				</button>
-				{#if schedules.showmodal === true}
+				{#if schedule.showmodal === true}
 					<div
 						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-						on:click|self={() => (schedules.showmodal = false)}
-						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						on:click|self={() => closeModal(schedule)}
+						on:keydown={(e) => e.key === 'Escape' && closeModal(schedule)}
 						role="button"
 						tabindex="0"
 					>
@@ -96,16 +117,16 @@
 							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
 						>
 							<div class="mb-6 flex justify-between border-b-2 border-white">
-								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedule.name}</div>
 								<button
-									on:click={() => (schedules.showmodal = false)}
+									on:click={() => closeModal(schedule)}
 									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
 								>
 									<span>x</span>
 								</button>
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
-								{schedules.description}
+								{schedule.description}
 							</div>
 						</div>
 					</div>
@@ -122,21 +143,19 @@
 				<p>21:00</p>
 			</div>
 
-			{#each schedules_night as schedules}
+			{#each ni as schedule}
 				<button
-					class="border-3 border-white bg-transparent px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
-					on:click={() => {
-						schedules.showmodal = true;
-					}}
+					class="border-3 border-white bg-transparent px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
+					on:click={() => openModal(schedule)}
 				>
-					{schedules.name}
+					{schedule.name}
 				</button>
 
-				{#if schedules.showmodal === true}
+				{#if schedule.showmodal === true}
 					<div
 						class="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
-						on:click|self={() => (schedules.showmodal = false)}
-						on:keydown={(e) => e.key === 'Escape' && (schedules.showmodal = false)}
+						on:click|self={() => closeModal(schedule)}
+						on:keydown={(e) => e.key === 'Escape' && closeModal(schedule)}
 						role="button"
 						tabindex="0"
 					>
@@ -144,16 +163,16 @@
 							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
 						>
 							<div class="mb-6 flex justify-between border-b-2 border-white">
-								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>
+								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedule.name}</div>
 								<button
-									on:click={() => (schedules.showmodal = false)}
+									on:click={() => closeModal(schedule)}
 									class="flex size-8 items-center justify-center border-2 border-white transition-colors hover:cursor-pointer hover:bg-red-500"
 								>
 									<span>x</span>
 								</button>
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg whitespace-pre-line">
-								{schedules.description}
+								{schedule.description}
 							</div>
 						</div>
 					</div>

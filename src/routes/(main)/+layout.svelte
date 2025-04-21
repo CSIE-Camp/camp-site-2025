@@ -26,7 +26,13 @@
 				href="#CampInfo"
 				class="block w-30 border-2 border-white p-1 text-center text-xl text-white transition-colors hover:bg-yellow-500 hover:text-black"
 			>
-				活動資訊
+				營隊資訊
+			</a>
+			<a
+				href="#CourseInfo"
+				class="block w-30 border-2 border-white p-1 text-center text-xl text-white transition-colors hover:bg-yellow-500 hover:text-black"
+			>
+				課程資訊
 			</a>
 			<a
 				href="#FAQ"
@@ -35,10 +41,10 @@
 				FAQ
 			</a>
 			<a
-				href="#CourseInfo"
+				href="#CampHistory"
 				class="block w-30 border-2 border-white p-1 text-center text-xl text-white transition-colors hover:bg-yellow-500 hover:text-black"
 			>
-				課程資訊
+				歷屆回顧
 			</a>
 			<a
 				href="https://forms.gle/tZzXBLQuiR8QSpdKA"

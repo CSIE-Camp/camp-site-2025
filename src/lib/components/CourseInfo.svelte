@@ -4,7 +4,7 @@
 
 <section class="mb-20 text-pretty" id="CourseInfo">
 	<div class="my-3">
-		<span class="text-4xl">課程內容</span>
+		<span class="text-4xl">課程資訊</span>
 	</div>
 	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12 overflow-x-auto">
 		<div

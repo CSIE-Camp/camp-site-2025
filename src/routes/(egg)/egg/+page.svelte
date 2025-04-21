@@ -163,7 +163,6 @@
 					if (!document.querySelector(`script[src="${url}"]`)) {
 						const script = document.createElement('script');
 						script.src = url;
-						script.async = true;
 						document.head.appendChild(script);
 					}
 				}

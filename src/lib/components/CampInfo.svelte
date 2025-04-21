@@ -186,22 +186,22 @@
 			<p class="border-b-3 border-white p-7 text-center text-3xl">報名已截止</p>
 		{/if}
 		<div class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6">
-			<div class="border-r-3 py-1 text-center text-3xl">報名時間</div>
-			<div class="justify-self-start text-2xl">
+			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">報名時間</div>
+			<div class="text-center md:text-left text-2xl">
 				{stageText}
 			</div>
 
-			<div class="border-r-3 py-1 text-center text-3xl">報名費用</div>
-			<div class="justify-self-start text-2xl">
+			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">報名費用</div>
+			<div class="text-center md:text-left text-2xl">
 				<span class="text-xl text-red-500 line-through">{originalCostText}</span>
 				{stageCostText}
 			</div>
 
-			<div class="border-r-3 py-1 text-center text-3xl">活動時間</div>
-			<div class="justify-self-start text-2xl">7/1 (二) - 7/4 (五)</div>
+			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">活動時間</div>
+			<div class="text-center md:text-left text-2xl">7/1 (二) - 7/4 (五)</div>
 
-			<div class="border-r-3 py-1 text-center text-3xl">詳細資訊</div>
-			<div class="justify-self-start text-2xl">
+			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">詳細資訊</div>
+			<div class="text-center md:text-left text-2xl">
 				<a
 					href="https://drive.google.com/file/d/1tVDKH31xWfpOBJMWEkedD96Vh1odnq_A/view?usp=sharing"
 					class="hover:text-yellow-300">點此查看 活動簡章</a
@@ -210,35 +210,28 @@
 
 			<button
 				type="button"
-				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
+				class="border-3 border-white px-1 py-2 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
 				on:click={() => switchLocation('activity')}
 				on:keydown={(e) => e.key === 'Enter' && switchLocation('activity')}
 			>
 				活動地點
 			</button>
-			<span class="justify-self-start text-2xl"> 國立臺灣師範大學 公館校區 </span>
+			<span class="text-center md:text-left text-2xl"> 國立臺灣師範大學 公館校區 </span>
 
 			<button
 				type="button"
-				class="border-3 border-white py-3 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
+				class="border-3 border-white px-1 py-2 text-center text-3xl hover:cursor-pointer hover:bg-yellow-300 hover:text-black"
 				on:click={() => switchLocation('dorm')}
 				on:keydown={(e) => e.key === 'Enter' && switchLocation('dorm')}
 			>
 				住宿地點
 			</button>
-			<span class="justify-self-start text-2xl">
-				<a
-					href="https://guidehotel.com.tw/hotel-detail/346"
+			<span class="text-center md:text-left text-2xl">
+				<a 
+					href="https://guidehotel.com.tw/hotel-detail/346" 
 					target="_blank"
-					class="hover:text-yellow-300"
-				>
-					承攜行旅-台北台大館
-				</a><br />
-				<a
-					href="https://maps.app.goo.gl/kVK1XueDzAtNsBW6A"
-					target="_blank"
-					class="hover:text-yellow-300">（臺北市中正區羅斯福路三段 98 號）</a
-				>
+					class="hover:text-yellow-300"> 承攜行旅-台北台大館 </a><br />
+					（臺北市中正區羅斯福路三段 98 號）
 			</span>
 		</div>
 
@@ -273,6 +266,63 @@
 		width: 6rem;
 		overflow: hidden;
 		transition: transform 0.3s ease;
+	}
+
+	@media (max-width: 768px) {
+	#CampInfo .grid {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100% !important;
+		max-width: 100%;
+		padding: 0 1rem;
+		box-sizing: border-box;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+	@media (max-width: 640px) {
+		.countdown-container {
+			gap: 0.5rem;
+		}
+
+		.countdown-unit {
+			padding: 0.5rem;
+			width: 4rem;
+		}
+
+		.countdown-value {
+			font-size: 1.75rem !important;
+		}
+
+		.countdown-label {
+			font-size: 0.75rem !important;
+		}
+
+		.countdown-separator {
+			font-size: 1.5rem !important;
+		}
+	}
+
+	@media (max-width: 380px) {
+		.countdown-unit {
+			padding: 0.25rem;
+			width: 3rem;
+		}
+
+		.countdown-value {
+			font-size: 1.25rem !important;
+		}
+
+		.countdown-label {
+			font-size: 0.625rem !important;
+		}
+
+		.countdown-separator {
+			font-size: 1rem !important;
+		}
 	}
 
 	.flash {

@@ -15,9 +15,10 @@
 	<Navbar class="sticky top-0 z-20 w-full bg-[#22222D] py-1">
 		<NavBrand href="/">
 			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
-			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white"
-				>2025 NTNU CSIE CAMP</span
-			>
+			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white">
+				<span class="max-[430px]:hidden">2025&nbsp;</span>NTNU CSIE CAMP
+			</span>
+			
 		</NavBrand>
 		<NavHamburger />
 		<NavUl>
@@ -41,6 +42,7 @@
 			</a>
 			<a
 				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+				target="_blank"
 				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl font-bold text-black transition-colors hover:border-yellow-500 hover:bg-yellow-500"
 			>
 				立即報名
@@ -48,7 +50,7 @@
 		</NavUl>
 	</Navbar>
 
-	<main class="container mx-auto max-w-7xl flex-grow px-4">
+	<main class="container mx-auto max-w-7xl flex-grow px-2 sm:px-4">
 		{@render children()}
 	</main>
 

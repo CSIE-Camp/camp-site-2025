@@ -1,7 +1,8 @@
-<section class="mb-20 text-pretty" id="Introduction">
-	<h1 class="mb-10 text-center text-6xl/24">
-		今年夏天<br />（史詩級的音效）
-	</h1>
+<section class="mt-30 mb-20 text-pretty" id="Introduction">
+	<h1 class="mb-10 text-center">
+        <span class="text-6xl/24">今年夏天</span><br />
+        <span class="max-[542px]:text-4xl text-6xl/24">（史詩級的音效）</span>
+    </h1>
 
 	<div class="text-center text-2xl/12">
 		「各位公測玩家們準備好了嗎？」<br />

@@ -25,10 +25,10 @@
 		<h1 class="text-3xl">2025 臺師大資工營</h1>
 		<h2 class="text-6xl/20">資遊你和我的師界</h2>
 		<div class="flex max-[1230px]:flex-col min-[1230px]:flex-row min-[1230px]:items-baseline min-[1230px]:gap-2">
-			<p class="text-3xl">報名期間</p>
+			<p class="text-3xl">活動日期</p>
 			<p class="text-6xl">
-				<span class="min-[800px]:inline hidden">04/21 - 05/19</span>
-				<span class="max-[800px]:inline hidden text-5xl">4/21 - 5/19</span>
+				<span class="min-[800px]:inline hidden">7/1 - 7/4</span>
+				<span class="max-[800px]:inline hidden text-5xl">7/1 - 7/4</span>
 			</p>
 		</div>
 		<a

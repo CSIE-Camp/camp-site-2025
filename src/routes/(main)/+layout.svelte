@@ -60,14 +60,20 @@
 		{@render children()}
 	</main>
 
-	<footer class="flex items-center px-10 pb-10">
+	<footer class="flex flex-col items-center gap-5 px-10 pb-10 sm:flex-row sm:items-start sm:gap-0">
 		<div class="px-10">
-			<img src="/profile.png" alt="NTNU CSIE CAMP" class="size-30" />
+			<img src="/profile.png" alt="NTNU CSIE CAMP" class="size-35 object-contain aspect-square" />
 		</div>
-		<div class="grow text-white">
-			<h2 class="text-3xl">2025 臺師大資工營 | 資遊你和我的師界</h2>
-			<p class="text-xl/10">
-				臺北市文山區汀州路四段 88 號 應用科學大樓<br />
+		<div class="text-center text-white sm:grow sm:text-left">
+			<h2 class="text-2xl sm:text-3xl leading-relaxed sm:leading-normal mb-5">
+				<span class="whitespace-nowrap">2025 臺師大資工營</span>
+				<span class="hidden sm:inline"> | </span>
+				<br class="sm:hidden" />
+				資遊你和我的師界
+			</h2>
+			<p class="text-lg sm:text-xl/10 leading-loose">
+				臺北市文山區汀州路四段 88 號<br />
+				應用科學大樓<br />
 				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br />
 				若有疑問可以來信或私訊粉專
 			</p>
@@ -84,13 +90,13 @@
 					<img
 						src="/icons/btn-ig-hover.png"
 						alt="Instagram"
-						class="size-25 object-contain transition-all duration-300"
+						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
 					/>
 				{:else}
 					<img
 						src="/icons/btn-ig.png"
 						alt="Instagram"
-						class="size-25 object-contain transition-all duration-300"
+						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
 					/>
 				{/if}
 			</a>
@@ -105,13 +111,13 @@
 					<img
 						src="/icons/btn-fb-hover.png"
 						alt="Facebook"
-						class="size-25 object-contain transition-all duration-300"
+						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
 					/>
 				{:else}
 					<img
 						src="/icons/btn-fb.png"
 						alt="Facebook"
-						class="size-25 object-contain transition-all duration-300"
+						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
 					/>
 				{/if}
 			</a>

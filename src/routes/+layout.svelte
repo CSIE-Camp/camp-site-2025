@@ -39,6 +39,7 @@
 			</a>
 			<a
 				href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+				target="_blank"
 				class="box-border block w-30 border-2 border-yellow-300 bg-yellow-300 p-1 text-center text-xl font-bold text-black transition-colors hover:border-yellow-500 hover:bg-yellow-500"
 			>
 				立即報名

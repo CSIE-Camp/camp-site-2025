@@ -34,6 +34,7 @@
 		</div>
 		<a
 			href="https://forms.gle/tZzXBLQuiR8QSpdKA"
+			target="_blank"
 			class="mt-4 rounded-none bg-yellow-300 px-10 py-3 text-3xl font-bold text-black transition hover:bg-yellow-500"
 		>
 			立即報名

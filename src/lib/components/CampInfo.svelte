@@ -232,10 +232,7 @@
 					href="https://guidehotel.com.tw/hotel-detail/346" 
 					target="_blank"
 					class="hover:text-yellow-300"> 承攜行旅-台北台大館 </a><br />
-					<a 
-						href="https://maps.app.goo.gl/kVK1XueDzAtNsBW6A"
-						target="_blank"
-						class="hover:text-yellow-300">（臺北市中正區羅斯福路三段 98 號）</a>
+					（臺北市中正區羅斯福路三段 98 號）
 			</span>
 		</div>
 
@@ -270,6 +267,48 @@
 		width: 6rem;
 		overflow: hidden;
 		transition: transform 0.3s ease;
+	}
+
+	@media (max-width: 640px) {
+		.countdown-container {
+			gap: 0.5rem;
+		}
+
+		.countdown-unit {
+			padding: 0.5rem;
+			width: 4rem;
+		}
+
+		.countdown-value {
+			font-size: 1.75rem !important;
+		}
+
+		.countdown-label {
+			font-size: 0.75rem !important;
+		}
+
+		.countdown-separator {
+			font-size: 1.5rem !important;
+		}
+	}
+
+	@media (max-width: 380px) {
+		.countdown-unit {
+			padding: 0.25rem;
+			width: 3rem;
+		}
+
+		.countdown-value {
+			font-size: 1.25rem !important;
+		}
+
+		.countdown-label {
+			font-size: 0.625rem !important;
+		}
+
+		.countdown-separator {
+			font-size: 1rem !important;
+		}
 	}
 
 	.flash {

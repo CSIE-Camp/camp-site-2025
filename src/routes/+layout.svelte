@@ -12,9 +12,10 @@
 	<Navbar class="sticky top-0 z-20 w-full bg-[#22222D] py-1">
 		<NavBrand href="/">
 			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
-			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white"
-				>2025 NTNU CSIE CAMP</span
-			>
+			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white">
+				<span class="max-[430px]:hidden">2025&nbsp;</span>NTNU CSIE CAMP
+			</span>
+			
 		</NavBrand>
 		<NavHamburger />
 		<NavUl>

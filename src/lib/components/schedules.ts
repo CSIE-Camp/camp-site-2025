@@ -131,7 +131,7 @@ export const schedules_afternoon = [
     },
     {
         name: '閉幕',
-        description: '課程總結與結業式，頒發證書與合影。',
+        description: '課程總結、結業式與合影。',
         class: '',
         showmodal: false
     }

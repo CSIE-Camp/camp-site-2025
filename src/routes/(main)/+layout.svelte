@@ -72,8 +72,8 @@
 				資遊你和我的師界
 			</h2>
 			<p class="text-lg sm:text-xl/10 leading-loose">
-				臺北市文山區汀州路四段 88 號<br />
-				應用科學大樓<br />
+				臺北市文山區汀州路四段 88 號<br class="sm:hidden" />
+				<span class="hidden sm:inline">&nbsp;</span>應用科學大樓<br />
 				<a href="mailto:ntnucsiecamp2025@gmail.com">ntnucsiecamp2025@gmail.com</a><br />
 				若有疑問可以來信或私訊粉專
 			</p>

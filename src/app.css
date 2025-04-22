@@ -4,6 +4,8 @@
 @plugin 'flowbite/plugin';
 @source "../node_modules/flowbite-svelte/dist";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html, body {
     overflow-x: hidden;
     width: 100%;

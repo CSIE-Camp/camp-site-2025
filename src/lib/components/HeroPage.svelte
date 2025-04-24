@@ -17,9 +17,13 @@
 >
 	<!-- 左側圖片 -->
 	<div class="flex flex-1 items-center justify-center">
-		<img src="cube.png" alt="資工營主視覺" class="h-auto w-full max-w-lg" />
+		<img
+			src="cube.png"
+			alt="資工營主視覺"
+			class="h-auto w-full max-w-lg floating"
+		/>
 	</div>
-
+	
 	<!-- 右側文字區塊 -->
 	<div class="flex flex-1 flex-col items-start justify-center space-y-4 pl-6 py-4">
 		<h1 class="text-3xl">2025 臺師大資工營</h1>
@@ -44,5 +48,21 @@
 <style>
 	:root {
 		--navbar-height: 0px;
+	}
+
+	@keyframes float {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	.floating {
+		animation: float 3s ease-in-out infinite;
 	}
 </style>

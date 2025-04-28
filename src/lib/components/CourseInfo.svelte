@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { schedules_mornong, schedules_afternoon, schedules_night } from './schedules';
+	import { schedules_morning, schedules_afternoon, schedules_night } from './schedules';
 	// 建立本地副本，方便觸發 reactivity
-	let morn = schedules_mornong;
+	let morn = schedules_morning;
 	let aft = schedules_afternoon;
 	let ni = schedules_night;
 
@@ -57,7 +57,11 @@
 					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
 					on:click={() => openModal(schedule)}
 				>
-					{schedule.name}
+						{#if schedule.name === "開幕 +《走進 CS》講座"}
+						開幕<br>+<br>《走進 CS》講座
+					{:else}
+						{schedule.name}
+					{/if}
 				</button>
 
 				{#if schedule.showmodal === true}

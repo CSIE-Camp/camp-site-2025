@@ -35,7 +35,7 @@ export const schedules_mornong = [
 
 export const schedules_afternoon = [
     {
-        name: 'PYTHON 基礎',
+        name: 'Python 基礎',
         description:
             '你是不是常常聽到「Python 很簡單，適合初學者」但打開程式編輯器還是覺得好陌生？\n別擔心！這堂課就是為了你這樣的 零經驗新手 設計的 🚀\n從最基本的輸出、變數、計算開始，\n再一路帶你搞懂「什麼是 if 判斷？for 跑來跑去要跑去哪？」\n學完之後，你就能：\n✔️ 寫出自己的小工具\n✔️ 跑迴圈跑得比小明還快\n✔️ 和別人說「我會 Python 喔！」\n我們還會透過實際的 小練習 & 有趣範例，讓你不只是會看，也真的寫得出來～\n別擔心看不懂、不敢問，這堂課就是你的 程式啟蒙起點！',
         class: 'row-span-2',
@@ -124,8 +124,8 @@ export const schedules_afternoon = [
         showmodal: false
     },
     {
-        name: '敬請期待',
-        description: '沒錯，敬請期待！🥰',
+        name: '黑客松',
+        description: '黑客松專案開發時間💻',
         class: '',
         showmodal: false
     },
@@ -151,9 +151,10 @@ export const schedules_night = [
         showmodal: false
     },
     {
-        name: '黑客松',
-        description: '黑客松專案開發時間',
+        name: '敬請期待',
+        description: '沒錯，敬請期待！🥰',
         class: 'row-span-2',
         showmodal: false
-    }
+    },
+    
 ];

@@ -1,4 +1,4 @@
-export const schedules_mornong = [
+export const schedules_morning = [
     {
         name: '邊緣人的好朋友 —— 在 Discord 跟 AI 機器人聊天吧！',
         description:
@@ -22,13 +22,13 @@ export const schedules_mornong = [
     {
         name: '報到 + 破冰',
         description: '歡迎來到課程！這個環節我們將進行破冰活動，讓大家互相認識。',
-        class: '',
+        class: 'row-span-1',
         showmodal: false
     },
     {
-        name: '開幕',
-        description: '課程開幕式，介紹課程目標與內容大綱。',
-        class: '',
+        name: '開幕 +《走進 CS》講座',
+        description: '🚩課程開幕式\n介紹課程目標與內容大綱。\n\n💻《走進 CS》講座\n本場講座邀請臺師大資工系系主任葉梅珍教授，引領高中生學員們一起來了解資工系的世界，以及資工系學生的生活與學習！這堂課不僅是一次講座，更是一次與未來的對話！讓我們一起探索資工的奧秘吧！',
+        class: 'row-span-1',
         showmodal: false
     }
 ];

@@ -198,7 +198,21 @@
 			</div>
 
 			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">活動時間</div>
-			<div class="text-center md:text-left text-2xl">7/1 (二) - 7/4 (五)</div>
+			<div class="text-center md:text-left text-2xl">
+				<div class="flex flex-col md:flex-row md:items-center">
+					<div class="mb-2 md:mb-0">7/1 (二) - 7/4 (五)</div>
+					<div class="md:ml-4">
+						<a 
+							href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=2025%20臺師大資工營&dates=20250701/20250706&details=2025%20臺師大資工營%20NTNU%20CSIE%20CAMP｜資遊你和我的師界%0A官網：https://camp.ntnucsie.info&location=國立臺灣師範大學%20公館校區"
+							target="_blank"
+							class="inline-block border-3 border-white px-3 py-2 text-xl hover:bg-yellow-300 hover:text-black"
+						>
+							新增至 Google 日曆
+						</a>
+					</div>
+				</div>
+			</div>
+				
 
 			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">詳細資訊</div>
 			<div class="text-center md:text-left text-2xl">

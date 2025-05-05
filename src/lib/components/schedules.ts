@@ -15,19 +15,19 @@ export const schedules_morning = [
     },
     {
         name: '黑客松',
-        description: '黑客松專案開發時間。💻',
+        description: '💻黑客松專案開發時間，加緊趕工啊啊啊～',
         class: 'row-span-3',
         showmodal: false
     },
     {
         name: '報到 + 破冰',
-        description: '歡迎來到課程！這個環節我們將進行破冰活動，讓大家互相認識。',
+        description: '🧊歡迎來到「資遊你和我的師界」！這個環節我們將進行破冰活動，讓組內夥伴互相認識，為四天的活動拉開序幕～',
         class: 'row-span-1',
         showmodal: false
     },
     {
         name: '開幕 +《走進 CS》講座',
-        description: '🚩課程開幕式\n介紹課程目標與內容大綱。\n\n💻《走進 CS》講座\n本場講座邀請臺師大資工系系主任葉梅珍教授，引領高中生學員們一起來了解資工系的世界，以及資工系學生的生活與學習！這堂課不僅是一次講座，更是一次與未來的對話！讓我們一起探索資工的奧秘吧！',
+        description: '🚩營隊開幕式\n介紹課程、活動與生活規範。\n\n💻《走進 CS》講座\n本場講座邀請臺師大資工系系主任葉梅珍教授，引領高中生學員們一起來了解資工系的世界，以及資工系學生的生活與學習！這堂課不僅是一場講座，更是一次與未來的對話！讓我們一起探索資工的奧秘吧！',
         class: 'row-span-1',
         showmodal: false
     }
@@ -103,7 +103,7 @@ export const schedules_afternoon = [
         「還在一個個手打？不累嗎？密碼是拿來爆破的，不是拿來猜的！」
         本課堂你將學到:
         ✅弱密碼的危害
-        ✅離線爆破Wi-Fi
+        ✅離線爆破 Wi-Fi
         ✅爆破工具比較 
         原神可莉曾經說過:「蹦蹦炸彈 !! 一起來學爆破吧！除了爆破密碼外，要記得陪可莉炸魚喔！」
         `,
@@ -112,20 +112,20 @@ export const schedules_afternoon = [
     },
     {
         name: '黑客松報告',
-        description: "It's your time!\n各組展示黑客松專案成果，並由講師們提供回饋。🎤",
+        description: "🫵It's your time!\n各組展示黑客松專案成果，並由講師們提供回饋。🎤",
         class: '',
         showmodal: false
     },
     {
         name: '擁有自己的男女朋友 —— Discord bot AI 生圖',
         description:
-            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式AI)',
+            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式 AI）',
         class: 'text-base',
         showmodal: false
     },
     {
         name: '黑客松',
-        description: '黑客松專案開發時間。💻',
+        description: '💡黑客松專案開發時間。',
         class: '',
         showmodal: false
     },

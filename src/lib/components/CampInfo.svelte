@@ -203,7 +203,7 @@
 					<div class="mb-2 md:mb-0">7/1 (二) - 7/4 (五)</div>
 					<div class="md:ml-4">
 						<a 
-							href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=2025%20臺師大資工營&dates=20250701/20250706&details=2025%20臺師大資工營%20NTNU%20CSIE%20CAMP｜資遊你和我的師界%0A官網：https://camp.ntnucsie.info&location=國立臺灣師範大學%20公館校區"
+							href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=2025%20臺師大資工營&dates=20250701/20250705&details=2025%20臺師大資工營%20NTNU%20CSIE%20CAMP｜資遊你和我的師界%0A官網：https://camp.ntnucsie.info&location=國立臺灣師範大學%20公館校區"
 							target="_blank"
 							class="inline-block border-3 border-white px-3 py-2 text-xl hover:bg-yellow-300 hover:text-black"
 						>

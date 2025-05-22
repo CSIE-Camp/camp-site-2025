@@ -186,7 +186,25 @@
 			loading = false;
 		}
 	});
+
+	// 新增背景音樂控制邏輯
+	let played = false;
+	const playMusic = () => {
+		if (!played) {
+			document.getElementById("bg-music")?.play().then(() => {
+				played = true;
+				console.log("音樂播放成功！");
+			}).catch((e) => {
+				console.warn("播放被阻擋：", e);
+			});
+		}
+	};
+	window.addEventListener("scroll", playMusic);
+	document.addEventListener("click", playMusic);
 </script>
+
+<!-- 加入背景音樂 -->
+<audio id="bg-music" src="/bg-audio.wav" autoplay loop></audio>
 
 {#if loading}
 	<div class="egg-loading">

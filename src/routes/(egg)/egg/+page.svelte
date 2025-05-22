@@ -189,7 +189,7 @@
 </script>
 
 <audio id="bg-audio" autoplay loop>
-	<source src="/egg-bg-audio.wav" type="audio/wav" />
+	<source src="/bg-audio.wav" type="audio/wav" />
 	Your browser does not support the audio element.
 </audio>
 

@@ -203,8 +203,10 @@
 	document.addEventListener("click", playMusic);
 </script>
 
-<!-- 加入背景音樂 -->
-<audio id="bg-music" src="/bg-audio.wav" autoplay loop></audio>
+<audio id="bg-music" autoplay loop>
+	<source src="/bg-audio.wav" type="audio/wav" />
+	Your browser does not support the audio element.
+</audio>
 
 {#if loading}
 	<div class="egg-loading">

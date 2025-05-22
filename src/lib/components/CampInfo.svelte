@@ -24,7 +24,7 @@
 	let flashMinute = false;
 	let flashSecond = false;
 
-	const eventDate = new Date('2025-05-19T23:59:59');
+	const eventDate = new Date('2025-06-02T00:00:00');
 	// 地圖位置的 Google Maps 連結
 	const locations = {
 		activity:
@@ -41,7 +41,7 @@
 		stage = 0; // 早鳥報名
 	} else if (now < new Date('2025-05-20T00:00:00')) {
 		stage = 1; // 一階報名
-	} else if (now >= new Date('2025-05-27T00:00:00') && now < new Date('2025-06-02T00:00:00')) {
+	} else if (now >= new Date('2025-05-23T00:00:00') && now < new Date('2025-06-02T00:00:00')) {
 		stage = 2; // 二階報名
 	} else if (now >= new Date('2025-06-02T00:00:00')) {
 		stage = 3; // 報名已截止
@@ -54,9 +54,9 @@
 	let dateTexts = [
 		'2025/04/21 - 2025/05/05', // 早鳥報名截止日期
 		'2025/05/06 - 2025/05/19', // 一階報名截止日期
-		'2025/05/27 - 2025/06/01', // 二階報名截止日期
+		'2025/05/23 - 2025/06/01', // 二階報名截止日期
 		'', // 報名已截止
-		'（若有名額則 5/27 會開放二階報名）' // 非報名時段
+		'（剩餘名額將在 5/23 開放二階報名）' // 非報名時段
 	];
 
 	if (stage === 0) {

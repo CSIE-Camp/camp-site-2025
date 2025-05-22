@@ -188,6 +188,11 @@
 	});
 </script>
 
+<audio id="bg-audio" autoplay loop>
+	<source src="/egg-bg-audio.wav" type="audio/wav" />
+	Your browser does not support the audio element.
+</audio>
+
 {#if loading}
 	<div class="egg-loading">
 		<div class="egg-loading-bar-container">

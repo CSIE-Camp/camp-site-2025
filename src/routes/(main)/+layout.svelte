@@ -12,7 +12,7 @@
 	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(/background.png)] bg-contain bg-fixed bg-center bg-repeat dark"
 	style="background-blend-mode: multiply;"
 >
-	<Navbar class="sticky top-0 z-20 w-full bg-[#22222D] py-1">
+	<Navbar class="fixed top-0 z-50 w-full bg-[#22222D] py-1">
 		<NavBrand href="/">
 			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
 			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white">
@@ -56,7 +56,7 @@
 		</NavUl>
 	</Navbar>
 
-	<main class="container mx-auto max-w-7xl flex-grow px-2 sm:px-4">
+	<main class="container mx-auto max-w-7xl flex-grow px-2 sm:px-4 mt-16">
 		{@render children()}
 	</main>
 

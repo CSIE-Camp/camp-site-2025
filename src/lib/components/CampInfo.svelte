@@ -208,7 +208,7 @@
 							target="_blank"
 							class="hover:text-yellow-300"
 						>
-							點此新增至 Google 日曆  
+							新增活動至 Google 日曆  
 						</a>
 						›&gt; <!--考慮用 "‖" 視覺上也可接受-->
 					</div>

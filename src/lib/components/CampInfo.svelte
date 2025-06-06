@@ -24,7 +24,7 @@
 	let flashMinute = false;
 	let flashSecond = false;
 
-	const eventDate = new Date('2025-06-02T00:00:00');
+	const eventEndDate = new Date('2025-07-04T17:00:01'); // 活動結束時間
 	// 地圖位置的 Google Maps 連結
 	const locations = {
 		activity:
@@ -43,10 +43,16 @@
 		stage = 1; // 一階報名
 	} else if (now >= new Date('2025-05-23T00:00:00') && now < new Date('2025-06-02T00:00:00')) {
 		stage = 2; // 二階報名
-	} else if (now >= new Date('2025-06-02T00:00:00')) {
-		stage = 3; // 報名已截止
+	} else if (now <= new Date('2025-07-01T10:00:00')) {
+		stage = 3; // 報名已截止，活動即將開始
+	} else if (now >= new Date('2025-07-01T21:30:00') && now <= new Date('2025-07-04T14:00:00')) {
+		stage = 4; // 黑客松進行中
+	} else if (now <= new Date('2025-07-04T17:00:00')) {
+		stage = 5; // 活動進行中
+	} else if (now > new Date('2025-07-04T17:00:00')) {
+		stage = 6; // 活動已結束
 	} else {
-		stage = 4; // 非報名時段
+		stage = 7; // 非報名時段
 	}
 
 	let stageText = ''; // 報名階段文字
@@ -65,10 +71,10 @@
 		stageText = '一階報名：' + dateTexts[stage];
 	} else if (stage === 2) {
 		stageText = '二階報名：' + dateTexts[stage];
-	} else if (stage === 3) {
-		stageText = '報名已截止' + dateTexts[stage];
-	} else if (stage === 4) {
+	} else if (stage === 7) {
 		stageText = '暫不受理報名 ' + dateTexts[stage];
+	} else {
+		stageText = '報名已截止' + dateTexts[stage];
 	}
 
 	let stageCostText = ''; // 報名費用文字
@@ -83,15 +89,30 @@
 	} else if (stage === 2) {
 		originalCostText = '';
 		stageCostText = '7400 元'; // 二階報名費用
-	} else if (stage === 3) {
-		originalCostText = '';
-		stageCostText = '7400 元 (報名已截止)'; // 報名已截止
-	} else if (stage === 4) {
+	} else if (stage === 7) {
 		originalCostText = '';
 		stageCostText = '7400 元'; // 非報名時段
-	}
+	} else {
+		originalCostText = '';
+		stageCostText = '7400 元 (報名已截止)'; // 報名已截止
+	} 
 
 	stageCostText += ' / 清寒 3500 元';
+
+	let stageCountDownText = '';
+	let stageTitle = '報名已截止';
+
+	if (stage === 3) {
+		stageCountDownText = '距離活動開始剩餘';
+	} else if (stage === 4) {
+		stageCountDownText = '距離黑客松結束剩餘';
+	} else if (stage === 5) {
+		stageCountDownText = '距離活動結束剩餘';
+	} else if (stage === 6) {
+		stageTitle = '活動圓滿結束，感謝大家的參與！';
+	} else {
+		stageCountDownText = '距離報名截止剩餘';
+	}
 
 	let isCountdownActive = true;
 	const secondsProgress = tweened(0, { duration: 1000, easing: cubicOut });
@@ -100,7 +121,7 @@
 	onMount(() => {
 		const interval = setInterval(() => {
 			const now = new Date();
-			const diff = eventDate.getTime() - now.getTime();
+			const diff = eventEndDate.getTime() - now.getTime();
 
 			if (diff <= 0) {
 				clearInterval(interval);
@@ -159,7 +180,7 @@
 	<div class="border-3 border-white bg-black/40">
 		{#if isCountdownActive}
 			<div class="border-b-3 border-white p-7 text-center">
-				<p class="mb-4 text-3xl">距離報名截止剩餘</p>
+				<p class="mb-4 text-3xl">{stageCountDownText}</p>
 				<div class="countdown-container">
 					<div class="countdown-unit {flashDay ? 'flash' : ''}">
 						<div class="countdown-value">{countdown.days}</div>
@@ -183,7 +204,7 @@
 				</div>
 			</div>
 		{:else}
-			<p class="border-b-3 border-white p-7 text-center text-3xl">報名已截止</p>
+			<p class="border-b-3 border-white p-7 text-center text-3xl">{stageTitle}</p>
 		{/if}
 		<div class="m-7 grid w-[95%] grid-cols-[15%_85%] items-center justify-center gap-x-6 gap-y-6">
 			<div class="w-full border-b-3 md:border-r-3 md:border-b-0 py-1 text-center text-3xl">報名時間</div>

@@ -118,10 +118,22 @@
 	const secondsProgress = tweened(0, { duration: 1000, easing: cubicOut });
 
 	// 倒數計時邏輯
+	const stageEndDates = [
+		new Date('2025-05-06T00:00:00'), // 早鳥報名結束
+		new Date('2025-05-20T00:00:00'), // 一階報名結束
+		new Date('2025-06-02T00:00:00'), // 二階報名結束
+		new Date('2025-07-01T10:00:00'), // 活動開始
+		new Date('2025-07-04T14:00:00'), // 黑客松結束
+		new Date('2025-07-04T17:00:00'), // 活動結束
+		null // 活動已結束或非報名時段
+	];
+
+	let countdownTarget = stageEndDates[stage] || eventEndDate; // 根據 stage 設定倒數目標時間
+
 	onMount(() => {
 		const interval = setInterval(() => {
 			const now = new Date();
-			const diff = eventEndDate.getTime() - now.getTime();
+			const diff = countdownTarget ? countdownTarget.getTime() - now.getTime() : 0;
 
 			if (diff <= 0) {
 				clearInterval(interval);

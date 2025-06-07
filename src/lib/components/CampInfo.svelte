@@ -132,7 +132,7 @@
 		null // 活動已結束或非報名時段
 	];
 
-	let countdownTarget = stageEndDates[stage]; // 根據 stage 設定倒數目標時間
+	$: countdownTarget = stageEndDates[stage]; // 根據 stage 設定倒數目標時間
 
 	onMount(() => {
 		const interval = setInterval(() => {

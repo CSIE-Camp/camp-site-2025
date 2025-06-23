@@ -2,7 +2,7 @@ export const schedules_morning = [
     {
         name: '邊緣人的好朋友 —— 在 Discord 跟 AI 機器人聊天吧！',
         description:
-            '相信大家都有在 Discord 跟朋友聊天的經驗吧～\n什麼！你說沒有朋友跟你聊天，幫你 QQ😢\n但是沒關係，在這堂課你可以學會怎麼寫你的第一隻 Discord bot。\n甚至可以透過串接大型語言模型，\n幫你的機器人注入靈魂，\n這樣你就有一個跟你聊天的機器人了～\n再也不需要找朋友聊天了。\n本堂課程你將學到：\n✅教你寫出第一隻 Discord bot\n✅講解「非同步處理」的概念\n✅講解大型語言模型背後的原理\n✅講解 API 的原理\n✅教你如何使用 Gemini API，並串接 Discord bot，在 Discord 製作 AI 聊天機器人',
+            '相信大家都有在 Discord 跟朋友聊天的經驗吧～\n什麼！你說沒有朋友跟你聊天，幫你 QQ😢\n但是沒關係，在這堂課你可以學會怎麼寫你的第一隻 Discord bot。\n甚至可以透過串接生成式 AI，\n幫你的機器人注入靈魂，\n這樣你就有一個跟你聊天的機器人了～\n再也不需要找朋友聊天了。\n本堂課程你將學到：\n✅教你寫出第一隻 Discord bot\n✅講解生成式 AI\n✅講解 API 的原理\n✅教你如何使用 Gemini API，並串接 Discord bot，在 Discord 製作 AI 聊天機器人',
         class: 'row-span-3',
         showmodal: false
     },

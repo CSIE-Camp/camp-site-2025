@@ -1,15 +1,19 @@
 <script lang="ts">
 	import { schedules_morning, schedules_afternoon, schedules_night } from './schedules';
 	// 建立本地副本，方便觸發 reactivity
-	let morn = schedules_morning;
-	let aft = schedules_afternoon;
-	let ni = schedules_night;
+	let morn: Schedule[] = schedules_morning;
+	let aft: Schedule[] = schedules_afternoon;
+	let ni: Schedule[] = schedules_night;
 
 	type Schedule = {
 		name: string;
 		description: string;
 		class?: string;
 		showmodal: boolean;
+		flag?: {
+			text: string;
+			color: string;
+		};
 	};
 
 	function openModal(schedule: Schedule) {
@@ -86,6 +90,9 @@
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
 								{schedule.description}
+								{#if schedule.flag}
+									<p style="color: {schedule.flag.color};">{schedule.flag.text}</p>
+								{/if}
 							</div>
 						</div>
 					</div>
@@ -131,6 +138,9 @@
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg/8 whitespace-pre-line">
 								{schedule.description}
+								{#if schedule.flag}
+									<p style="color: {schedule.flag.color};">{schedule.flag.text}</p>
+								{/if}
 							</div>
 						</div>
 					</div>
@@ -177,6 +187,9 @@
 							</div>
 							<div class="modal-scrollbar h-full overflow-y-auto text-lg whitespace-pre-line">
 								{schedule.description}
+								{#if schedule.flag}
+									<p style="color: {schedule.flag.color};">{schedule.flag.text}</p>
+								{/if}
 							</div>
 						</div>
 					</div>

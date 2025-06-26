@@ -1,3 +1,6 @@
+export const FLAG_COLOR_white = '#ffffff';
+export const FLAG_COLOR_gray = '#2C2C2C'; // 集中管理 flag 顏色
+
 export const schedules_morning = [
     {
         name: '邊緣人的好朋友 —— 在 Discord 跟 AI 機器人聊天吧！',
@@ -21,9 +24,13 @@ export const schedules_morning = [
     },
     {
         name: '報到 + 破冰',
-        description: '🧊歡迎來到「資遊你和我的師界」！這個環節我們將進行破冰活動，讓組內夥伴互相認識，為四天的活動拉開序幕～',
+        description: '🧊歡迎來到「資遊你和我的師界」！這個環節我們將進行破冰活動，讓組內夥伴互相認識，為四天的活動拉開序幕～\n',
         class: 'row-span-1',
-        showmodal: false
+        showmodal: false,
+        flag: {
+            text: 'flag{||4c435d3171760edf7bf41a907eedc0||}',
+            color: FLAG_COLOR_gray
+        }
     },
     {
         name: '開幕 +《走進 CS》講座',
@@ -128,9 +135,13 @@ export const schedules_afternoon = [
     {
         name: '擁有自己的男女朋友 —— Discord bot AI 生圖',
         description:
-            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式 AI）\nflag{||fc7e051acf235ba4aa783647469e67||}',
+            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式 AI）',
         class: 'text-base',
-        showmodal: false
+        showmodal: false,
+        flag: {
+            text: 'flag{||fc7e051acf235ba4aa783647469e67||}',
+            color: FLAG_COLOR_white
+        }
     },
     {
         name: '黑客松',

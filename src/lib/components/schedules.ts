@@ -21,7 +21,7 @@ export const schedules_morning = [
     },
     {
         name: '報到 + 破冰',
-        description: '🧊歡迎來到「資遊你和我的師界」！這個環節我們將進行破冰活動，讓組內夥伴互相認識，為四天的活動拉開序幕～',
+        description: '🧊歡迎來到「資遊你和我的師界」！這個環節我們將進行破冰活動，讓組內夥伴互相認識，為四天的活動拉開序幕～\n<span style="color: #29A0CA;">flag{||4c435d3171760edf7bf41a907eedc0||}</span>',
         class: 'row-span-1',
         showmodal: false
     },

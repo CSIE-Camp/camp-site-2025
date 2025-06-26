@@ -128,7 +128,7 @@ export const schedules_afternoon = [
     {
         name: '擁有自己的男女朋友 —— Discord bot AI 生圖',
         description:
-            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式 AI）',
+            '「ㄟㄟ，聽說每月的 14 號都是情人節欸。1 月是日記情人節，2 月是西洋情人節，3 月是白色情人節......」「夠了，別說了。嗚嗚嗚......」\n每月的情人節都是自己過或是情人節想增加一些樂趣嗎？Discord bot 來幫忙 !!!\n本堂課你將學到：\n✅在 Discord 中，利用 Discord bot 傳送圖片\n✅將 Discord bot 搭配 AI，使其能夠在 Discord 中生圖\n✅網頁框架 Flask\n✅內網穿透 ngrok\n✅diffuser（圖片生成式 AI）\nflag{||fc7e051acf235ba4aa783647469e67||}',
         class: 'text-base',
         showmodal: false
     },
@@ -140,7 +140,7 @@ export const schedules_afternoon = [
     },
     {
         name: '閉幕',
-        description: '課程總結、結業式與合影，為這場學習之旅畫上完美的句點。🎉',
+        description: '課程總結、結業式與合影，為這場學習之旅畫上完美的句點。🎉<br>',
         class: '',
         showmodal: false
     }

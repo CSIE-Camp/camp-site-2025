@@ -7,7 +7,6 @@
 	import Hackathon from '$lib/components/Hackathon.svelte';
 	import CampHistory from '$lib/components/CampHistory.svelte';
 	import Faq from '$lib/components/Faq.svelte';
-	import Sponsors from '$lib/components/Sponsors.svelte';
 	import Egg from '$lib/components/Egg.svelte';
 </script>
 
@@ -33,7 +32,5 @@
 <Faq />
 
 <CampHistory />
-
-<Sponsors />
 
 <Egg />

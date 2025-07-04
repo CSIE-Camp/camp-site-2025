@@ -45,7 +45,7 @@
 		stage = 2; // 二階報名
 	} else if (now <= new Date('2025-07-01T10:00:00')) {
 		stage = 3; // 報名已截止，活動即將開始
-	} else if (now >= new Date('2025-07-01T21:30:00') && now <= new Date('2025-07-04T14:00:00')) {
+	} else if (now >= new Date('2025-07-01T21:30:00') && now <= new Date('2025-07-04T12:50:00')) {
 		stage = 4; // 黑客松進行中
 	} else if (now <= new Date('2025-07-04T17:00:00')) {
 		stage = 5; // 活動進行中

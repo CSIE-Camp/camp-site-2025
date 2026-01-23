@@ -9,7 +9,10 @@ const config = {
 
 	kit: {
 		// Using Cloudflare adapter for deployment to Cloudflare Pages
-		adapter: adapter()
+		adapter: adapter(),
+		paths: {
+			base: '/2025'
+		}
 	}
 };
 

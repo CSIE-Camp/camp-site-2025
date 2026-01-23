@@ -27,11 +27,10 @@ jobs:
 
       - name: Build
         run: |
-          mkdir -p .svelte-kit/cloudflare/2025
-          pnpm run build
+          pnpm install
+          pnpm run build 
 
       - name: Deploy to Cloudflare Pages
-        # 使用 npx 直接執行 wrangler，並指向 SvelteKit 真正的輸出目錄
         run: npx wrangler pages deploy .svelte-kit/cloudflare --branch=main --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

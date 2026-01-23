@@ -8,7 +8,6 @@ export default defineConfig({
 		sveltekit(),
 		{
 			name: 'fix-cloudflare-enoent',
-			// 在 Vite 打包完成後、適配器運行前執行
 			closeBundle() {
 				const dir = '.svelte-kit/cloudflare/2025';
 				if (!fs.existsSync(dir)) {

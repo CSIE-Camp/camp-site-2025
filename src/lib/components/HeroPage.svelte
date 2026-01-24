@@ -18,7 +18,7 @@
 	<!-- 左側圖片 -->
 	<div class="flex flex-1 items-center justify-center">
 		<img
-			src="cube.png"
+			src="/cube.png"
 			alt="資工營主視覺"
 			class="h-auto w-full max-w-lg floating"
 		/>

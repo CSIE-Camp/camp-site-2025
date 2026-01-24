@@ -32,7 +32,7 @@ jobs:
           PUBLIC_BASE_PATH: /2025
 
       - name: Deploy to Cloudflare Pages
-        run: pnpm wrangler pages deploy .svelte-kit/cloudflare --branch=main --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+        run: npx wrangler pages deploy .svelte-kit/cloudflare --branch=main --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -26,7 +26,9 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run build 
+        run: pnpm build
+        env:
+          NODE_ENV: production
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler pages deploy .svelte-kit/cloudflare --branch=main --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}

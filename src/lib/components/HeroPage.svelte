@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { assets } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	// 計算navbar高度
@@ -18,7 +19,7 @@
 	<!-- 左側圖片 -->
 	<div class="flex flex-1 items-center justify-center">
 		<img
-			src="/cube.png"
+			src={`${assets}/cube.png`}
 			alt="資工營主視覺"
 			class="h-auto w-full max-w-lg floating"
 		/>

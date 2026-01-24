@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { assets } from '$app/paths';
 	import { schedules_morning, schedules_afternoon, schedules_night } from './schedules';
 	// 建立本地副本，方便觸發 reactivity
 	let morn: Schedule[] = schedules_morning;
@@ -40,7 +41,7 @@
 			class="grid grid-cols-5 grid-rows-[min-content_min-content_1fr_1fr_min-content_repeat(2,1fr_1fr_min-content)] gap-3
 			text-xl min-w-[767px]"
 		> 
-			<div class="bg-[url(/mushroom.png)] bg-contain bg-center bg-no-repeat"></div>
+			<div class="bg-contain bg-center bg-no-repeat" style={`background-image: url('${assets}/mushroom.png')`}></div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.01 (TUE)</div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.02 (WED)</div>
 			<div class="bg-white p-3 text-center text-2xl text-black">07.03 (THU)</div>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../../app.css';
 	import { Navbar, NavBrand, NavUl, NavHamburger } from 'flowbite-svelte';
+	import { assets, base } from '$app/paths';
 	let { children } = $props();
 
 	// 追蹤懸停狀態
@@ -9,12 +10,12 @@
 </script>
 
 <div
-	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-[url(/background.png)] bg-contain bg-fixed bg-center bg-repeat dark"
-	style="background-blend-mode: multiply;"
+	class="flex min-h-screen flex-col bg-[rgba(0,0,0,0.7)] bg-contain bg-fixed bg-center bg-repeat dark"
+	style={`background-image: url('${assets}/background.png'); background-blend-mode: multiply;`}
 >
 	<Navbar class="fixed top-0 z-50 w-full bg-[#22222D] py-1">
-		<NavBrand href="/">
-			<img src="/profile.png" class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
+		<NavBrand href={`${base}/`}>
+			<img src={`${assets}/profile.png`} class="me-3 h-6 sm:h-10" alt="Flowbite Logo" />
 			<span class="self-center text-3xl font-semibold whitespace-nowrap text-white">
 				<span class="max-[430px]:hidden">2025&nbsp;</span>NTNU CSIE CAMP
 			</span>
@@ -62,7 +63,7 @@
 
 	<footer class="flex flex-col items-center gap-5 px-10 pb-10 sm:flex-row sm:items-start sm:gap-0">
 		<div class="px-10">
-			<img src="/profile.png" alt="NTNU CSIE CAMP" class="size-35 object-contain aspect-square" />
+			<img src={`${assets}/profile.png`} alt="NTNU CSIE CAMP" class="size-35 object-contain aspect-square" />
 		</div>
 		<div class="text-center text-white sm:grow sm:text-left">
 			<h2 class="text-2xl sm:text-3xl leading-relaxed sm:leading-normal mb-5">
@@ -87,17 +88,17 @@
 				onmouseleave={() => (isInstagramHovered = false)}
 			>
 				{#if isInstagramHovered}
-					<img
-						src="/icons/btn-ig-hover.png"
-						alt="Instagram"
-						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
-					/>
+						<img
+							src={`${assets}/icons/btn-ig-hover.png`}
+							alt="instagram"
+							class="h-16 w-16"
+						/>
 				{:else}
-					<img
-						src="/icons/btn-ig.png"
-						alt="Instagram"
-						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
-					/>
+						<img
+							src={`${assets}/icons/btn-ig.png`}
+							alt="instagram"
+							class="h-16 w-16"
+						/>
 				{/if}
 			</a>
 			<a
@@ -108,17 +109,17 @@
 				onmouseleave={() => (isFacebookHovered = false)}
 			>
 				{#if isFacebookHovered}
-					<img
-						src="/icons/btn-fb-hover.png"
-						alt="Facebook"
-						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
-					/>
+						<img
+							src={`${assets}/icons/btn-fb-hover.png`}
+							alt="facebook"
+							class="h-16 w-16"
+						/>
 				{:else}
-					<img
-						src="/icons/btn-fb.png"
-						alt="Facebook"
-						class="size-16 sm:size-25 object-contain transition-all duration-300 aspect-square"
-					/>
+						<img
+							src={`${assets}/icons/btn-fb.png`}
+							alt="facebook"
+							class="h-16 w-16"
+						/>
 				{/if}
 			</a>
 		</div>

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { assets } from '$app/paths';
 	import { Carousel } from 'flowbite-svelte';
 
 	const imageFiles = import.meta.glob('/static/images/*.{jpg,jpeg,png,gif}', { eager: true });
 	let images = Object.entries(imageFiles).map(([path, module], index) => ({
-		src: path.replace('/static', ''),
+		src: `${assets}${path.replace('/static', '')}`,
 		alt: `Image ${index + 1}`
 	}));
 </script>
@@ -34,7 +35,7 @@
 						<div
 							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"
 						>
-							<img src="/icons/preview.png" alt="preview" class="h-3/5 w-3/5 object-contain" />
+							<img src={`${assets}/icons/preview.png`} alt="preview" class="h-3/5 w-3/5 object-contain" />
 						</div>
 					</ControlButton>
 
@@ -47,7 +48,7 @@
 						<div
 							class="flex h-12 w-12 items-center justify-center rounded-full bg-black/40 transition-colors hover:cursor-pointer hover:bg-black/80"
 						>
-							<img src="/icons/next.png" alt="preview" class="h-3/5 w-3/5 object-contain" />
+							<img src={`${assets}/icons/next.png`} alt="preview" class="h-3/5 w-3/5 object-contain" />
 						</div>
 					</ControlButton>
 				</Controls>

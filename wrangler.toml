@@ -1,0 +1,8 @@
+name = "camp-site-2025"
+type = "javascript"
+
+[env.production]
+routes = [
+  { pattern = "camp.ntnucsie.info/2025/*", zone_name = "camp.ntnucsie.info" },
+  { pattern = "*/2025/*" }
+]

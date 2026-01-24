@@ -5,6 +5,7 @@ import fs from 'fs';
 
 export default defineConfig({
 	plugins: [
+		tailwindcss(),
 		sveltekit(),
 		{
 			name: 'fix-cloudflare-enoent',

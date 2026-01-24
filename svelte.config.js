@@ -3,15 +3,25 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://svelte.dev/docs/kit/integrations
-	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// Using Cloudflare adapter for deployment to Cloudflare Pages
-		adapter: adapter(),
+		adapter: {
+			name: 'adapter-cloudflare-custom',
+			async adapt(builder) {
+				const delegate = adapter();
+				const originalMkdirp = builder.mkdirp;
+				builder.mkdirp = (dir) => {
+					originalMkdirp(dir);
+					if (dir.endsWith('cloudflare')) {
+						originalMkdirp(dir + '/2025');
+					}
+				};
+				await delegate.adapt(builder);
+			}
+		},
 		paths: {
-			base: process.env.PUBLIC_BASE_PATH || ''
+			base: '/2025'
 		}
 	}
 };

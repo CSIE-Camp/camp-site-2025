@@ -13,7 +13,7 @@
 		};
 	}
 
-	type Schedule = ScheduleItem & Record<string, unknown>;
+	type Schedule = ScheduleItem;
 
 	type DaySchedule = {
 		date: string;

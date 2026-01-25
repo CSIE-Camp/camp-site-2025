@@ -10,7 +10,7 @@
 	</div>
 	<div class="border-3 border-white bg-black/40 p-5 text-2xl/12">
 		<div class="grid auto-rows-min gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-			{#each faqList as schedules}
+			{#each faqList as schedules (schedules.name)}
 				<button
 					class="border-3 border-white p-5 text-left text-2xl/10 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedules.class}"
 					on:click={() => {
@@ -29,7 +29,7 @@
 						tabindex="0"
 					>
 						<div
-							class="relative flex max-h-[90vh] w-200 flex-col border-3 border-white bg-black p-8"
+							class="relative flex max-h-[90vh] max-w-[90vw] w-80 md:w-200 flex-col border-3 border-white bg-black p-8 overflow-hidden"
 						>
 							<div class="mb-6 flex justify-between border-b-2 border-white">
 								<div class="mr-5 grow text-3xl/12 whitespace-pre-line">{schedules.name}</div>

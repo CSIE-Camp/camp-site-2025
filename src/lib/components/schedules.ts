@@ -151,7 +151,7 @@ export const schedules_afternoon = [
     },
     {
         name: '閉幕',
-        description: '課程總結、結業式與合影，為這場學習之旅畫上完美的句點。🎉<br>',
+        description: '課程總結、結業式與合影，為這場學習之旅畫上完美的句點。🎉',
         class: '',
         showmodal: false
     }

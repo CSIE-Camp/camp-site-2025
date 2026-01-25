@@ -79,49 +79,69 @@
 				若有疑問可以來信或私訊粉專
 			</p>
 		</div>
-		<div class="flex gap-5">
-			<a
-				href="https://www.instagram.com/ntnucsiecamp2025/"
-				target="_blank"
-				class="transition-transform hover:scale-110"
-				onmouseenter={() => (isInstagramHovered = true)}
-				onmouseleave={() => (isInstagramHovered = false)}
-			>
-				{#if isInstagramHovered}
-						<img
-							src={`${assets}/icons/btn-ig-hover.png`}
-							alt="instagram"
-							class="h-16 w-16"
-						/>
-				{:else}
-						<img
-							src={`${assets}/icons/btn-ig.png`}
-							alt="instagram"
-							class="h-16 w-16"
-						/>
-				{/if}
-			</a>
-			<a
-				href="https://www.facebook.com/ntnucsiecamp"
-				target="_blank"
-				class="transition-transform hover:scale-110"
-				onmouseenter={() => (isFacebookHovered = true)}
-				onmouseleave={() => (isFacebookHovered = false)}
-			>
-				{#if isFacebookHovered}
-						<img
-							src={`${assets}/icons/btn-fb-hover.png`}
-							alt="facebook"
-							class="h-16 w-16"
-						/>
-				{:else}
-						<img
-							src={`${assets}/icons/btn-fb.png`}
-							alt="facebook"
-							class="h-16 w-16"
-						/>
-				{/if}
-			</a>
+		<div class="flex flex-col items-center gap-4 flex-grow justify-between sm:self-stretch">
+			<div class="flex gap-5">
+				<a
+					href="https://www.instagram.com/ntnucsiecamp2025/"
+					target="_blank"
+					class="transition-transform hover:scale-110"
+					onmouseenter={() => (isInstagramHovered = true)}
+					onmouseleave={() => (isInstagramHovered = false)}
+				>
+					{#if isInstagramHovered}
+							<img
+								src={`${assets}/icons/btn-ig-hover.png`}
+								alt="instagram"
+								class="h-16 w-16"
+							/>
+					{:else}
+							<img
+								src={`${assets}/icons/btn-ig.png`}
+								alt="instagram"
+								class="h-16 w-16"
+							/>
+					{/if}
+				</a>
+				<a
+					href="https://www.facebook.com/ntnucsiecamp"
+					target="_blank"
+					class="transition-transform hover:scale-110"
+					onmouseenter={() => (isFacebookHovered = true)}
+					onmouseleave={() => (isFacebookHovered = false)}
+				>
+					{#if isFacebookHovered}
+							<img
+								src={`${assets}/icons/btn-fb-hover.png`}
+								alt="facebook"
+								class="h-16 w-16"
+							/>
+					{:else}
+							<img
+								src={`${assets}/icons/btn-fb.png`}
+								alt="facebook"
+								class="h-16 w-16"
+							/>
+					{/if}
+				</a>
+			</div>
+			<div class="flex gap-4 text-lg text-white">
+				<a 
+					href="https://camp.ntnucsie.info/2024" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="underline hover:text-yellow-300 transition-colors"
+				>
+					2024
+				</a>
+				<a 
+					href="https://camp.ntnucsie.info/2023" 
+					target="_blank" 
+					rel="noopener noreferrer"
+					class="underline hover:text-yellow-300 transition-colors"
+				>
+					2023
+				</a>
+			</div>
 		</div>
 	</footer>
 </div>

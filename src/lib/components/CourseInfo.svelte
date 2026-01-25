@@ -108,7 +108,7 @@
 
 			<div class="h-10"></div>
 
-			{#each schedules_morning as schedule (schedule.name)}
+			{#each schedules_morning as schedule, index (index)}
 				<button
 					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
 					on:click={() => openModal(schedule)}
@@ -131,7 +131,7 @@
 				<p>17:00</p>
 			</div>
 
-			{#each schedules_afternoon as schedule (schedule.name)}
+			{#each schedules_afternoon as schedule, index (index)}
 				<button
 					class="border-3 border-white px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
 					on:click={() => openModal(schedule)}
@@ -150,7 +150,7 @@
 				<p>21:00</p>
 			</div>
 
-			{#each schedules_night as schedule (schedule.name)}
+			{#each schedules_night as schedule, index (index)}
 				<button
 					class="border-3 border-white bg-transparent px-3 py-5 whitespace-pre-line transition-colors hover:cursor-pointer hover:bg-yellow-300 hover:text-black {schedule.class}"
 					on:click={() => openModal(schedule)}

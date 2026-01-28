@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#22222D" />
+	<meta name="theme-color" content="#1e2939" />
 	<title>2025 臺師大資工營 NTNU CSIE CAMP</title>
 	<meta property="og:title" content="2025 臺師大資工營 NTNU CSIE CAMP" />
 	<meta property="og:description" content="2025 臺師大資工營 7/1 ~ 7/4 在師大公館校區，等你來「資遊你和我的師界」！" />
